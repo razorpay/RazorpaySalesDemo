@@ -1,22 +1,27 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
+import MerchantList from './MerchantList';
 
 class Sidebar extends Component {
   static propTypes = {
     className: PropTypes.string,
-    open: PropTypes.bool
+    open: PropTypes.bool,
+    merchantData: PropTypes.array.isRequired
+  }
+
+  constructor(props) {
+    super(props);
   }
 
   render() {
-
-    var sidebarClasses = classNames({
+    var classes = classNames({
       'sidebar': true,
-      'sidebar-open': this.props.open
+      'open': this.props.open,
+      'close': !this.props.open
     });
-
     return (
-      <div className={sidebarClasses}>
-        <h1>This is the sidebar</h1>
+      <div className={classes}>
+        <MerchantList data={this.props.merchantData} showing={true}/>
       </div>
     );
   }

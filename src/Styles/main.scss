@@ -1,9 +1,12 @@
 @import "compass";
 @import "compass/reset";
+@import "./animations";
 @import "./Components/App";
 @import "./Components/Sidebar";
 @import "./Components/PaymentModal";
 @import "./Components/ButtonStart";
+@import "./Components/MerchantList";
+@import "./Components/MerchantListItem";
 
 * {
   box-sizing: border-box;

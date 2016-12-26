@@ -1,1 +1,204 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}.App{width:100vw;height:100vh;background:linear-gradient(0deg, #4c79b4,#101d4a)}@keyframes slideIn{to{transform:translateX(0)}}.sidebar{position:absolute;width:350px;height:100vh;background:white;padding:20px;z-index:999;-moz-transform:translateX(-500px);-ms-transform:translateX(-500px);-webkit-transform:translateX(-500px);transform:translateX(-500px)}.sidebar-open{-moz-animation:slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) forwards;-webkit-animation:slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) forwards;animation:slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) forwards}*{box-sizing:border-box}
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* line 25, ../../src/Styles/_animations.scss */
+.fadeInLeft {
+  -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+  -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+  animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+}
+
+/* line 29, ../../src/Styles/_animations.scss */
+.slideIn {
+  -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+  -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+  animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+}
+
+/* line 33, ../../src/Styles/_animations.scss */
+.slideOut {
+  -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+  -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+  animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
+}
+
+/* line 1, ../../src/Styles/Components/_App.scss */
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, #4c79b4, #101d4a);
+}
+
+/* line 1, ../../src/Styles/Components/_Sidebar.scss */
+.sidebar {
+  position: absolute;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+
+/* line 10, ../../src/Styles/Components/_Sidebar.scss */
+.open {
+  transform: translateX(0);
+}
+
+/* line 14, ../../src/Styles/Components/_Sidebar.scss */
+.close {
+  transform: translateX(-100%);
+}
+
+/* line 1, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  animation-duration: 0.35s;
+}
+/* line 9, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:hover {
+  background: blue;
+  color: white;
+}
+
+/* line 15, ../../src/Styles/Components/_MerchantListItem.scss */
+.li-merchantName {
+  margin-left: 10px;
+  width: 80%;
+}
+
+/* line 20, ../../src/Styles/Components/_MerchantListItem.scss */
+.li-merchantImage {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+/* line 26, ../../src/Styles/Components/_MerchantListItem.scss */
+.arrow-right {
+  width: 50px;
+  height: 50px;
+  background: black;
+  margin-left: 5px;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-1 {
+  animation-delay: 0.05s;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-2 {
+  animation-delay: 0.1s;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-3 {
+  animation-delay: 0.15s;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-4 {
+  animation-delay: 0.2s;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-5 {
+  animation-delay: 0.25s;
+}
+
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
+#mli-6 {
+  animation-delay: 0.3s;
+}
+
+/* line 11, ../../src/Styles/main.scss */
+* {
+  box-sizing: border-box;
+}

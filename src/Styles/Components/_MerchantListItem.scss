@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  animation-duration: 0.35s;
   &:hover {
     background: blue;
     color: white;
@@ -31,6 +32,6 @@
 
 @for $i from 1 through 6 {
   #mli-#{$i} {
-    animation-delay: #{$i * 0.07}s;
+    animation-delay: #{$i * 0.05}s;
   }
 }

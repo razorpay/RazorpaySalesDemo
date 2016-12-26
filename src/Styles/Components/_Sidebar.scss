@@ -4,9 +4,13 @@
   height: 100vh;
   background: white;
   z-index: 999;
-  @include transform(translateX(-500px));
+  transition: transform 0.3s cubic-bezier(.06,.69,.18,1.01);
 }
 
-.sidebar-open {
-  @include animation(slideIn 0.3s cubic-bezier(.06,.69,.18,1.01) forwards);
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  transform: translateX(-100%);
 }
