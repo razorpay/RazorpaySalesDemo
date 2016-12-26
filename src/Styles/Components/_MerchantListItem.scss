@@ -1,0 +1,36 @@
+.merchantListItem {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: blue;
+    color: white;
+  }
+}
+
+.li-merchantName {
+  margin-left: 10px;
+  width: 80%;
+}
+
+.li-merchantImage {
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+.arrow-right {
+  width: 50px;
+  height: 50px;
+  background: black;
+  margin-left: 5px;
+}
+
+@for $i from 1 through 6 {
+  #mli-#{$i} {
+    animation-delay: #{$i * 0.07}s;
+  }
+}

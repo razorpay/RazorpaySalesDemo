@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import Sidebar from './Sidebar';
+import PaymentModal from './PaymentModal';
+import ButtonStart from './ButtonStart';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello world</h1>
+        <Sidebar open={false}/>
+        <PaymentModal/>
+        <ButtonStart/>
       </div>
     );
   }

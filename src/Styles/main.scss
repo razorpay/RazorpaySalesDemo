@@ -1,3 +1,10 @@
 @import "compass";
 @import "compass/reset";
 @import "./Components/App";
+@import "./Components/Sidebar";
+@import "./Components/PaymentModal";
+@import "./Components/ButtonStart";
+
+* {
+  box-sizing: border-box;
+}
