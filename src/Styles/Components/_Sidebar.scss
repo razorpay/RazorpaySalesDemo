@@ -1,20 +1,18 @@
 .sidebar {
   position: absolute;
-  width: 350px;
+  width: $width-sidebar;
   height: 100vh;
   background: white;
   z-index: 999;
   transition: transform 0.3s $slide-easing;
+  box-shadow: 4px 3px 14px 0px rgba(0, 0, 0, 0.06);
+  transform: translateX(-100%);
 }
 
 .open {
   transform: translateX(0);
   & > .merchantList > .merchantListItem {
     opacity: 1;
-    transform: none;
+    transform: translateX(0);
   }
-}
-
-.close {
-  transform: translateX(-100%);
 }

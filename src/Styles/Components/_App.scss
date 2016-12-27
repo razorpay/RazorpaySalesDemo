@@ -1,8 +1,15 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background:linear-gradient(0deg, #4C79B4, #101D4A);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  transition: width 0.3s, margin 0.3s;
+  transition-delay: 0.05s;
+}
+
+.shrunk {
+  width: 100vw - $width-sidebar;
+  margin-left: $width-sidebar;
 }

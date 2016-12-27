@@ -16,8 +16,7 @@ class Sidebar extends Component {
   render() {
     var classes = classNames({
       'sidebar': true,
-      'open': this.props.open,
-      'close': !this.props.open
+      'open': this.props.open
     });
     return (
       <div className={classes}>

@@ -22,6 +22,15 @@
   }
 }
 
+@keyframes bounceIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .fadeInLeft {
   @include animation(fadeInLeft 0.5s cubic-bezier(.17,.67,.32,1.01) forwards);
 }
@@ -32,4 +41,8 @@
 
 .slideOut {
   @include animation(slideOut 0.3s cubic-bezier(.06,.69,.18,1.01) both);
+}
+
+.bounceIn {
+  @include animation(bounceIn 0.3s both cubic-bezier(.01,.66,.22,1.25));
 }

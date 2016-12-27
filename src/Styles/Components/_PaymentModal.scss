@@ -1,0 +1,19 @@
+.paymentModal {
+  margin-bottom: 30px;
+  min-width: 350px;
+  background: white;
+  border-radius: 3px;
+  transform: scale(0);
+}
+
+.paymentModalHeader {
+  background: #1abc9c;
+  height: 30px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 3px 3px 0 0;
+}
+
+.paymentModalBody {
+  padding: 20px;
+}

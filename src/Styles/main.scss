@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 
-body, html {
+body {
   font-family: 'Lato', sans-serif;
+  background:linear-gradient(0deg, #4C79B4, #101D4A);
+  overflow: hidden;
 }
 
 @import "compass";

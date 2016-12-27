@@ -4,8 +4,10 @@
 }
 
 /* line 5, ../../src/Styles/main.scss */
-body, html {
+body {
   font-family: 'Lato', sans-serif;
+  background: linear-gradient(0deg, #4C79B4, #101D4A);
+  overflow: hidden;
 }
 
 /* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
@@ -93,60 +95,103 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: none;
   }
 }
-/* line 25, ../../src/Styles/_animations.scss */
+@keyframes bounceIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* line 34, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 29, ../../src/Styles/_animations.scss */
+/* line 38, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 33, ../../src/Styles/_animations.scss */
+/* line 42, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
+/* line 46, ../../src/Styles/_animations.scss */
+.bounceIn {
+  -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
+}
+
 /* line 1, ../../src/Styles/Components/_App.scss */
 .App {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(0deg, #4c79b4, #101d4a);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  transition: width 0.3s, margin 0.3s;
+  transition-delay: 0.05s;
+}
+
+/* line 12, ../../src/Styles/Components/_App.scss */
+.shrunk {
+  width: 70vw;
+  margin-left: 30vw;
 }
 
 /* line 1, ../../src/Styles/Components/_Sidebar.scss */
 .sidebar {
   position: absolute;
-  width: 350px;
+  width: 30vw;
   height: 100vh;
   background: white;
   z-index: 999;
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  box-shadow: 4px 3px 14px 0px rgba(0, 0, 0, 0.06);
+  transform: translateX(-100%);
 }
 
-/* line 10, ../../src/Styles/Components/_Sidebar.scss */
+/* line 12, ../../src/Styles/Components/_Sidebar.scss */
 .open {
   transform: translateX(0);
 }
-/* line 12, ../../src/Styles/Components/_Sidebar.scss */
+/* line 14, ../../src/Styles/Components/_Sidebar.scss */
 .open > .merchantList > .merchantListItem {
   opacity: 1;
-  transform: none;
+  transform: translateX(0);
 }
 
-/* line 18, ../../src/Styles/Components/_Sidebar.scss */
-.close {
-  transform: translateX(-100%);
+/* line 1, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModal {
+  margin-bottom: 30px;
+  min-width: 350px;
+  background: white;
+  border-radius: 3px;
+  transform: scale(0);
+}
+
+/* line 9, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader {
+  background: #1abc9c;
+  height: 30px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 3px 3px 0 0;
+}
+
+/* line 17, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalBody {
+  padding: 20px;
 }
 
 /* line 1, ../../src/Styles/Components/_ButtonStart.scss */
@@ -162,7 +207,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   transition: transform 0.2s;
   letter-spacing: 2px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* line 15, ../../src/Styles/Components/_ButtonStart.scss */
 .buttonStart:active {
@@ -176,59 +221,58 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem {
   padding: 20px;
-  border-bottom: 1px solid grey;
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  opacity: 0;
   transition: opacity 0.2s, transform 0.2s cubic-bezier(0.06, 0.69, 0.18, 1.01);
-  transform: translateX(-50%);
+  transform: translateX(-15%);
+  opacity: 0;
 }
-/* line 12, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 11, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:hover {
   background: blue;
   color: white;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(1) {
   transition-delay: 0.1s;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(2) {
   transition-delay: 0.2s;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(3) {
   transition-delay: 0.3s;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(4) {
   transition-delay: 0.4s;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(5) {
   transition-delay: 0.5s;
 }
-/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 17, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:nth-child(6) {
   transition-delay: 0.6s;
 }
 
-/* line 24, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 23, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantName {
   margin-left: 10px;
   width: 80%;
 }
 
-/* line 29, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 28, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantImage {
   width: 50px;
   height: 50px;
   background: red;
 }
 
-/* line 35, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
 .arrow-right {
   width: 50px;
   height: 50px;

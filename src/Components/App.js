@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
 import ButtonStart from './ButtonStart';
@@ -59,12 +60,17 @@ class App extends Component {
   }
 
   render() {
+    var appClasses = classNames({
+      'App': true,
+      'shrunk': this.state.isSidebarOpen
+    });
+
     return (
       <div>
         <Sidebar open={this.state.isSidebarOpen} merchantData={merchants}/>
-        <div className="App">
-          <ButtonStart fireOnClick={this.toggleSidebar}/>
+        <div className={appClasses}>
           <PaymentModal/>
+          <ButtonStart fireOnClick={this.toggleSidebar}/>
         </div>
       </div>
     );
