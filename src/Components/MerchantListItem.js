@@ -21,7 +21,7 @@ class MerchantListItem extends Component {
   render() {
     var {name} = this.props.data;
     return (
-      <li className="merchantListItem" onClick={this.handleClick} id={`mli-${this.props.mid}`}>
+      <li className="merchantListItem" onClick={this.handleClick}>
         <div className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
         <i className="arrow-right"></i>

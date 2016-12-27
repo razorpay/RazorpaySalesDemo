@@ -17,10 +17,6 @@ var merchants = [
     image: 'http://images.google.com/funny/whatevs'
   },
   {
-    name: 'Chaipoint',
-    image: 'http://images.google.com/funny/whatevs'
-  },
-  {
     name: 'Rentomojo',
     image: 'http://images.google.com/funny/whatevs'
   },
@@ -41,13 +37,17 @@ class App extends Component {
       isSidebarOpen: false
     };
 
-    setTimeout(() => {
-      // this.openSidebar();
-    }, 3000);
-
     // Binding this to methods
     this.openSidebar = this.openSidebar.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+  }
+
+  toggleSidebar() {
+    if(!this.state.isSidebarOpen)
+      this.openSidebar();
+    else
+      this.closeSidebar();
   }
 
   openSidebar() {
@@ -60,10 +60,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <Sidebar open={this.state.isSidebarOpen} merchantData={merchants}/>
-        <PaymentModal/>
-        <ButtonStart/>
+        <div className="App">
+          <ButtonStart fireOnClick={this.toggleSidebar}/>
+          <PaymentModal/>
+        </div>
       </div>
     );
   }

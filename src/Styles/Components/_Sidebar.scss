@@ -4,11 +4,15 @@
   height: 100vh;
   background: white;
   z-index: 999;
-  transition: transform 0.3s cubic-bezier(.06,.69,.18,1.01);
+  transition: transform 0.3s $slide-easing;
 }
 
 .open {
   transform: translateX(0);
+  & > .merchantList > .merchantListItem {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .close {

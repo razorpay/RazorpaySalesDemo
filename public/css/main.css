@@ -1,3 +1,13 @@
+/* line 1, ../../src/Styles/main.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, ../../src/Styles/main.scss */
+body, html {
+  font-family: 'Lato', sans-serif;
+}
+
 /* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -109,6 +119,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 100vw;
   height: 100vh;
   background: linear-gradient(0deg, #4c79b4, #101d4a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* line 1, ../../src/Styles/Components/_Sidebar.scss */
@@ -125,10 +138,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .open {
   transform: translateX(0);
 }
+/* line 12, ../../src/Styles/Components/_Sidebar.scss */
+.open > .merchantList > .merchantListItem {
+  opacity: 1;
+  transform: none;
+}
 
-/* line 14, ../../src/Styles/Components/_Sidebar.scss */
+/* line 18, ../../src/Styles/Components/_Sidebar.scss */
 .close {
   transform: translateX(-100%);
+}
+
+/* line 1, ../../src/Styles/Components/_ButtonStart.scss */
+.buttonStart {
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-family: Lato;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  letter-spacing: 2px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+/* line 15, ../../src/Styles/Components/_ButtonStart.scss */
+.buttonStart:active {
+  transform: scale(0.9);
+}
+/* line 19, ../../src/Styles/Components/_ButtonStart.scss */
+.buttonStart:focus {
+  outline: none;
 }
 
 /* line 1, ../../src/Styles/Components/_MerchantListItem.scss */
@@ -139,66 +181,57 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  animation-duration: 0.35s;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transform: translateX(-50%);
 }
-/* line 9, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 12, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:hover {
   background: blue;
   color: white;
 }
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(1) {
+  transition-delay: 0.1s;
+}
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(2) {
+  transition-delay: 0.2s;
+}
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(3) {
+  transition-delay: 0.3s;
+}
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(4) {
+  transition-delay: 0.4s;
+}
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(5) {
+  transition-delay: 0.5s;
+}
+/* line 18, ../../src/Styles/Components/_MerchantListItem.scss */
+.merchantListItem:nth-child(6) {
+  transition-delay: 0.6s;
+}
 
-/* line 15, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 24, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantName {
   margin-left: 10px;
   width: 80%;
 }
 
-/* line 20, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 29, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantImage {
   width: 50px;
   height: 50px;
   background: red;
 }
 
-/* line 26, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 35, ../../src/Styles/Components/_MerchantListItem.scss */
 .arrow-right {
   width: 50px;
   height: 50px;
   background: black;
   margin-left: 5px;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-1 {
-  animation-delay: 0.05s;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-2 {
-  animation-delay: 0.1s;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-3 {
-  animation-delay: 0.15s;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-4 {
-  animation-delay: 0.2s;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-5 {
-  animation-delay: 0.25s;
-}
-
-/* line 34, ../../src/Styles/Components/_MerchantListItem.scss */
-#mli-6 {
-  animation-delay: 0.3s;
-}
-
-/* line 11, ../../src/Styles/main.scss */
-* {
-  box-sizing: border-box;
 }

@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class ButtonStart extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <button className="buttonStart" onClick={this.props.fireOnClick}>
+        Start
+      </button>
     );
   }
 }

@@ -5,10 +5,19 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  animation-duration: 0.35s;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s $slide-easing;
+  transform: translateX(-50%);
+
   &:hover {
     background: blue;
     color: white;
+  }
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i * 0.1}s;
+    }
   }
 }
 
@@ -28,10 +37,4 @@
   height: 50px;
   background: black;
   margin-left: 5px;
-}
-
-@for $i from 1 through 6 {
-  #mli-#{$i} {
-    animation-delay: #{$i * 0.05}s;
-  }
 }

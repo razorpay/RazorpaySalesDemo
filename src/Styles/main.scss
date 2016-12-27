@@ -1,6 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Lato', sans-serif;
+}
+
 @import "compass";
 @import "compass/reset";
 @import "./animations";
+@import "./variables";
+@import "./mixins";
 @import "./Components/App";
 @import "./Components/Sidebar";
 @import "./Components/PaymentModal";
@@ -8,6 +18,3 @@
 @import "./Components/MerchantList";
 @import "./Components/MerchantListItem";
 
-* {
-  box-sizing: border-box;
-}
