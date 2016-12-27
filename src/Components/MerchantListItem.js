@@ -1,11 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import classNames from 'classnames';
 
 class MerchantListItem extends Component {
   static propTypes = {
     className: PropTypes.string,
-    data: PropTypes.object.isRequired,
-    mid: PropTypes.number.isRequired
+    data: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -16,12 +14,13 @@ class MerchantListItem extends Component {
 
   handleClick() {
     console.log(this.props.data.name);
+    // This click should bring in the merchant detail section
   }
 
   render() {
     var {name} = this.props.data;
     return (
-      <li className="merchantListItem" onClick={this.handleClick}>
+      <li className="merchantListItem" onClick={this.handleClick} {...this.props}>
         <div className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
         <i className="arrow-right"></i>

@@ -1,2 +1,8 @@
 .merchantList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.4s $slide-easing;
+  transform: translateX(-100%);
 }

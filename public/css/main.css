@@ -159,13 +159,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   box-shadow: 4px 3px 14px 0px rgba(0, 0, 0, 0.06);
   transform: translateX(-100%);
+  overflow-x: hidden;
 }
 
-/* line 12, ../../src/Styles/Components/_Sidebar.scss */
+/* line 13, ../../src/Styles/Components/_Sidebar.scss */
 .open {
   transform: translateX(0);
 }
-/* line 14, ../../src/Styles/Components/_Sidebar.scss */
+/* line 15, ../../src/Styles/Components/_Sidebar.scss */
 .open > .merchantList > .merchantListItem {
   opacity: 1;
   transform: translateX(0);
@@ -216,6 +217,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 19, ../../src/Styles/Components/_ButtonStart.scss */
 .buttonStart:focus {
   outline: none;
+}
+
+/* line 1, ../../src/Styles/Components/_MerchantList.scss */
+.merchantList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.4s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transform: translateX(-100%);
 }
 
 /* line 1, ../../src/Styles/Components/_MerchantListItem.scss */
@@ -278,4 +289,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 50px;
   background: black;
   margin-left: 5px;
+}
+
+/* line 1, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  transition: transform 0.4s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transform: translateX(110%);
+  box-shadow: -3px 0px 8px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+/* line 14, ../../src/Styles/Components/_MerchantDetail.scss */
+.visible-in-sidebar {
+  transform: translateX(0);
 }

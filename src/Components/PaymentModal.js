@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import PaymentModalHeader from  './PaymentModalHeader';
 import PaymentModalBody from './PaymentModalBody';
 

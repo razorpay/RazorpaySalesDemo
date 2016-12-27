@@ -35,7 +35,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSidebarOpen: false
+      isSidebarOpen: true
     };
 
     // Binding this to methods

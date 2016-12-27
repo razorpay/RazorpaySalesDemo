@@ -1,0 +1,16 @@
+.merchantDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  transition: transform 0.4s $slide-easing;
+  transform: translateX(110%);
+  box-shadow: -3px 0px 8px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.visible-in-sidebar {
+  transform: translateX(0);
+}
