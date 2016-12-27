@@ -5,8 +5,8 @@ class PaymentModalHeader extends Component {
     return (
       <div className="paymentModalHeader">
         <div id="header-merchant-logo"></div>
-        <div id="header-merchant-name">{this.props.merchantName}</div>
-        <div id="header-description">{this.props.paymentDesc}</div>
+        <div id="header-merchant-name">{this.props.name}</div>
+        <div id="header-description">{this.props.desc}</div>
         <div id="header-amount">₹{this.props.amount}</div>
       </div>
     );

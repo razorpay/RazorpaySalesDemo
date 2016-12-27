@@ -4,7 +4,7 @@ class ButtonStart extends Component {
   render() {
     return (
       <button className="buttonStart" onClick={this.props.fireOnClick}>
-        Start
+        {this.props.text}
       </button>
     );
   }

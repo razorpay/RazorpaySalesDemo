@@ -56,9 +56,12 @@ class Sidebar extends Component {
         />
 
         <MerchantDetail
-          name={this.state.visibleMerchant.name}
+          data={this.state.visibleMerchant}
           visibleInSidebar={this.state.visibleState === this.visibleStates.detail}
           backToList={this.showMerchantList}
+          onNameChange={this.props.updateName}
+          onDescChange={this.props.updateDesc}
+          onAmountChange={this.props.updateAmount}
         />
       </div>
     );

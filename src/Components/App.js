@@ -48,7 +48,11 @@ class App extends Component {
     super(props);
     this.state = {
       isSidebarOpen: false,
-      visibleMerchant: merchants[1]
+      // Data that is visible in the modal currently
+      currentMerchantName: merchants[0].name,
+      currentPaymentDesc: merchants[0].desc,
+      currentAmount: merchants[0].amount,
+      currentMerchantLogo: merchants[0].logo
     };
 
     // Binding this to methods
@@ -56,6 +60,10 @@ class App extends Component {
     this.closeSidebar = this.closeSidebar.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
     this.updateVisibleMerchant = this.updateVisibleMerchant.bind(this);
+    this.updateCurrentMerchantName = this.updateCurrentMerchantName.bind(this);
+    this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
+    this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
+
   }
 
   toggleSidebar(e) {
@@ -76,7 +84,28 @@ class App extends Component {
 
   updateVisibleMerchant(merchant) {
     this.setState({
-      visibleMerchant: merchant
+      currentMerchantName: merchant.name,
+      currentPaymentDesc: merchant.desc,
+      currentAmount: merchant.amount,
+      currentMerchantLogo: merchant.logo
+    });
+  }
+
+  updateCurrentMerchantName(e) {
+    this.setState({
+      currentMerchantName: e.target.value
+    });
+  }
+
+  updateCurrentPaymentDesc(e) {
+    this.setState({
+      currentPaymentDesc: e.target.value
+    });
+  }
+
+  updateCurrentAmount(e) {
+    this.setState({
+      currentAmount: e.target.value
     });
   }
 
@@ -86,16 +115,32 @@ class App extends Component {
       'shrunk': this.state.isSidebarOpen
     });
 
+    var buttonText = this.state.isSidebarOpen ? 'done' : 'configure';
+
+    var {currentMerchantName,
+        currentPaymentDesc,
+        currentAmount,
+        currentMerchantLogo} = this.state;
+
     return (
       <div>
         <Sidebar
           open={this.state.isSidebarOpen}
           merchantData={merchants}
-          updateVisibleMerchant={this.updateVisibleMerchant}/>
+          updateVisibleMerchant={this.updateVisibleMerchant}
+          updateName={this.updateCurrentMerchantName}
+          updateDesc={this.updateCurrentPaymentDesc}
+          updateAmount={this.updateCurrentAmount}
+        />
 
         <div className={appClasses} onClick={this.closeSidebar}>
-          <PaymentModal data={this.state.visibleMerchant}/>
-          <ButtonStart fireOnClick={this.toggleSidebar}/>
+          <PaymentModal
+            name={currentMerchantName}
+            desc={currentPaymentDesc}
+            amount={currentAmount}
+            logo={currentMerchantLogo}
+          />
+          <ButtonStart text={buttonText} fireOnClick={this.toggleSidebar}/>
         </div>
       </div>
     );

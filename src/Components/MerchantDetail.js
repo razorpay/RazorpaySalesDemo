@@ -4,6 +4,10 @@ import ButtonBackToList from './ButtonBackToList';
 
 class MerchantDetail extends Component {
 
+  handleChange() {
+    console.log('A change was detected');
+  }
+
   render() {
 
     var mDetailClasses = classNames({
@@ -14,7 +18,25 @@ class MerchantDetail extends Component {
     return (
       <div className={mDetailClasses}>
         <ButtonBackToList fireOnClick={this.props.backToList}/>
-        {this.props.name}
+        <input
+          className="input"
+          type="text"
+          placeholder={this.props.data.name}
+          onChange={this.props.onNameChange}/>
+
+        <input
+          className="input"
+          type="text"
+          placeholder={this.props.data.desc}
+          onChange={this.props.onDescChange}
+        />
+
+        <input
+          className="input"
+          type="text"
+          placeholder={this.props.data.amount}
+          onChange={this.props.onAmountChange}
+        />
       </div>
     );
   }

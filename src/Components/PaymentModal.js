@@ -5,18 +5,17 @@ import PaymentModalBody from './PaymentModalBody';
 class PaymentModal extends Component {
   static PropTypes = {
     className: PropTypes.string,
-    data: PropTypes.object.isRequired
+    name: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired
   }
 
   render() {
-    var {name, desc, amount, logo} = this.props.data;
+    var {name, desc, amount, logo} = this.props;
     return (
       <div className="paymentModal bounceIn">
-        <PaymentModalHeader
-          merchantName={name}
-          paymentDesc={desc}
-          amount={amount}
-        />
+        <PaymentModalHeader {...this.props}/>
         <PaymentModalBody />
       </div>
     );
