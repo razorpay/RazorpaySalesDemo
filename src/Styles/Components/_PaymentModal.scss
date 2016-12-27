@@ -1,17 +1,56 @@
 .paymentModal {
   margin-bottom: 30px;
+  max-width: 350px;
   min-width: 350px;
   background: white;
   border-radius: 3px;
   transform: scale(0);
+  font-family: 'Lato';
 }
 
 .paymentModalHeader {
   background: #1abc9c;
-  height: 30px;
   width: 100%;
   padding: 20px;
   border-radius: 3px 3px 0 0;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,.12);
+
+  %header-text {
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+
+  #header-merchant-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 3px;
+    margin-right: 24px;
+    background: white;
+    float: left;
+    @include box-shadow(0 1px 3px rgba(0,0,0,.1));
+  }
+
+  #header-merchant-name {
+    @extend %header-text;
+    font-size: 20px;
+ }
+
+  #header-description {
+    @extend %header-text;
+    margin-top: 5px;
+    opacity: 0.8;
+    font-size: 16px;
+  }
+
+  #header-amount {
+    @extend %header-text;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
 }
 
 .paymentModalBody {

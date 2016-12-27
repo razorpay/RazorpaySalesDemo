@@ -7,27 +7,39 @@ import ButtonStart from './ButtonStart';
 var merchants = [
   {
     name: 'Akbar Travels',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 700
   },
   {
     name: 'Nestaway',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 700
   },
   {
     name: 'Chaipoint',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 700
   },
   {
     name: 'Rentomojo',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #222',
+    amount: 700
   },
   {
     name: 'Voonik',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 700
   },
   {
     name: 'PapaJohns',
-    image: 'http://images.google.com/funny/whatevs'
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 700
   }
 ];
 
@@ -35,7 +47,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSidebarOpen: true
+      isSidebarOpen: false
     };
 
     // Binding this to methods
@@ -44,7 +56,8 @@ class App extends Component {
     this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
-  toggleSidebar() {
+  toggleSidebar(e) {
+    e.stopPropagation();
     if(!this.state.isSidebarOpen)
       this.openSidebar();
     else
@@ -68,8 +81,8 @@ class App extends Component {
     return (
       <div>
         <Sidebar open={this.state.isSidebarOpen} merchantData={merchants}/>
-        <div className={appClasses}>
-          <PaymentModal/>
+        <div className={appClasses} onClick={this.closeSidebar}>
+          <PaymentModal data={merchants[0]}/>
           <ButtonStart fireOnClick={this.toggleSidebar}/>
         </div>
       </div>

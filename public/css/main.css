@@ -175,22 +175,59 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModal {
   margin-bottom: 30px;
+  max-width: 350px;
   min-width: 350px;
   background: white;
   border-radius: 3px;
   transform: scale(0);
+  font-family: 'Lato';
 }
 
-/* line 9, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 11, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader {
   background: #1abc9c;
-  height: 30px;
   width: 100%;
   padding: 20px;
   border-radius: 3px 3px 0 0;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+/* line 19, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 26, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader #header-merchant-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+  margin-right: 24px;
+  background: white;
+  float: left;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* line 36, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader #header-merchant-name {
+  font-size: 20px;
+}
+/* line 41, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader #header-description {
+  margin-top: 5px;
+  opacity: 0.8;
+  font-size: 16px;
+}
+/* line 48, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader #header-amount {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
-/* line 17, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 56, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalBody {
   padding: 20px;
 }
