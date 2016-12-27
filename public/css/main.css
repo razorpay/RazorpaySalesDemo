@@ -196,6 +196,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
   white-space: pre;
   text-overflow: ellipsis;
+  padding: 0 0 2px 0;
   overflow: hidden;
 }
 /* line 26, ../../src/Styles/Components/_PaymentModal.scss */
@@ -216,7 +217,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 41, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
-  margin-top: 5px;
+  margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
@@ -224,7 +225,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /* line 56, ../../src/Styles/Components/_PaymentModal.scss */

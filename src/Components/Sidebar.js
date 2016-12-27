@@ -20,7 +20,7 @@ class Sidebar extends Component {
     this.state = {
       visibleState: this.visibleStates.list,
       // The merchant visible in the detail view
-      visibleMerchant: 'Razorpay Sample Merchant'      
+      visibleMerchant: 'Razorpay Sample Merchant'
     };
 
     // Bind this to methods
@@ -29,6 +29,7 @@ class Sidebar extends Component {
   }
 
   showMerchantDetail() {
+    this.props.updateVisibleMerchant(arguments[0]);
     this.setState({
       visibleState: this.visibleStates.detail,
       visibleMerchant: arguments[0]
