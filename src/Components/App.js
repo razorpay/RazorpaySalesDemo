@@ -12,37 +12,43 @@ var merchants = [
     name: 'Akbar Travels',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #223',
-    amount: 7000
+    amount: 7000,
+    color: '#1ABC9C'
   },
   {
     name: 'Nestaway',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #421',
-    amount: 699
+    amount: 699,
+    color: '#9681A0'
   },
   {
     name: 'Chaipoint',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #314',
-    amount: 341
+    amount: 341,
+    color: '#7A73AF'
   },
   {
     name: 'Rentomojo',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #222',
-    amount: 3.1415
+    amount: 3.1415,
+    color: '#F0DB4F'
   },
   {
     name: 'Voonik',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #221',
-    amount: 1
+    amount: 1,
+    color: '#A4C639'
   },
   {
     name: 'PapaJohns',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #221',
-    amount: 800
+    amount: 800,
+    color: '#6ADCFB'
   }
 ];
 
@@ -55,7 +61,8 @@ class App extends Component {
       currentMerchantName: merchants[0].name,
       currentPaymentDesc: merchants[0].desc,
       currentAmount: merchants[0].amount,
-      currentMerchantLogo: merchants[0].logo
+      currentMerchantLogo: merchants[0].logo,
+      currentMerchantColor: merchants[0].color
     };
 
     // Binding 'this' to methods
@@ -111,7 +118,8 @@ class App extends Component {
       currentMerchantName: newMerchant.name,
       currentPaymentDesc: newMerchant.desc,
       currentAmount: newMerchant.amount,
-      currentMerchantLogo: newMerchant.logo
+      currentMerchantLogo: newMerchant.logo,
+      currentMerchantColor: newMerchant.color
     });
   }
 
@@ -169,7 +177,8 @@ class App extends Component {
     var {currentMerchantName,
         currentPaymentDesc,
         currentAmount,
-        currentMerchantLogo} = this.state;
+        currentMerchantLogo,
+        currentMerchantColor} = this.state;
 
     return (
       <div>
@@ -188,6 +197,7 @@ class App extends Component {
             desc={currentPaymentDesc}
             amount={currentAmount}
             logo={currentMerchantLogo}
+            color={currentMerchantColor}
           />
           <ButtonStart text={buttonText} fireOnClick={this.toggleSidebar}/>
         </div>

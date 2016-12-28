@@ -257,15 +257,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 3px 3px 0 0;
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s;
 }
-/* line 19, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 20, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
   white-space: pre;
   text-overflow: ellipsis;
   padding: 0 0 2px 0;
   overflow: hidden;
 }
-/* line 26, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 27, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
   width: 64px;
   height: 64px;
@@ -277,17 +278,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-/* line 36, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 37, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name {
   font-size: 20px;
 }
-/* line 41, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 42, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
   margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
-/* line 48, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 49, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
