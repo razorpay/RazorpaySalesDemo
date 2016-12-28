@@ -73,6 +73,7 @@ class App extends Component {
     this.updateCurrentMerchantName = this.updateCurrentMerchantName.bind(this);
     this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
+    this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
 
   }
 
@@ -125,9 +126,10 @@ class App extends Component {
 
 
   /*
-  * The following three functions (updateCurrentMerchantName, updatePaymentDesc,
-  * updateCurrentAmount) are propagated to Sidebar > MerchantDetail. Inputs detected
-  * inside MerchantDetail updates the details in Payment Modal in real time.
+  * The following four functions (updateCurrentMerchantName, updatePaymentDesc,
+  * updateCurrentAmount, updateCurrentMerchantColor) are propagated to
+  * Sidebar > MerchantDetail. Inputs detected inside MerchantDetail updates the details
+  * in Payment Modal in real time.
   */
 
   /*
@@ -158,11 +160,21 @@ class App extends Component {
   * function: updateCurrentAmount(keyboard event fired on input field)
   * ------------------------------------------------------------------------
   * Updates the amount in the Payment Modal.
-  *
   */
   updateCurrentAmount(e) {
     this.setState({
       currentAmount: e.target.value
+    });
+  }
+
+ /*
+  * function: updateCurrentMerchantColor()
+  * ----------------------------------------
+  * Updates the colors inside payment modal>
+  */
+  updateCurrentMerchantColor(color) {
+    this.setState({
+      currentMerchantColor: color.hex
     });
   }
 
@@ -189,6 +201,7 @@ class App extends Component {
           updateName={this.updateCurrentMerchantName}
           updateDesc={this.updateCurrentPaymentDesc}
           updateAmount={this.updateCurrentAmount}
+          updateColor={this.updateCurrentMerchantColor}
         />
 
         <div className={appClasses} onClick={this.closeSidebar}>

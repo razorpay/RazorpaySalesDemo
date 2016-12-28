@@ -91,6 +91,7 @@ class Sidebar extends Component {
             onNameChange={this.props.updateName}
             onDescChange={this.props.updateDesc}
             onAmountChange={this.props.updateAmount}
+            onColorChange={this.props.updateColor}
           />
         </div>
       </div>

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 // Components
 import DetailInput from './DetailInput';
+import {SketchPicker} from 'react-color';
 
 class MerchantDetail extends Component {
   render() {
@@ -23,22 +24,28 @@ class MerchantDetail extends Component {
           labelText="Merchant Name"
           type="text"
           placeholder={this.props.data.name}
-          onChange={this.props.onChangeName}
+          onChange={this.props.onNameChange}
         />
 
         <DetailInput
           labelText="Payment Description"
           type="text"
           placeholder={this.props.data.desc}
-          onChange={this.props.onChangeDesc}
+          onChange={this.props.onDescChange}
         />
 
         <DetailInput
           labelText="Amount"
           type="number"
           placeholder={this.props.data.amount}
-          onChange={this.props.onChangeAmount}
+          onChange={this.props.onAmountChange}
         />
+
+        <SketchPicker
+          color={this.props.data.color}
+          onChangeComplete={this.props.onColorChange}
+        />
+
      </div>
     );
   }
