@@ -1,0 +1,17 @@
+.buttonBackToList {
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  transform: translateY(-46%);
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #6C6C6C;
+  font-weight: 700;
+  transition: left 0.3s $slide-easing;
+  outline: none;
+  padding-right: 0;
+}

@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 
-// Components
-import ButtonBackToList from './ButtonBackToList';
-
 class MerchantDetail extends Component {
-
   render() {
 
     var mDetailClasses = classNames({
@@ -15,7 +11,6 @@ class MerchantDetail extends Component {
 
     return (
       <div className={mDetailClasses}>
-        <ButtonBackToList fireOnClick={this.props.backToList}/>
         <input
           className="input"
           type="text"

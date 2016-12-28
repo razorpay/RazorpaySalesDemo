@@ -1,6 +1,6 @@
 .merchantList {
   position: absolute;
-  top: 0;
+  top: $height-sidebar-header;
   left: 0;
   right: 0;
   transition: transform 0.4s $slide-easing;

@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 class ButtonBackToList extends Component {
   render() {
     return (
-      <button onClick={this.props.fireOnClick}>
-        Back
+      <button className="buttonBackToList" onClick={this.props.fireOnClick}>
+        {this.props.text}
       </button>
     );
   }

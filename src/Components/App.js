@@ -50,7 +50,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSidebarOpen: false,
+      isSidebarOpen: true,
       // Merchant data currently visible in the modal
       currentMerchantName: merchants[0].name,
       currentPaymentDesc: merchants[0].desc,

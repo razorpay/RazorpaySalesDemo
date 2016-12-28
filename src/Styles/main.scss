@@ -8,15 +8,21 @@ body {
   overflow: hidden;
 }
 
+html * {
+  font-family: 'Lato', sans-serif !important;
+}
+
 @import "compass";
 @import "compass/reset";
 @import "./animations";
 @import "./variables";
 @import "./mixins";
 @import "./Components/App";
+@import "./Components/SidebarHeader";
 @import "./Components/Sidebar";
 @import "./Components/PaymentModal";
 @import "./Components/ButtonStart";
+@import "./Components/ButtonBackToList";
 @import "./Components/MerchantList";
 @import "./Components/MerchantListItem";
 @import "./Components/MerchantDetail";

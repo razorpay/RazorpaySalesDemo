@@ -2,14 +2,14 @@ import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
 // Components
+import SidebarHeader from './SidebarHeader';
 import MerchantList from './MerchantList';
 import MerchantDetail from './MerchantDetail';
+
 
 class Sidebar extends Component {
   static propTypes = {
     className: PropTypes.string,
-    open: PropTypes.bool,
-    merchants: PropTypes.array.isRequired
   }
 
   constructor(props) {
@@ -72,6 +72,12 @@ class Sidebar extends Component {
     });
     return (
       <div className={classes}>
+        <SidebarHeader
+          text="Razorpay Checkout"
+          subtext="Merchants"
+          backButtonVisible={this.state.visibleState === this.visibleStates.detail}
+          backToList={this.showMerchantList}
+        />
         <MerchantList
           data={this.props.merchants}
           visibleInSidebar={this.state.visibleState === this.visibleStates.list}
@@ -81,7 +87,6 @@ class Sidebar extends Component {
         <MerchantDetail
           data={this.state.visibleMerchant}
           visibleInSidebar={this.state.visibleState === this.visibleStates.detail}
-          backToList={this.showMerchantList}
           onNameChange={this.props.updateName}
           onDescChange={this.props.updateDesc}
           onAmountChange={this.props.updateAmount}
