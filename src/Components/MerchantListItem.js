@@ -6,21 +6,10 @@ class MerchantListItem extends Component {
     data: PropTypes.object.isRequired
   }
 
-  constructor(props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    console.log(this.props.data.name);
-    // This click should bring in the merchant detail section
-  }
-
   render() {
     var {name} = this.props.data;
     return (
-      <li className="merchantListItem" onClick={this.handleClick} {...this.props}>
+      <li className="merchantListItem" onClick={this.props.showMerchantDetail}>
         <div className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
         <i className="arrow-right"></i>

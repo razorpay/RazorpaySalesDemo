@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+
+// Components
 import ButtonBackToList from './ButtonBackToList';
 
 class MerchantDetail extends Component {
-
-  handleChange() {
-    console.log('A change was detected');
-  }
 
   render() {
 

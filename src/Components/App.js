@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+
+// Components
 import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
 import ButtonStart from './ButtonStart';
 
+// Dummy Data
 var merchants = [
   {
     name: 'Akbar Travels',
@@ -48,24 +51,29 @@ class App extends Component {
     super(props);
     this.state = {
       isSidebarOpen: false,
-      // Data that is visible in the modal currently
+      // Merchant data currently visible in the modal
       currentMerchantName: merchants[0].name,
       currentPaymentDesc: merchants[0].desc,
       currentAmount: merchants[0].amount,
       currentMerchantLogo: merchants[0].logo
     };
 
-    // Binding this to methods
+    // Binding 'this' to methods
     this.openSidebar = this.openSidebar.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
-    this.updateVisibleMerchant = this.updateVisibleMerchant.bind(this);
+    this.updateCurrentMerchant = this.updateCurrentMerchant.bind(this);
     this.updateCurrentMerchantName = this.updateCurrentMerchantName.bind(this);
     this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
 
   }
 
+  /*
+  * Function: toggleSidebar
+  * ----------------------------------
+  * Toggles visibility of the sidebar.
+  */
   toggleSidebar(e) {
     e.stopPropagation();
     if(!this.state.isSidebarOpen)
@@ -74,35 +82,76 @@ class App extends Component {
       this.closeSidebar();
   }
 
+  /*
+  * Function: openSidebar
+  * ---------------------
+  * Slides Sidebar in.
+  */
   openSidebar() {
     this.setState({isSidebarOpen: true});
   }
 
+  /*
+  * Function: closeSidebar
+  * ----------------------
+  * Slides Sidebar out.
+  */
   closeSidebar() {
     this.setState({isSidebarOpen: false});
   }
 
-  updateVisibleMerchant(merchant) {
+  /*
+  * Function: updateCurrentMerchant(object holding new merchant's data)
+  * -------------------------------------------------------------------
+  * Updates the data visible in the Payment modal to the data passed in
+  * as param to this function.
+  */
+  updateCurrentMerchant(newMerchant) {
     this.setState({
-      currentMerchantName: merchant.name,
-      currentPaymentDesc: merchant.desc,
-      currentAmount: merchant.amount,
-      currentMerchantLogo: merchant.logo
+      currentMerchantName: newMerchant.name,
+      currentPaymentDesc: newMerchant.desc,
+      currentAmount: newMerchant.amount,
+      currentMerchantLogo: newMerchant.logo
     });
   }
 
+
+  /*
+  * The following three functions (updateCurrentMerchantName, updatePaymentDesc,
+  * updateCurrentAmount) are propagated to Sidebar > MerchantDetail. Inputs detected
+  * inside MerchantDetail updates the details in Payment Modal in real time.
+  */
+
+  /*
+  * Function: updateCurrentMerchantName(keyboard event fired on input field)
+  * ------------------------------------------------------------------------
+  * Updates the name of the merchant in the Payment Modal.
+  *
+  */
   updateCurrentMerchantName(e) {
     this.setState({
       currentMerchantName: e.target.value
     });
   }
 
+ /*
+  * function: updateCurrentPaymentDesc(keyboard event fired on input field)
+  * ------------------------------------------------------------------------
+  * Updates the payment description in the Payment Modal.
+  *
+  */
   updateCurrentPaymentDesc(e) {
     this.setState({
       currentPaymentDesc: e.target.value
     });
   }
 
+ /*
+  * function: updateCurrentAmount(keyboard event fired on input field)
+  * ------------------------------------------------------------------------
+  * Updates the amount in the Payment Modal.
+  *
+  */
   updateCurrentAmount(e) {
     this.setState({
       currentAmount: e.target.value
@@ -126,8 +175,8 @@ class App extends Component {
       <div>
         <Sidebar
           open={this.state.isSidebarOpen}
-          merchantData={merchants}
-          updateVisibleMerchant={this.updateVisibleMerchant}
+          merchants={merchants}
+          updateCurrentMerchant={this.updateCurrentMerchant}
           updateName={this.updateCurrentMerchantName}
           updateDesc={this.updateCurrentPaymentDesc}
           updateAmount={this.updateCurrentAmount}

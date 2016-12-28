@@ -1,10 +1,13 @@
 import React, {Component, PropTypes} from 'react';
-import MerchantListItem from './MerchantListItem';
 import classNames from 'classnames';
+
+// Components
+import MerchantListItem from './MerchantListItem';
 
 class MerchantList extends Component {
   static PropTypes = {
     className: PropTypes.string,
+    // An array holding all the merchants
     data: PropTypes.object.isRequired
   }
 
@@ -22,7 +25,7 @@ class MerchantList extends Component {
               <MerchantListItem
                 key={i}
                 data={merchant}
-                onClick={this.props.fireOnClick.bind(null, this.props.data[i])}
+                showMerchantDetail={this.props.showMerchantDetail.bind(null, this.props.data[i])}
               />
             );
           })
