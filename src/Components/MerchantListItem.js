@@ -12,7 +12,7 @@ class MerchantListItem extends Component {
       <li className="merchantListItem" onClick={this.props.showMerchantDetail}>
         <div className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
-        <i className="arrow-right"></i>
+        <i className="arrow-right">&#9658;</i>
       </li>
     );
   }

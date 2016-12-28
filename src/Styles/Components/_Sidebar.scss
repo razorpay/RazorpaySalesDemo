@@ -12,8 +12,13 @@
 
 .open {
   transform: translateX(0);
-  & > .merchantList > .merchantListItem {
+  & .merchantListItem {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.sidebarContent {
+  width: 100%;
+  position: relative;
 }

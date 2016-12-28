@@ -14,13 +14,13 @@ class SidebarHeader extends Component {
     return (
       <div className={bClasses}>
         <h1>{this.props.text}</h1>
-        <span>
+        <div className="subheader">
+          <i className="arrow-left">&#9664;</i>
           <ButtonBackToList
-            text="&#9664;"
+            text="Merchants"
             fireOnClick={this.props.backToList}
           />
-          {this.props.subtext}
-        </span>
+        </div>
       </div>
     );
   }

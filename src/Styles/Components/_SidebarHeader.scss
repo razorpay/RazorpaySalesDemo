@@ -1,39 +1,50 @@
  .sidebarHeader {
-  max-height: $height-sidebar-header;
-  min-height: $height-sidebar-header;
   z-index: 999;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   h1 {
     font-weight: 700;
     font-size: 18px;
     color: #3879AC;
     padding: 20px;
+    flex-grow: 2;
   }
 
-  span {
-    position: relative;
-    width: 100%;
-    display: block;
-    padding: 10px 20px;
+  .arrow-left {
+    display: inline-block;
+    font-size: 14px;
+    width: 14px;
+    transform: translateX(14px);
+    transition: transform 0.2s, opacity 0.1s, $slide-easing;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .subheader {
     background: #F2F2F2;
     text-transform: uppercase;
-    font-size: 14px;
     letter-spacing: 2px;
-    font-weight: 700;
+    padding: 10px 20px;
     color: #6C6C6C;
     transition: padding 0.3s $slide-easing;
+    flex-grow: 1;
+    .subtext {
+      font-size: 14px;
+      font-weight: 700;
+    }
   }
  }
 
  .hasBackButton {
-   span {
-     padding-left: 45px;
+   .arrow-left {
+     transform: translateX(0);
+     opacity: 1;
    }
 
   .buttonBackToList {
-    padding-right: 110px;
-    left: 20px;
+    pointer-events: auto;
+    margin-left: 0;
   }
  }
