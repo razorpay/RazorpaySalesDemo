@@ -1,3 +1,76 @@
 .paymentModalBody {
   padding: 20px;
+  padding-bottom: 0;
+  font-size: 14px;
+
+  .inputWrap {
+    color: #424242;
+    border-bottom: 1px solid #e6e7e8;
+    position: relative;
+    margin-top: 20px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  label {
+    transform-origin: 0 0;
+    color: #757575;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .input {
+    border: none;
+    outline: none;
+    background: 0 0;
+    width: 100%;
+    line-height: 19px;
+    padding: 28px 0 7px;
+    margin: 0;
+    position: relative;
+    color: inherit;
+    font-size: 16px;
+  }
+
+  i {
+    position: absolute;
+    font-size: 20px;
+    bottom: 6px;
+    right: 0;
+    color: #8f8f8f;
+  }
+
+  #legend {
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  #payment-options {
+    display: flex;
+    margin: 0 -20px;
+    border-top: 1px solid #e6e7e8;
+    .payment-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      flex: 1;
+      height: 117px;
+      border-right: 1px solid #e6e7e8;
+      &:last-child {
+        border-color: transparent;
+      }
+    }
+  }
 }

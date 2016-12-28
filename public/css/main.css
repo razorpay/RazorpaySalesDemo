@@ -175,7 +175,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 14px;
   transform: translateX(14px);
   transition: transform 0.2s, opacity 0.1s, cubic-bezier(0.06, 0.69, 0.18, 1.01);
-  cursor: pointer;
+  cursor: default;
   opacity: 0;
 }
 /* line 25, ../../src/Styles/Components/_SidebarHeader.scss */
@@ -198,11 +198,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .hasBackButton .arrow-left {
   transform: translateX(0);
   opacity: 1;
+  cursor: pointer;
 }
-/* line 46, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 47, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .buttonBackToList {
   pointer-events: auto;
   margin-left: 0;
+  padding-left: 5px;
 }
 
 /* line 1, ../../src/Styles/Components/_Sidebar.scss */
@@ -293,6 +295,82 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody {
   padding: 20px;
+  padding-bottom: 0;
+  font-size: 14px;
+}
+/* line 6, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .inputWrap {
+  color: #424242;
+  border-bottom: 1px solid #e6e7e8;
+  position: relative;
+  margin-top: 20px;
+}
+/* line 11, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .inputWrap:first-child {
+  margin-top: 0;
+}
+/* line 16, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody label {
+  transform-origin: 0 0;
+  color: #757575;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+/* line 27, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .input {
+  border: none;
+  outline: none;
+  background: 0 0;
+  width: 100%;
+  line-height: 19px;
+  padding: 28px 0 7px;
+  margin: 0;
+  position: relative;
+  color: inherit;
+  font-size: 16px;
+}
+/* line 40, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody i {
+  position: absolute;
+  font-size: 20px;
+  bottom: 6px;
+  right: 0;
+  color: #8f8f8f;
+}
+/* line 48, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #legend {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+/* line 59, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #payment-options {
+  display: flex;
+  margin: 0 -20px;
+  border-top: 1px solid #e6e7e8;
+}
+/* line 63, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #payment-options .payment-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex: 1;
+  height: 117px;
+  border-right: 1px solid #e6e7e8;
+}
+/* line 71, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #payment-options .payment-option:last-child {
+  border-color: transparent;
 }
 
 /* line 1, ../../src/Styles/Components/_ButtonStart.scss */
@@ -329,7 +407,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   letter-spacing: 2px;
   color: #6C6C6C;
   font-weight: 700;
-  transition: margin 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transition: margin 0.3s, padding 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   outline: none;
   pointer-events: none;
   padding: 0;

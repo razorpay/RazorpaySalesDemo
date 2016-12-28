@@ -7,7 +7,7 @@
   letter-spacing: 2px;
   color: #6C6C6C;
   font-weight: 700;
-  transition: margin 0.3s $slide-easing;
+  transition: margin 0.3s, padding 0.3s $slide-easing;
   outline: none;
   pointer-events: none;
   padding: 0;
