@@ -10,8 +10,7 @@
   justify-content: space-between;
 
   &:hover {
-    background: blue;
-    color: white;
+    background: rgba(0, 0, 0, 0.1);
   }
 
   // @for $i from 1 through 6 {
@@ -22,14 +21,15 @@
 }
 
 .li-merchantName {
-  margin-left: 10px;
+  margin-left: 20px;
   width: 80%;
 }
 
 .li-merchantImage {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   background:grey;
+  border-radius: 3px;
 }
 
 .arrow-right {

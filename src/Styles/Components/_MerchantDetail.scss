@@ -7,16 +7,55 @@
   transition: transform 0.4s $slide-easing;
   transform: translateX(110%);
   z-index: -1;
+
+  .merchantInfo {
+    display: flex;
+    align-items: center;
+    .merchantLogo {
+      height: 64px;
+      width: 64px;
+      border-radius: 3px;
+      background: grey;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 20px;
+    }
+  }
+
+  .inputWrap {
+    margin-top: 20px;
+    position: relative;
+    border-bottom: 1px solid #e6e7e8;
+
+   label {
+     color: #757575;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     white-space: nowrap;
+     pointer-events: none;
+   }
+
+   .input {
+     border: none;
+     outline: none;
+     background: 0 0;
+     width: 100%;
+     line-height: 19px;
+     padding: 28px 0 7px;
+     margin: 0;
+     position: relative;
+     color: inherit;
+     font-size: 16px;
+   }
+
+  }
 }
 
 .visible-in-sidebar {
   transform: translateX(0);
-}
-
-.input {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  margin: 5px;
 }

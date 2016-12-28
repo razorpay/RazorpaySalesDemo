@@ -170,6 +170,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 15, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .arrow-left {
+  position: relative;
   display: inline-block;
   font-size: 14px;
   width: 14px;
@@ -177,8 +178,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.2s, opacity 0.1s, cubic-bezier(0.06, 0.69, 0.18, 1.01);
   cursor: default;
   opacity: 0;
+  z-index: 0;
 }
-/* line 25, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 27, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .subheader {
   background: #F2F2F2;
   text-transform: uppercase;
@@ -188,23 +190,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: padding 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   flex-grow: 1;
 }
-/* line 33, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 35, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .subheader .subtext {
   font-size: 14px;
   font-weight: 700;
 }
 
-/* line 41, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 43, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .arrow-left {
   transform: translateX(0);
   opacity: 1;
   cursor: pointer;
 }
-/* line 47, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 49, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .buttonBackToList {
   pointer-events: auto;
-  margin-left: 0;
-  padding-left: 5px;
+  margin-left: -15px;
+  padding-left: 20px;
 }
 
 /* line 1, ../../src/Styles/Components/_Sidebar.scss */
@@ -399,6 +401,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../../src/Styles/Components/_ButtonBackToList.scss */
 .buttonBackToList {
+  position: relative;
   cursor: pointer;
   border: none;
   background: none;
@@ -412,7 +415,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   pointer-events: none;
   padding: 0;
   margin-left: -14px;
-  background: #F2F2F2;
+  background: transparent;
+  z-index: 999;
 }
 
 /* line 1, ../../src/Styles/Components/_MerchantList.scss */
@@ -439,21 +443,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 12, ../../src/Styles/Components/_MerchantListItem.scss */
 .merchantListItem:hover {
-  background: blue;
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 24, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 23, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantName {
-  margin-left: 10px;
+  margin-left: 20px;
   width: 80%;
 }
 
-/* line 29, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 28, ../../src/Styles/Components/_MerchantListItem.scss */
 .li-merchantImage {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   background: grey;
+  border-radius: 3px;
 }
 
 /* line 35, ../../src/Styles/Components/_MerchantListItem.scss */
@@ -473,17 +477,55 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: translateX(110%);
   z-index: -1;
 }
-
-/* line 12, ../../src/Styles/Components/_MerchantDetail.scss */
-.visible-in-sidebar {
-  transform: translateX(0);
+/* line 11, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .merchantInfo {
+  display: flex;
+  align-items: center;
+}
+/* line 14, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .merchantInfo .merchantLogo {
+  height: 64px;
+  width: 64px;
+  border-radius: 3px;
+  background: grey;
+}
+/* line 21, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .merchantInfo h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+/* line 28, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .inputWrap {
+  margin-top: 20px;
+  position: relative;
+  border-bottom: 1px solid #e6e7e8;
+}
+/* line 33, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .inputWrap label {
+  color: #757575;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+/* line 43, ../../src/Styles/Components/_MerchantDetail.scss */
+.merchantDetail .inputWrap .input {
+  border: none;
+  outline: none;
+  background: 0 0;
+  width: 100%;
+  line-height: 19px;
+  padding: 28px 0 7px;
+  margin: 0;
+  position: relative;
+  color: inherit;
+  font-size: 16px;
 }
 
-/* line 16, ../../src/Styles/Components/_MerchantDetail.scss */
-.input {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  margin: 5px;
+/* line 59, ../../src/Styles/Components/_MerchantDetail.scss */
+.visible-in-sidebar {
+  transform: translateX(0);
 }
