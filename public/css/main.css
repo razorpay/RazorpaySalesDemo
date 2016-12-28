@@ -156,24 +156,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader {
-  position: relative;
-  max-height: 95px;
-  min-height: 95px;
+  max-height: 90px;
+  min-height: 90px;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
 }
-/* line 7, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 8, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader h1 {
   font-weight: 700;
   font-size: 18px;
   color: #3879AC;
   padding: 20px;
 }
-/* line 14, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 15, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  width: 100%;
   display: block;
   padding: 10px 20px;
   background: #F2F2F2;
@@ -185,11 +184,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: padding 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 
-/* line 32, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 31, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton span {
   padding-left: 45px;
 }
-/* line 36, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 35, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .buttonBackToList {
   padding-right: 110px;
   left: 20px;
@@ -325,7 +324,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_MerchantList.scss */
 .merchantList {
   position: absolute;
-  top: 95px;
+  top: 90px;
   left: 0;
   right: 0;
   transition: transform 0.4s cubic-bezier(0.06, 0.69, 0.18, 1.01);
@@ -397,7 +396,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail {
   position: absolute;
-  top: 95px;
+  top: 90px;
   left: 0;
   right: 0;
   bottom: 0;
