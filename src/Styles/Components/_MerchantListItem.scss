@@ -14,11 +14,11 @@
     color: white;
   }
 
-  @for $i from 1 through 6 {
-    &:nth-child(#{$i}) {
-      transition-delay: #{$i * 0.1}s;
-    }
-  }
+  // @for $i from 1 through 6 {
+  //   &:nth-child(#{$i}) {
+  //     transition-delay: #{$i * 0.1}s;
+  //   }
+  // }
 }
 
 .li-merchantName {
