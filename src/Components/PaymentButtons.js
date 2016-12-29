@@ -6,7 +6,7 @@ import ButtonPrimary from './ButtonPrimary';
 class PaymentButtonsT extends Component {
   render() {
     return (
-      <div className="paymentButtons">
+      <div className="paymentButtons fadeInUp">
         <ButtonPrimary text="Card"/>
         <ButtonPrimary text="Netbanking"/>
         <ButtonPrimary text="Wallets"/>

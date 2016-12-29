@@ -1,9 +1,9 @@
 .paymentModal {
-  margin-bottom: 30px;
   max-width: 350px;
   min-width: 350px;
   background: white;
   border-radius: 3px;
+  transition: all 0.3s;
   transform: scale(0);
   font-family: 'Lato';
   @include box-shadow(0px 4px 16px rgba(0, 0, 0, 0.15));

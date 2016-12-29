@@ -1,8 +1,8 @@
 .paymentButtons {
-  margin-top: 20px;
-  transform: translateY(1000px);
+  margin-top: 32px;
   opacity: 0;
-  transition: transform 0.3s, opacity 0.3s $slide-easing;
+  display: none;
+  transition: transform 0.3s $slide-easing;
   .buttonPrimary{
     margin-right: 5px;
     text-transform: capitalize;

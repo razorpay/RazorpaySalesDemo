@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
 import ButtonPrimary from './ButtonPrimary';
 import PaymentButtons from './PaymentButtons';
+import ConditionalComp from './ConditionalComp';
 
 // Dummy Data
 var merchants = [
@@ -246,10 +247,17 @@ class App extends Component {
           updateDesc={this.updateCurrentPaymentDesc}
           updateAmount={this.updateCurrentAmount}
           updateColor={this.updateCurrentMerchantColor}
-        />
+      />
 
         <div className={appClasses}>
-          <ButtonPrimary text="@" id="btnEndDemo" fireOnClick={this.endDemo}/>
+          <ButtonPrimary
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              opacity: 0.8
+            }}
+            text="restart"
+            id="btnEndDemo"
+            fireOnClick={this.endDemo}/>
 
           <PaymentModal
             id={currentMerchantId}
@@ -260,12 +268,17 @@ class App extends Component {
             color={currentMerchantColor}
           />
 
-          <ButtonPrimary
-            id="btnStartDemo"
-            text="Begin Demo"
-            fireOnClick={this.beginDemo}/>
+          <ConditionalComp visible={!this.props.demoMode}>
+            <ButtonPrimary
+              id="btnStartDemo"
+              className="buttonPrimary fadeIn"
+              text="Begin Demo"
+              fireOnClick={this.beginDemo}/>
+          </ConditionalComp>
 
-          <PaymentButtons />
+          <ConditionalComp visible={this.state.demoMode}>
+            <PaymentButtons/>
+          </ConditionalComp>
         </div>
       </div>
     );

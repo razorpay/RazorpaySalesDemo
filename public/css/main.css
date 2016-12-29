@@ -119,44 +119,57 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 100%, 0);
+    transform: translateY(100%);
   }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
-/* line 55, ../../src/Styles/_animations.scss */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 64, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 59, ../../src/Styles/_animations.scss */
+/* line 68, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 63, ../../src/Styles/_animations.scss */
+/* line 72, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 67, ../../src/Styles/_animations.scss */
+/* line 76, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 71, ../../src/Styles/_animations.scss */
+/* line 80, ../../src/Styles/_animations.scss */
 .fadeInUp {
   animation: fadeInUp 0.3s;
+}
+
+/* line 84, ../../src/Styles/_animations.scss */
+.fadeIn {
+  animation: fadeIn 0.3s;
 }
 
 /* line 1, ../../src/Styles/Components/_App.scss */
@@ -185,17 +198,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: none;
 }
 
-/* line 25, ../../src/Styles/Components/_App.scss */
+/* line 24, ../../src/Styles/Components/_App.scss */
+#btnStartDemo {
+  margin-top: 20px;
+}
+
+/* line 29, ../../src/Styles/Components/_App.scss */
 .playingDemo-s1 .paymentButtons {
-  transform: translateY(-70px);
+  display: block;
   opacity: 1;
 }
-/* line 30, ../../src/Styles/Components/_App.scss */
+/* line 34, ../../src/Styles/Components/_App.scss */
 .playingDemo-s1 #btnStartDemo {
-  transform: translateY(200px);
   opacity: 0;
+  display: none;
 }
-/* line 35, ../../src/Styles/Components/_App.scss */
+/* line 39, ../../src/Styles/Components/_App.scss */
 .playingDemo-s1 #btnEndDemo {
   display: block;
 }
@@ -289,11 +307,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModal {
-  margin-bottom: 30px;
   max-width: 350px;
   min-width: 350px;
   background: white;
   border-radius: 3px;
+  transition: all 0.3s;
   transform: scale(0);
   font-family: 'Lato';
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
@@ -439,10 +457,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: rgba(255, 255, 255, 0.5);
   color: white;
   cursor: pointer;
-  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   letter-spacing: 2px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   opacity: 1;
+  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 /* line 16, ../../src/Styles/Components/_ButtonPrimary.scss */
 .buttonPrimary:active {
@@ -590,10 +608,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons {
-  margin-top: 20px;
-  transform: translateY(1000px);
+  margin-top: 32px;
   opacity: 0;
-  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  display: none;
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 /* line 6, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary {
