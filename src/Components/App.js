@@ -137,11 +137,11 @@ class App extends Component {
   */
   updateCurrentMerchant(newMerchant) {
     this.setState({
+      currentMerchantColor: newMerchant.color,
       currentMerchantName: newMerchant.name,
       currentPaymentDesc: newMerchant.desc,
       currentAmount: newMerchant.amount,
       currentMerchantLogo: newMerchant.logo,
-      currentMerchantColor: newMerchant.color
     });
   }
 

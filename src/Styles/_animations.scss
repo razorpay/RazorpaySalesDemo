@@ -31,6 +31,27 @@
   }
 }
 
+@keyframes fadeOutInWithPause {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .fadeInLeft {
   @include animation(fadeInLeft 0.5s cubic-bezier(.17,.67,.32,1.01) forwards);
 }
@@ -45,4 +66,8 @@
 
 .bounceIn {
   @include animation(bounceIn 0.3s both cubic-bezier(.01,.66,.22,1.25));
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.3s;
 }
