@@ -4,5 +4,7 @@
   left: 0;
   right: 0;
   transition: transform 0.4s $slide-easing;
+  height: 100%;
+  overflow-y: scroll;
   transform: translateX(-100%);
 }

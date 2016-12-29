@@ -219,7 +219,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   box-shadow: 4px 3px 14px 0px rgba(0, 0, 0, 0.06);
   transform: translateX(-100%);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* line 13, ../../src/Styles/Components/_Sidebar.scss */
@@ -235,6 +235,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 21, ../../src/Styles/Components/_Sidebar.scss */
 .sidebarContent {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -427,6 +428,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   left: 0;
   right: 0;
   transition: transform 0.4s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  height: 100%;
+  overflow-y: scroll;
   transform: translateX(-100%);
 }
 
