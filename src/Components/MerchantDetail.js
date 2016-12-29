@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 // Components
 import DetailInput from './DetailInput';
-import {SketchPicker} from 'react-color';
+import {ChromePicker} from 'react-color';
 
 class MerchantDetail extends Component {
   render() {
@@ -41,9 +41,12 @@ class MerchantDetail extends Component {
           onChange={this.props.onAmountChange}
         />
 
-        <SketchPicker
-          color={this.props.data.color}
-          onChangeComplete={this.props.onColorChange}
+        <br/>
+        <br/>
+
+        <ChromePicker
+          color={this.props.currentMerchantColor}
+          onChange={this.props.onColorChange}
         />
 
      </div>

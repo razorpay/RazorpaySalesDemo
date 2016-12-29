@@ -70,6 +70,11 @@ class Sidebar extends Component {
       'sidebar': true,
       'open': this.props.open
     });
+
+    /*
+      For realtime current change of PaymentModal
+      we pass currentMerchantColor to <MerchantDetail/> as a separate prop.
+    */
     return (
       <div className={classes}>
         <SidebarHeader
@@ -86,6 +91,7 @@ class Sidebar extends Component {
           />
 
           <MerchantDetail
+            currentMerchantColor={this.props.currentMerchantColor}
             data={this.state.visibleMerchant}
             visibleInSidebar={this.state.visibleState === this.visibleStates.detail}
             onNameChange={this.props.updateName}

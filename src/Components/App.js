@@ -189,9 +189,9 @@ class App extends Component {
   }
 
  /*
-  * function: updateCurrentMerchantColor()
+  * function: updateCurrentMerchantColor
   * ----------------------------------------
-  * Updates the colors inside payment modal>
+  * Updates the colors inside payment modal.
   */
   updateCurrentMerchantColor(color) {
     this.setState({
@@ -214,8 +214,14 @@ class App extends Component {
         currentMerchantColor} = this.state;
 
     return (
+      /*
+        For realtime current change of PaymentModal
+        we pass currentMerchantColor to <Sidebar/> as a separate prop
+      */
+
       <div>
         <Sidebar
+          currentMerchantColor={currentMerchantColor}
           open={this.state.isSidebarOpen}
           merchants={merchants}
           updateCurrentMerchant={this.updateCurrentMerchant}

@@ -159,16 +159,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #8C82BD;
 }
-/* line 7, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 8, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader h1 {
   font-weight: 700;
   font-size: 18px;
-  color: #3879AC;
   padding: 20px;
   flex-grow: 2;
+  color: white;
 }
-/* line 15, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 16, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .arrow-left {
   position: relative;
   display: inline-block;
@@ -180,7 +181,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   z-index: 0;
 }
-/* line 27, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 28, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .subheader {
   background: #F2F2F2;
   text-transform: uppercase;
@@ -190,19 +191,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: padding 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   flex-grow: 1;
 }
-/* line 35, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 36, ../../src/Styles/Components/_SidebarHeader.scss */
 .sidebarHeader .subheader .subtext {
   font-size: 14px;
   font-weight: 700;
 }
 
-/* line 43, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 44, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .arrow-left {
   transform: translateX(0);
   opacity: 1;
   cursor: pointer;
 }
-/* line 49, ../../src/Styles/Components/_SidebarHeader.scss */
+/* line 50, ../../src/Styles/Components/_SidebarHeader.scss */
 .hasBackButton .buttonBackToList {
   pointer-events: auto;
   margin-left: -15px;
