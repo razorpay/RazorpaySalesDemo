@@ -49,6 +49,20 @@ var merchants = [
     desc: 'Payment #221',
     amount: 800,
     color: '#6ADCFB'
+  },
+  {
+    name: 'Lassi Shop',
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 800,
+    color: '#6BDCFF'
+  },
+  {
+    name: 'Cool Lassi Burger',
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 800,
+    color: '#5ADDFB'
   }
 ];
 
