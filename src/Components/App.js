@@ -9,6 +9,7 @@ import ButtonStart from './ButtonStart';
 // Dummy Data
 var merchants = [
   {
+    id: 0,
     name: 'Akbar Travels',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #223',
@@ -16,6 +17,7 @@ var merchants = [
     color: '#1ABC9C'
   },
   {
+    id: 1,
     name: 'Nestaway',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #421',
@@ -23,6 +25,7 @@ var merchants = [
     color: '#9681A0'
   },
   {
+    id: 2,
     name: 'Chaipoint',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #314',
@@ -30,6 +33,7 @@ var merchants = [
     color: '#7A73AF'
   },
   {
+    id: 3,
     name: 'Rentomojo',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #222',
@@ -37,6 +41,7 @@ var merchants = [
     color: '#F0DB4F'
   },
   {
+    id: 4,
     name: 'Voonik',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #221',
@@ -44,32 +49,12 @@ var merchants = [
     color: '#A4C639'
   },
   {
+    id: 5,
     name: 'PapaJohns',
     logo: 'http://images.google.com/funny/whatevs',
     desc: 'Payment #221',
     amount: 800,
     color: '#6ADCFB'
-  },
-  {
-    name: 'Lassi Shop',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #221',
-    amount: 800,
-    color: '#6BDCFF'
-  },
-  {
-    name: 'Cool Lassi Burger',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #221',
-    amount: 800,
-    color: '#5ADDFB'
-  },
-  {
-    name: 'Tadka Singh',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #221',
-    amount: 798,
-    color: '#5ADDFB'
   }
 ];
 
@@ -79,6 +64,7 @@ class App extends Component {
     this.state = {
       isSidebarOpen: true,
       // Merchant data currently visible in the modal
+      currentMerchantId: merchants[0].id,
       currentMerchantName: merchants[0].name,
       currentPaymentDesc: merchants[0].desc,
       currentAmount: merchants[0].amount,
@@ -137,6 +123,7 @@ class App extends Component {
   */
   updateCurrentMerchant(newMerchant) {
     this.setState({
+      currentMerchantId: newMerchant.id,
       currentMerchantColor: newMerchant.color,
       currentMerchantName: newMerchant.name,
       currentPaymentDesc: newMerchant.desc,
@@ -207,7 +194,8 @@ class App extends Component {
 
     var buttonText = this.state.isSidebarOpen ? 'done' : 'configure';
 
-    var {currentMerchantName,
+    var {currentMerchantId,
+        currentMerchantName,
         currentPaymentDesc,
         currentAmount,
         currentMerchantLogo,
@@ -233,6 +221,7 @@ class App extends Component {
 
         <div className={appClasses} onClick={this.closeSidebar}>
           <PaymentModal
+            id={currentMerchantId}
             name={currentMerchantName}
             desc={currentPaymentDesc}
             amount={currentAmount}

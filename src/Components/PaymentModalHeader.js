@@ -9,7 +9,7 @@ class PaymentModalHeader extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.infoShouldAnimate = nextProps.name !== this.props.name;
+    this.infoShouldAnimate = nextProps.id !== this.props.id;
   }
 
   render() {
