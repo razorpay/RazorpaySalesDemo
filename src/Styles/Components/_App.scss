@@ -12,3 +12,13 @@
   width: 100vw - $width-sidebar;
   margin-left: $width-sidebar;
 }
+
+.playingDemo-s1 {
+  .paymentButtons {
+    transform: translateY(-60px);
+  }
+
+  #buttonStartDemo{
+    transform: translateY(200px);
+  }
+}

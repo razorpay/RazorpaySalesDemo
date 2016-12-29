@@ -4,7 +4,8 @@ import classNames from 'classnames';
 // Components
 import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
-import ButtonStart from './ButtonStart';
+import ButtonPrimary from './ButtonPrimary';
+import PaymentButtons from './PaymentButtons';
 
 // Dummy Data
 var merchants = [
@@ -63,6 +64,7 @@ class App extends Component {
     super(props);
     this.state = {
       isSidebarOpen: true,
+      demoMode: false,
       // Merchant data currently visible in the modal
       currentMerchantId: merchants[0].id,
       currentMerchantName: merchants[0].name,
@@ -81,7 +83,7 @@ class App extends Component {
     this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
     this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
-
+    this.beginDemo = this.beginDemo.bind(this);
   }
 
   /*
@@ -132,6 +134,17 @@ class App extends Component {
     });
   }
 
+  /*
+  * Function: beginDemo
+  * -----------------------
+  * Animates the whole demo
+  */
+  beginDemo() {
+    this.closeSidebar();
+    setTimeout(() => {
+      this.setState({demoMode: true});
+    }, 800);
+  }
 
   /*
   * The following four functions (updateCurrentMerchantName, updatePaymentDesc,
@@ -189,6 +202,7 @@ class App extends Component {
   render() {
     var appClasses = classNames({
       'App': true,
+      'playingDemo-s1': this.state.demoMode,
       'shrunk': this.state.isSidebarOpen
     });
 
@@ -219,7 +233,7 @@ class App extends Component {
           updateColor={this.updateCurrentMerchantColor}
         />
 
-        <div className={appClasses} onClick={this.closeSidebar}>
+        <div className={appClasses}>
           <PaymentModal
             id={currentMerchantId}
             name={currentMerchantName}
@@ -228,7 +242,13 @@ class App extends Component {
             logo={currentMerchantLogo}
             color={currentMerchantColor}
           />
-          <ButtonStart text={buttonText} fireOnClick={this.toggleSidebar}/>
+
+          <ButtonPrimary
+            id="btnStartDemo"
+            text="Begin Demo"
+            fireOnClick={this.beginDemo}/>
+
+          <PaymentButtons />
         </div>
       </div>
     );
