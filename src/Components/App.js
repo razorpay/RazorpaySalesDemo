@@ -63,6 +63,13 @@ var merchants = [
     desc: 'Payment #221',
     amount: 800,
     color: '#5ADDFB'
+  },
+  {
+    name: 'Tadka Singh',
+    logo: 'http://images.google.com/funny/whatevs',
+    desc: 'Payment #221',
+    amount: 798,
+    color: '#5ADDFB'
   }
 ];
 

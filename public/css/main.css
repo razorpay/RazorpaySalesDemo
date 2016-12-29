@@ -431,6 +431,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   overflow-y: scroll;
   transform: translateX(-100%);
+  padding-bottom: 100px;
 }
 
 /* line 1, ../../src/Styles/Components/_MerchantListItem.scss */
@@ -532,4 +533,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 59, ../../src/Styles/Components/_MerchantDetail.scss */
 .visible-in-sidebar {
   transform: translateX(0);
+  z-index: 999;
 }
