@@ -161,6 +161,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../../src/Styles/Components/_App.scss */
 .App {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -170,19 +171,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: width 0.3s, margin 0.3s;
 }
 
-/* line 11, ../../src/Styles/Components/_App.scss */
+/* line 12, ../../src/Styles/Components/_App.scss */
 .shrunk {
   width: 60vw;
   margin-left: 40vw;
 }
 
 /* line 17, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 .paymentButtons {
-  transform: translateY(-60px);
+#btnEndDemo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: none;
 }
-/* line 21, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 #buttonStartDemo {
+
+/* line 25, ../../src/Styles/Components/_App.scss */
+.playingDemo-s1 .paymentButtons {
+  transform: translateY(-70px);
+  opacity: 1;
+}
+/* line 30, ../../src/Styles/Components/_App.scss */
+.playingDemo-s1 #btnStartDemo {
   transform: translateY(200px);
+  opacity: 0;
+}
+/* line 35, ../../src/Styles/Components/_App.scss */
+.playingDemo-s1 #btnEndDemo {
+  display: block;
 }
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */
@@ -424,15 +439,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: rgba(255, 255, 255, 0.5);
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   letter-spacing: 2px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
 }
-/* line 15, ../../src/Styles/Components/_ButtonPrimary.scss */
+/* line 16, ../../src/Styles/Components/_ButtonPrimary.scss */
 .buttonPrimary:active {
   transform: scale(0.9);
 }
-/* line 19, ../../src/Styles/Components/_ButtonPrimary.scss */
+/* line 20, ../../src/Styles/Components/_ButtonPrimary.scss */
 .buttonPrimary:focus {
   outline: none;
 }
@@ -576,16 +592,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .paymentButtons {
   margin-top: 20px;
   transform: translateY(1000px);
-  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 5, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 6, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary {
   margin-right: 5px;
   text-transform: capitalize;
   padding: 10px 20px;
   font-size: 16px;
 }
-/* line 10, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 11, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary:last-child {
   margin-right: 0;
 }

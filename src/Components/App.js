@@ -84,6 +84,7 @@ class App extends Component {
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
     this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
     this.beginDemo = this.beginDemo.bind(this);
+    this.endDemo = this.endDemo.bind(this);
   }
 
   /*
@@ -137,13 +138,27 @@ class App extends Component {
   /*
   * Function: beginDemo
   * -----------------------
-  * Animates the whole demo
+  * Starts demoing animation.
   */
   beginDemo() {
     this.closeSidebar();
     setTimeout(() => {
       this.setState({demoMode: true});
-    }, 800);
+    }, 500);
+  }
+
+ /*
+  * Function: beginDemo
+  * -----------------------
+  * Stops demoing animation.
+  */
+  endDemo() {
+    this.setState({
+      demoMode: false,
+    });
+    setTimeout(() => {
+      this.openSidebar();
+    }, 500);
   }
 
   /*
@@ -234,6 +249,8 @@ class App extends Component {
         />
 
         <div className={appClasses}>
+          <ButtonPrimary text="@" id="btnEndDemo" fireOnClick={this.endDemo}/>
+
           <PaymentModal
             id={currentMerchantId}
             name={currentMerchantName}

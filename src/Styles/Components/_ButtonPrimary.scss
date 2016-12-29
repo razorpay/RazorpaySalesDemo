@@ -8,9 +8,10 @@
   background: rgba(255, 255, 255, 0.5);
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s, opacity 0.3s $slide-easing;
   letter-spacing: 2px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
 
   &:active {
     transform: scale(0.9);
