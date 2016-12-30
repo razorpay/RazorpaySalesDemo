@@ -108,6 +108,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: scale(1);
   }
 }
+@keyframes bounceOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
 @keyframes fadeOutInWithPause {
   from {
     opacity: 0;
@@ -144,47 +152,81 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 1;
   }
 }
-/* line 76, ../../src/Styles/_animations.scss */
+/* line 85, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 80, ../../src/Styles/_animations.scss */
+/* line 89, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 84, ../../src/Styles/_animations.scss */
+/* line 93, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 88, ../../src/Styles/_animations.scss */
+/* line 97, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 92, ../../src/Styles/_animations.scss */
+/* line 101, ../../src/Styles/_animations.scss */
+.bounceOut {
+  -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+  -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+  animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+}
+
+/* line 105, ../../src/Styles/_animations.scss */
 .fadeInUp {
+  -moz-animation: fadeInUp 0.3s;
+  -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 96, ../../src/Styles/_animations.scss */
+/* line 109, ../../src/Styles/_animations.scss */
 .fadeInDown {
+  -moz-animation: fadeInDown 0.3s both;
+  -webkit-animation: fadeInDown 0.3s both;
   animation: fadeInDown 0.3s both;
 }
 
-/* line 100, ../../src/Styles/_animations.scss */
+/* line 113, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
+}
+
+@keyframes rotateIn {
+  from {
+    transform: perspective(1400px) rotateY(0);
+  }
+  to {
+    transform: perspective(1400px) rotateY(30deg);
+  }
+}
+@keyframes rotateOut {
+  to {
+    transform: rotateY(0);
+  }
+}
+/* line 133, ../../src/Styles/_animations.scss */
+.rotateOut {
+  animation: rotateOut 0.5s cubic-bezier(0.59, -0.46, 0.29, 1.24) both;
+}
+
+/* line 137, ../../src/Styles/_animations.scss */
+.rotateIn {
+  animation: rotateIn 0.5s cubic-bezier(0.59, -0.46, 0.29, 1.24) both;
 }
 
 /* line 1, ../../src/Styles/Components/_App.scss */
@@ -233,6 +275,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .playingDemo-s1 #btnStartDemo {
   opacity: 0;
   display: none;
+}
+
+/* line 47, ../../src/Styles/Components/_App.scss */
+.masterCardContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 999;
+}
+/* line 59, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .masterCardWindow {
+  width: 500px;
+  height: 500px;
+  border-radius: 3px;
+  background: white;
+  transform: scale(0);
+  border: 1px solid #000;
 }
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */

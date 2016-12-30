@@ -41,3 +41,27 @@
     display: none;
   }
 }
+
+// The Master card window that pops up
+
+.masterCardContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 999;
+
+  .masterCardWindow {
+    width: 500px;
+    height: 500px;
+    border-radius: 3px;
+    background: white;
+    transform: scale(0);
+    border: 1px solid #000;
+  }
+}

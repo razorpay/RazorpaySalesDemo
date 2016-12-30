@@ -76,7 +76,7 @@ class PaymentModalBody extends Component {
           <div className="row">
             <div style={{border: 'none'}} className="inputWrap left-input">
               <label for="save">
-                <input type="checkbox" name="save" value="1" checked></input>
+                <input type="checkbox" name="save" id="save" value="1" checked></input>
                 &nbsp;Remember Card
               </label>
           </div>
@@ -86,7 +86,11 @@ class PaymentModalBody extends Component {
           style={{backgroundColor: this.props.color,
             animationDuration: '0.3s',
             animationTimingFunction: 'cubic-bezier(.06,.69,.18,1.01)'}}
-            className="payButton fadeInUp">Pay&nbsp;&nbsp;₹{this.props.amount}</div>
+            className="payButton fadeInUp"
+            onClick={this.props.beginPaymentAnimation}
+          >
+            Pay&nbsp;&nbsp;₹{this.props.amount}
+          </div>
       </div>
     );
   }

@@ -113,6 +113,7 @@ class App extends Component {
     this.payUsingCard = this.payUsingCard.bind(this);
     this.beginDemo = this.beginDemo.bind(this);
     this.endDemo = this.endDemo.bind(this);
+    this.beginPaymentAnimation = this.beginPaymentAnimation.bind(this);
   }
 
   /*
@@ -247,6 +248,36 @@ class App extends Component {
   }
 
   /*
+  * Function: beginPaymentAnimation
+  * --------------------------------
+  * Starts the 3d modal popping animation
+  */
+  beginPaymentAnimation() {
+    var app = this.refs.app,
+      masterCardContainer = this.refs.masterCardContainer,
+      masterCardWindow = this.refs.masterCardWindow;
+
+    app.classList.add('rotateIn');
+    setTimeout(() => {
+      masterCardWindow.classList.remove('bounceOut');
+      masterCardWindow.classList.add('bounceIn');
+      masterCardContainer.style.visibility = 'visible';
+    }, 1000);
+
+    setTimeout(() => {
+      masterCardWindow.classList.remove('bounceIn');
+      masterCardWindow.classList.add('bounceOut');
+    }, 3500);
+
+    setTimeout(() => {
+      this.endDemo();
+      app.classList.remove('rotateIn');
+      app.classList.add('rotateOut');
+      masterCardContainer.style.visibility = 'hidden';
+    }, 4000);
+  }
+
+  /*
   * Function: payUsingCard
   * -------------------------
   * Switches the content in the Modal to 
@@ -293,7 +324,7 @@ class App extends Component {
           updateColor={this.updateCurrentMerchantColor}
       />
 
-        <div className={appClasses}>
+        <div className={appClasses} ref="app">
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
               style={{
@@ -317,6 +348,7 @@ class App extends Component {
           </ConditionalComp>
 
           <PaymentModal
+            beginPaymentAnimation={this.beginPaymentAnimation}
             content={this.state.paymentModalContent}
             id={currentMerchantId}
             name={currentMerchantName}
@@ -343,6 +375,12 @@ class App extends Component {
           <ConditionalComp visible={this.state.demoMode}>
             <MerchantPaymentWidow />
           </ConditionalComp>
+
+          <div className="masterCardContainer" ref="masterCardContainer">
+            <div className="masterCardWindow" ref="masterCardWindow">
+            </div>
+          </div>
+
         </div>
       </div>
     );

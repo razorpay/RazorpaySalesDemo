@@ -31,6 +31,15 @@
   }
 }
 
+@keyframes bounceOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
 @keyframes fadeOutInWithPause {
   from {
     opacity: 0;
@@ -89,14 +98,42 @@
   @include animation(bounceIn 0.3s both cubic-bezier(.01,.66,.22,1.25));
 }
 
+.bounceOut {
+  @include animation(bounceOut 0.3s both cubic-bezier(.59,-0.46,.29,1.24));
+}
+
 .fadeInUp {
-  animation: fadeInUp 0.3s;
+  @include animation(fadeInUp 0.3s);
 }
 
 .fadeInDown {
-  animation: fadeInDown 0.3s both;
+  @include animation(fadeInDown 0.3s both);
 }
 
 .fadeIn {
   animation: fadeIn 0.3s;
+}
+
+// Rotating animation
+@keyframes rotateIn {
+  from {
+    transform: perspective(1400px) rotateY(0);
+  }
+  to {
+    transform: perspective(1400px) rotateY(30deg);
+  }
+}
+
+@keyframes rotateOut {
+  to {
+    transform: rotateY(0);
+  }
+}
+
+.rotateOut {
+  animation: rotateOut 0.5s cubic-bezier(.59,-0.46,.29,1.24) both;
+}
+
+.rotateIn {
+  animation: rotateIn 0.5s cubic-bezier(.59,-0.46,.29,1.24) both;
 }
