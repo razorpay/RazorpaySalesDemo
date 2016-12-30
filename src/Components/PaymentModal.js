@@ -12,11 +12,10 @@ class PaymentModal extends Component {
   }
 
   render() {
-    var {name, desc, amount, logo} = this.props;
     return (
       <div className="paymentModal bounceIn">
         <PaymentModalHeader {...this.props}/>
-        <PaymentModalBody />
+        <PaymentModalBody {...this.props}/>
       </div>
     );
   }

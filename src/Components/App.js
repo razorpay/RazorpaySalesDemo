@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
 import ButtonPrimary from './ButtonPrimary';
 import PaymentButtons from './PaymentButtons';
+import MerchantPaymentWidow from './MerchantPaymentWindow';
 import ConditionalComp from './ConditionalComp';
 
 // Dummy Data
@@ -63,16 +64,41 @@ var merchants = [
 class App extends Component {
   constructor(props) {
     super(props);
+
+    // The steps demo consists of
+    this.demoSteps = {
+      0: () => {
+        this.endDemo();
+        this.setState({
+          demoStep: 0
+        });
+      },
+      1: () => {
+        this.setState({
+          paymentModalContent: 'contact-form',
+          demoStep: 1
+        });
+      },
+      2: () => {
+        this.setState({
+          demoStep: 2
+        });
+      }
+    };
+
     this.state = {
       isSidebarOpen: true,
       demoMode: false,
+      demoStep: 0,
       // Merchant data currently visible in the modal
       currentMerchantId: merchants[0].id,
       currentMerchantName: merchants[0].name,
       currentPaymentDesc: merchants[0].desc,
       currentAmount: merchants[0].amount,
       currentMerchantLogo: merchants[0].logo,
-      currentMerchantColor: merchants[0].color
+      currentMerchantColor: merchants[0].color,
+      // Content visible in payment modal (contact or card payment)
+      paymentModalContent: 'contact-form'
     };
 
     // Binding 'this' to methods
@@ -84,6 +110,7 @@ class App extends Component {
     this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
     this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
+    this.payUsingCard = this.payUsingCard.bind(this);
     this.beginDemo = this.beginDemo.bind(this);
     this.endDemo = this.endDemo.bind(this);
   }
@@ -144,7 +171,10 @@ class App extends Component {
   beginDemo() {
     this.closeSidebar();
     setTimeout(() => {
-      this.setState({demoMode: true});
+      this.setState({
+        demoMode: true,
+        demoStep: 1
+      });
     }, 500);
   }
 
@@ -156,6 +186,7 @@ class App extends Component {
   endDemo() {
     this.setState({
       demoMode: false,
+      paymentModalContent: 'contact-form'
     });
     setTimeout(() => {
       this.openSidebar();
@@ -215,6 +246,19 @@ class App extends Component {
     });
   }
 
+  /*
+  * Function: payUsingCard
+  * -------------------------
+  * Switches the content in the Modal to 
+  * pay using card mode.
+  */
+  payUsingCard() {
+    this.setState({
+      paymentModalContent: 'card-payment',
+      demoStep: 2
+    });
+  }
+
   render() {
     var appClasses = classNames({
       'App': true,
@@ -255,11 +299,12 @@ class App extends Component {
               backgroundColor: 'rgba(255, 255, 255, 0.2)',
               opacity: 0.8
             }}
-            text="restart"
-            id="btnEndDemo"
-            fireOnClick={this.endDemo}/>
+            text="&#9664;"
+            id="btnStepBackDemo"
+            fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
 
           <PaymentModal
+            content={this.state.paymentModalContent}
             id={currentMerchantId}
             name={currentMerchantName}
             desc={currentPaymentDesc}
@@ -276,8 +321,14 @@ class App extends Component {
               fireOnClick={this.beginDemo}/>
           </ConditionalComp>
 
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep === 1}>
+            <PaymentButtons
+              payUsingCard={this.payUsingCard}
+            />
+          </ConditionalComp>
+
           <ConditionalComp visible={this.state.demoMode}>
-            <PaymentButtons/>
+            <MerchantPaymentWidow />
           </ConditionalComp>
         </div>
       </div>

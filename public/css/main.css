@@ -126,6 +126,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: translateY(0);
   }
 }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,40 +144,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 1;
   }
 }
-/* line 64, ../../src/Styles/_animations.scss */
+/* line 76, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 68, ../../src/Styles/_animations.scss */
+/* line 80, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 72, ../../src/Styles/_animations.scss */
+/* line 84, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 76, ../../src/Styles/_animations.scss */
+/* line 88, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 80, ../../src/Styles/_animations.scss */
+/* line 92, ../../src/Styles/_animations.scss */
 .fadeInUp {
   animation: fadeInUp 0.3s;
 }
 
-/* line 84, ../../src/Styles/_animations.scss */
+/* line 96, ../../src/Styles/_animations.scss */
+.fadeInDown {
+  animation: fadeInDown 0.3s both;
+}
+
+/* line 100, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
 }
@@ -191,7 +206,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 17, ../../src/Styles/Components/_App.scss */
-#btnEndDemo {
+#btnStepBackDemo {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -214,7 +229,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: none;
 }
 /* line 39, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 #btnEndDemo {
+.playingDemo-s1 #btnStepBackDemo {
   display: block;
 }
 
@@ -445,6 +460,68 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .paymentModalBody #payment-options .payment-option:last-child {
   border-color: transparent;
 }
+/* line 78, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #body-card-form {
+  margin: -20px -20px 0 -20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* line 85, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-header {
+  width: 100%;
+  padding: 20px;
+  background: #FCFBFA;
+  border-bottom: 1px solid #E6E7E8;
+  color: #767676;
+}
+/* line 93, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+/* line 98, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row {
+  display: flex;
+}
+/* line 100, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row:not(:first-child) {
+  margin-top: 30px;
+}
+/* line 103, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row:last-child {
+  margin-bottom: 30px;
+}
+/* line 108, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .inputWrap {
+  margin-right: 10px;
+}
+/* line 111, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .inputWrap:last-child {
+  margin: 0;
+}
+/* line 116, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .left-input {
+  width: 65%;
+}
+/* line 120, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .right-input {
+  width: 35%;
+}
+/* line 125, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .payButton {
+  background: #1ABC9C;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+}
 
 /* line 1, ../../src/Styles/Components/_ButtonPrimary.scss */
 .buttonPrimary {
@@ -623,4 +700,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 11, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary:last-child {
   margin-right: 0;
+}
+
+/* line 1, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+.backdropContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  z-index: -999;
+}
+
+/* line 14, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+.merchantPaymentWindow {
+  height: 80vmin;
+  width: 100vmin;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
 }

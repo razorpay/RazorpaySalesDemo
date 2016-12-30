@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 // Components
 import ButtonPrimary from './ButtonPrimary';
 
-class PaymentButtonsT extends Component {
+class PaymentButtons extends Component {
   render() {
     return (
       <div className="paymentButtons fadeInUp">
-        <ButtonPrimary text="Card"/>
+        <ButtonPrimary text="Card" fireOnClick={this.props.payUsingCard}/>
         <ButtonPrimary text="Netbanking"/>
         <ButtonPrimary text="Wallets"/>
       </div>
@@ -15,4 +15,4 @@ class PaymentButtonsT extends Component {
   }
 }
 
-export default PaymentButtonsT;
+export default PaymentButtons;

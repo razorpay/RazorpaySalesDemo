@@ -73,4 +73,65 @@
       }
     }
   }
+
+  // Card Payment form styles
+  #body-card-form {
+    margin: -20px -20px 0 -20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .card-header {
+    width: 100%;
+    padding: 20px;
+    background: #FCFBFA;
+    border-bottom: 1px solid #E6E7E8;
+    color: #767676;
+  }
+
+  .card-fields {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    .inputWrap {
+      margin-right: 10px;
+
+      &:last-child {
+        margin : 0
+      }
+    }
+
+    .left-input {
+      width: 65%;
+    }
+
+    .right-input {
+      width: 35%;
+    }
+  }
+
+  .payButton {
+    background: #1ABC9C;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0 0 3px 3px;
+  }
 }
