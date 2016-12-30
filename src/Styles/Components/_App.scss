@@ -18,7 +18,12 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  display: none;
+}
+
+#btnEndDemo {
+  position: absolute;
+  top: 20px;
+  left: 100px;
 }
 
 #btnStartDemo {
@@ -35,9 +40,4 @@
     opacity: 0;
     display: none;
   }
-
-  #btnStepBackDemo{
-    display: block;
-  }
-
 }

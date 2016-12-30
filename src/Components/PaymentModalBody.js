@@ -73,6 +73,14 @@ class PaymentModalBody extends Component {
               <input className="input" type="password" value="333"></input>
             </div>
           </div>
+          <div className="row">
+            <div style={{border: 'none'}} className="inputWrap left-input">
+              <label for="save">
+                <input type="checkbox" name="save" value="1" checked></input>
+                &nbsp;Remember Card
+              </label>
+          </div>
+          </div>
         </div>
         <div
           style={{backgroundColor: this.props.color,

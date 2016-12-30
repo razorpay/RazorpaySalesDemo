@@ -294,14 +294,27 @@ class App extends Component {
       />
 
         <div className={appClasses}>
-          <ButtonPrimary
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              opacity: 0.8
-            }}
-            text="&#9664;"
-            id="btnStepBackDemo"
-            fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
+          <ConditionalComp visible={this.state.demoMode}>
+            <ButtonPrimary
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                opacity: 0.8
+              }}
+              text="&#9664;"
+              id="btnStepBackDemo"
+              fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
+          </ConditionalComp>
+
+          <ConditionalComp visible={this.state.demoMode}>
+            <ButtonPrimary
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                opacity: 0.8
+              }}
+              text="&#x21E6;"
+              id="btnEndDemo"
+              fireOnClick={this.endDemo}/>
+          </ConditionalComp>
 
           <PaymentModal
             content={this.state.paymentModalContent}
@@ -313,7 +326,7 @@ class App extends Component {
             color={currentMerchantColor}
           />
 
-          <ConditionalComp visible={!this.props.demoMode}>
+          <ConditionalComp visible={!this.state.demoMode}>
             <ButtonPrimary
               id="btnStartDemo"
               className="buttonPrimary fadeIn"
