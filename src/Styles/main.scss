@@ -5,6 +5,7 @@
 body {
   font-family: 'Lato', sans-serif;
   background:linear-gradient(0deg, #4C79B4, #101D4A);
+  perspective: 1400px;
   overflow: hidden;
 }
 
@@ -14,8 +15,8 @@ html * {
 
 @import "compass";
 @import "compass/reset";
-@import "./animations";
 @import "./variables";
+@import "./animations";
 @import "./mixins";
 @import "./Components/App";
 @import "./Components/SidebarHeader";

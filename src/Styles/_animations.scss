@@ -114,26 +114,16 @@
   animation: fadeIn 0.3s;
 }
 
-// Rotating animation
-@keyframes rotateIn {
+// Animations concerned with final payment rotations
+@keyframes demo-rotate{
   from {
-    transform: perspective(1400px) rotateY(0);
-  }
-  to {
-    transform: perspective(1400px) rotateY(30deg);
-  }
-}
-
-@keyframes rotateOut {
-  to {
     transform: rotateY(0);
   }
+  to {
+    transform: rotateY(30deg);
+  }
 }
 
-.rotateOut {
-  animation: rotateOut 0.5s cubic-bezier(.59,-0.46,.29,1.24) both;
-}
-
-.rotateIn {
-  animation: rotateIn 0.5s cubic-bezier(.59,-0.46,.29,1.24) both;
+.demo-rotate {
+  animation: demo-rotate 0.3s $spring-easing both;
 }

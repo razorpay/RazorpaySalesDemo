@@ -30,38 +30,110 @@
   margin-top: 20px;
 }
 
-.playingDemo-s1 {
-  .paymentButtons {
-    display: block;
-    opacity: 1;
+// Steps of final payment animation
+$rotation: 50deg;
+
+// First Step
+.f-anim-s1 {
+  .paymentModal,
+  .backdropContainer,
+  .masterCardContainer {
+    transform: translate3d(90px, 0, 0) rotateY($rotation);
+    transition: transform 0.7s $slide-easing;
   }
 
-  #btnStartDemo{
-    opacity: 0;
-    display: none;
+  .masterCardContainer {
+    transform: rotateY($rotation);
+  }
+ }
+
+// Second Step
+.f-anim-s2 {
+  .paymentModal,
+  .backdropContainer {
+    transform: translateZ(-70px) rotateY($rotation); 
+  }
+ .masterCardContainer {
+    visibility: visible;
+    transform: translate3d(90px, 0, 140px) rotateY($rotation);
+    .masterCardWindow {
+      transform: scale(1);
+    }
   }
 }
 
-// The Master card window that pops up
+// Third step
+.f-anim-s3 {
+  .paymentModal,
+  .backdropContainer,
+  .masterCardContainer {
+    transform: translateZ(0) rotateY($rotation);
+    transition: transform 0.7s $slide-easing;
+  }
 
+  .paymentModal {
+    opacity: 0;
+  }
+
+  .masterCardContainer{
+    transform: translate3d(0, 0, 0) rotateY($rotation);
+    .masterCardWindow {
+      transform: scale(0);
+      transition: transform 0.3s $slide-easing;
+    }
+    .paymentConfirmationWindow {
+      transform: scale(1) translate3d(-50%, -50%, 0);
+    }
+  }
+}
+
+.f-anim-s4 {
+  .paymentModal,
+  .backdropContainer,
+  .masterCardContainer {
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .masterCardContainer {
+    transform: rotateY(0);
+  }
+}
+
+
+// The Master card window that pops up
 .masterCardContainer {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  visibility: hidden;
   z-index: 999;
+  transition: transform 0.7s $slide-easing;
 
   .masterCardWindow {
     width: 500px;
     height: 500px;
     border-radius: 3px;
     background: white;
-    transform: scale(0);
     border: 1px solid #000;
+    transition: transform 0.3s $slide-easing;
+    transform: scale(0);
+  }
+
+  .paymentConfirmationWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(0) translate3d(-50%, -50%, 0);
+    background: yellow;
+    width: 400px;
+    height: 300px;
+    transition: transform 0.3s $spring-easing;
+    transform-origin: 0% 0%;
+    transition-delay: 1s;
   }
 }

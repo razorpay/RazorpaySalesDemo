@@ -253,29 +253,21 @@ class App extends Component {
   * Starts the 3d modal popping animation
   */
   beginPaymentAnimation() {
-    var app = this.refs.app,
-      masterCardContainer = this.refs.masterCardContainer,
-      masterCardWindow = this.refs.masterCardWindow;
+    var app = this.refs.app;
 
-    app.classList.add('rotateIn');
-    setTimeout(() => {
-      masterCardWindow.classList.remove('bounceOut');
-      masterCardWindow.classList.add('bounceIn');
-      masterCardContainer.style.visibility = 'visible';
+    app.classList.add('f-anim-s1');
+    setTimeout(()=> {
+      app.classList.add('f-anim-s2');
     }, 1000);
 
-    setTimeout(() => {
-      masterCardWindow.classList.remove('bounceIn');
-      masterCardWindow.classList.add('bounceOut');
+    setTimeout(()=>{
+      app.classList.add('f-anim-s3');
     }, 3500);
 
     setTimeout(() => {
-      this.endDemo();
-      app.classList.remove('rotateIn');
-      app.classList.add('rotateOut');
-      masterCardContainer.style.visibility = 'hidden';
-    }, 4000);
-  }
+      app.classList.add('f-anim-s4');
+    }, 5500);
+ }
 
   /*
   * Function: payUsingCard
@@ -293,7 +285,6 @@ class App extends Component {
   render() {
     var appClasses = classNames({
       'App': true,
-      'playingDemo-s1': this.state.demoMode,
       'shrunk': this.state.isSidebarOpen
     });
 
@@ -308,7 +299,7 @@ class App extends Component {
 
     return (
       /*
-        For realtime current change of PaymentModal
+        For realtime color change of PaymentModal
         we pass currentMerchantColor to <Sidebar/> as a separate prop
       */
 
@@ -329,7 +320,8 @@ class App extends Component {
             <ButtonPrimary
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                opacity: 0.8
+                opacity: 0.8,
+                zIndex: 9999
               }}
               text="&#9664;"
               id="btnStepBackDemo"
@@ -340,7 +332,8 @@ class App extends Component {
             <ButtonPrimary
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                opacity: 0.8
+                opacity: 0.8,
+                zIndex: 9999
               }}
               text="&#x21E6;"
               id="btnEndDemo"
@@ -348,6 +341,7 @@ class App extends Component {
           </ConditionalComp>
 
           <PaymentModal
+            ref="paymentModal"
             beginPaymentAnimation={this.beginPaymentAnimation}
             content={this.state.paymentModalContent}
             id={currentMerchantId}
@@ -378,6 +372,8 @@ class App extends Component {
 
           <div className="masterCardContainer" ref="masterCardContainer">
             <div className="masterCardWindow" ref="masterCardWindow">
+            </div>
+            <div className="paymentConfirmationWindow">
             </div>
           </div>
 

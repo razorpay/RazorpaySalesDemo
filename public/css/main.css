@@ -7,15 +7,16 @@
 body {
   font-family: 'Lato', sans-serif;
   background: linear-gradient(0deg, #4C79B4, #101D4A);
+  perspective: 1400px;
   overflow: hidden;
 }
 
-/* line 11, ../../src/Styles/main.scss */
+/* line 12, ../../src/Styles/main.scss */
 html * {
   font-family: 'Lato', sans-serif !important;
 }
 
-/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -37,45 +38,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -206,27 +207,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   animation: fadeIn 0.3s;
 }
 
-@keyframes rotateIn {
+@keyframes demo-rotate {
   from {
-    transform: perspective(1400px) rotateY(0);
-  }
-  to {
-    transform: perspective(1400px) rotateY(30deg);
-  }
-}
-@keyframes rotateOut {
-  to {
     transform: rotateY(0);
   }
+  to {
+    transform: rotateY(30deg);
+  }
 }
-/* line 133, ../../src/Styles/_animations.scss */
-.rotateOut {
-  animation: rotateOut 0.5s cubic-bezier(0.59, -0.46, 0.29, 1.24) both;
-}
-
-/* line 137, ../../src/Styles/_animations.scss */
-.rotateIn {
-  animation: rotateIn 0.5s cubic-bezier(0.59, -0.46, 0.29, 1.24) both;
+/* line 127, ../../src/Styles/_animations.scss */
+.demo-rotate {
+  animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
 
 /* line 1, ../../src/Styles/Components/_App.scss */
@@ -266,38 +257,105 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 20px;
 }
 
-/* line 34, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 .paymentButtons {
-  display: block;
-  opacity: 1;
+/* line 38, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .paymentModal,
+.f-anim-s1 .backdropContainer,
+.f-anim-s1 .masterCardContainer {
+  transform: translate3d(90px, 0, 0) rotateY(50deg);
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 39, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 #btnStartDemo {
-  opacity: 0;
-  display: none;
+/* line 45, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .masterCardContainer {
+  transform: rotateY(50deg);
 }
 
-/* line 47, ../../src/Styles/Components/_App.scss */
+/* line 52, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .paymentModal,
+.f-anim-s2 .backdropContainer {
+  transform: translateZ(-70px) rotateY(50deg);
+}
+/* line 56, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .masterCardContainer {
+  visibility: visible;
+  transform: translate3d(90px, 0, 140px) rotateY(50deg);
+}
+/* line 59, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .masterCardContainer .masterCardWindow {
+  transform: scale(1);
+}
+
+/* line 67, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .paymentModal,
+.f-anim-s3 .backdropContainer,
+.f-anim-s3 .masterCardContainer {
+  transform: translateZ(0) rotateY(50deg);
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+/* line 74, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .paymentModal {
+  opacity: 0;
+}
+/* line 78, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer {
+  transform: translate3d(0, 0, 0) rotateY(50deg);
+}
+/* line 80, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer .masterCardWindow {
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+/* line 84, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
+  transform: scale(1) translate3d(-50%, -50%, 0);
+}
+
+/* line 91, ../../src/Styles/Components/_App.scss */
+.f-anim-s4 .paymentModal,
+.f-anim-s4 .backdropContainer,
+.f-anim-s4 .masterCardContainer {
+  transform: translateZ(0) rotateY(0);
+}
+/* line 97, ../../src/Styles/Components/_App.scss */
+.f-anim-s4 .masterCardContainer {
+  transform: rotateY(0);
+}
+
+/* line 104, ../../src/Styles/Components/_App.scss */
 .masterCardContainer {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  visibility: hidden;
   z-index: 999;
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 59, ../../src/Styles/Components/_App.scss */
+/* line 117, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .masterCardWindow {
   width: 500px;
   height: 500px;
   border-radius: 3px;
   background: white;
-  transform: scale(0);
   border: 1px solid #000;
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transform: scale(0);
+}
+/* line 127, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate3d(-50%, -50%, 0);
+  background: yellow;
+  width: 400px;
+  height: 300px;
+  transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  transform-origin: 0% 0%;
+  transition-delay: 1s;
 }
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */
@@ -393,15 +451,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   min-width: 350px;
   background: white;
   border-radius: 3px;
-  transition: all 0.3s;
-  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   font-family: 'Lato';
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* line 12, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 11, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader {
   position: relative;
   background: #1abc9c;
@@ -412,7 +469,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: background-color 0.3s;
 }
-/* line 22, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 21, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader:before {
   position: absolute;
   content: '';
@@ -429,14 +486,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
 }
-/* line 34, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 33, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
   white-space: pre;
   text-overflow: ellipsis;
   padding: 0 0 2px 0;
   overflow: hidden;
 }
-/* line 41, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 40, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
   width: 64px;
   height: 64px;
@@ -448,17 +505,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-/* line 51, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 50, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name {
   font-size: 20px;
 }
-/* line 56, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 55, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
   margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
-/* line 63, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 62, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
@@ -607,7 +664,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 0 0 3px 3px;
-  margin-top: 40px;
+  margin-top: 54px;
 }
 /* line 139, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .payButton:after {
@@ -784,18 +841,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons {
   margin-top: 32px;
-  opacity: 0;
-  display: none;
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 6, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 4, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary {
   margin-right: 5px;
   text-transform: capitalize;
   padding: 10px 20px;
   font-size: 16px;
 }
-/* line 11, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 9, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary:last-child {
   margin-right: 0;
 }
@@ -811,10 +866,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   justify-content: center;
   background: transparent;
+  transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   z-index: -999;
 }
 
-/* line 14, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+/* line 15, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
 .merchantPaymentWindow {
   height: 80vmin;
   width: 100vmin;
