@@ -278,7 +278,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .f-anim-s1 .backdropContainer,
 .f-anim-s1 .masterCardContainer {
   transform: translate3d(90px, 0, 0) rotateY(50deg);
-  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 /* line 45, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .masterCardContainer {
@@ -305,7 +304,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .f-anim-s3 .backdropContainer,
 .f-anim-s3 .masterCardContainer {
   transform: translateZ(0) rotateY(50deg);
-  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 /* line 74, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
@@ -366,12 +364,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 50%;
   left: 50%;
   transform: scale(0) translate3d(-50%, -50%, 0);
-  background: yellow;
-  width: 400px;
-  height: 300px;
+  background: white;
+  border-radius: 4px;
+  width: 500px;
   transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform-origin: 0% 0%;
   transition-delay: 1s;
+  padding: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* line 140, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
+/* line 144, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row {
+  display: flex;
+  width: 100%;
+  padding: 30px 0 0 0;
+}
+/* line 148, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row .left-col,
+.masterCardContainer .paymentConfirmationWindow .row .right-col {
+  flex: 1;
+}
+/* line 152, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row .right-col {
+  text-align: right;
 }
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */

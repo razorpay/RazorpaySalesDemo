@@ -98,7 +98,7 @@ class PaymentModalBody extends Component {
 
   processingPayment() {
     return (
-      <div id="body-processing-payment">
+      <div id="body-processing-payment" className="fadeIn">
         <h1>Your payment is being processed</h1> 
         <div className="loader">
           <div></div>

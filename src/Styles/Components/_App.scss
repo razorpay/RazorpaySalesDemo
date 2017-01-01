@@ -39,7 +39,7 @@ $rotation: 50deg;
   .backdropContainer,
   .masterCardContainer {
     transform: translate3d(90px, 0, 0) rotateY($rotation);
-    transition: transform 0.7s $slide-easing;
+    // transition: transform 0.7s $slide-easing;
   }
 
   .masterCardContainer {
@@ -68,7 +68,7 @@ $rotation: 50deg;
   .backdropContainer,
   .masterCardContainer {
     transform: translateZ(0) rotateY($rotation);
-    transition: transform 0.7s $slide-easing;
+    // transition: transform 0.7s $slide-easing;
   }
 
   .paymentModal {
@@ -129,11 +129,29 @@ $rotation: 50deg;
     top: 50%;
     left: 50%;
     transform: scale(0) translate3d(-50%, -50%, 0);
-    background: yellow;
-    width: 400px;
-    height: 300px;
+    background: white;
+    border-radius: 4px;
+    width: 500px;
     transition: transform 0.3s $spring-easing;
     transform-origin: 0% 0%;
     transition-delay: 1s;
+    padding: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .row {
+      display: flex;
+      width: 100%;
+      padding: 30px 0 0 0;
+      .left-col,
+      .right-col {
+        flex: 1;
+      }
+      .right-col {
+        text-align: right;
+      }
+    }
   }
 }
