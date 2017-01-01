@@ -255,10 +255,14 @@ class App extends Component {
   beginPaymentAnimation() {
     var app = this.refs.app;
 
+    this.setState({
+      paymentModalContent: 'processing-payment'
+    });
+
     app.classList.add('f-anim-s1');
     setTimeout(()=> {
       app.classList.add('f-anim-s2');
-    }, 1000);
+    }, 1500);
 
     setTimeout(()=>{
       app.classList.add('f-anim-s3');
@@ -341,7 +345,6 @@ class App extends Component {
           </ConditionalComp>
 
           <PaymentModal
-            ref="paymentModal"
             beginPaymentAnimation={this.beginPaymentAnimation}
             content={this.state.paymentModalContent}
             id={currentMerchantId}

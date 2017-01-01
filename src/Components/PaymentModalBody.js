@@ -7,7 +7,8 @@ class PaymentModalBody extends Component {
 
     this.visibleStates = {
       contactForm: 'contact-form',
-      cardPayment: 'card-payment'
+      cardPayment: 'card-payment',
+      processingPayment: 'processing-payment'
     };
 
     this.contactForm = this.contactForm.bind(this);
@@ -95,6 +96,18 @@ class PaymentModalBody extends Component {
     );
   }
 
+  processingPayment() {
+    return (
+      <div id="body-processing-payment">
+        <h1>Your payment is being processed</h1> 
+        <div className="loader">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
+  }
+
    render() {
     var body;
 
@@ -104,6 +117,9 @@ class PaymentModalBody extends Component {
       break;
       case this.visibleStates.cardPayment:
         body = this.cardPaymentForm();
+      break;
+      case this.visibleStates.processingPayment:
+        body = this.processingPayment();
       break;
       default:
         this.contactForm();

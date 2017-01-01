@@ -153,56 +153,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 1;
   }
 }
-/* line 85, ../../src/Styles/_animations.scss */
+@keyframes spin {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    border-width: 8px;
+  }
+  20% {
+    transform: scale(0.6);
+    opacity: 0.8;
+    border-width: 4px;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/* line 103, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 89, ../../src/Styles/_animations.scss */
+/* line 107, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 93, ../../src/Styles/_animations.scss */
+/* line 111, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 97, ../../src/Styles/_animations.scss */
+/* line 115, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 101, ../../src/Styles/_animations.scss */
+/* line 119, ../../src/Styles/_animations.scss */
 .bounceOut {
   -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
 }
 
-/* line 105, ../../src/Styles/_animations.scss */
+/* line 123, ../../src/Styles/_animations.scss */
 .fadeInUp {
   -moz-animation: fadeInUp 0.3s;
   -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 109, ../../src/Styles/_animations.scss */
+/* line 127, ../../src/Styles/_animations.scss */
 .fadeInDown {
   -moz-animation: fadeInDown 0.3s both;
   -webkit-animation: fadeInDown 0.3s both;
   animation: fadeInDown 0.3s both;
 }
 
-/* line 113, ../../src/Styles/_animations.scss */
+/* line 131, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
 }
@@ -215,7 +231,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotateY(30deg);
   }
 }
-/* line 127, ../../src/Styles/_animations.scss */
+/* line 145, ../../src/Styles/_animations.scss */
 .demo-rotate {
   animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
@@ -676,6 +692,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   opacity: 1;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+}
+/* line 152, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #body-processing-payment {
+  margin: -20px -20px 0 -20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* line 161, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 30px 0 30px 0;
+}
+/* line 166, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader div {
+  position: absolute;
+  border-color: #4994E6;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 4px solid #29b7d6;
+  opacity: 0;
+  animation: spin 1.3s linear infinite;
+}
+/* line 177, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader div:last-child {
+  animation-delay: 0.65s;
 }
 
 /* line 1, ../../src/Styles/Components/_ButtonPrimary.scss */
