@@ -957,10 +957,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .paymentButtons .buttonPrimary {
   margin-right: 5px;
   text-transform: capitalize;
+  font-weight: 700;
   padding: 10px 20px;
   font-size: 16px;
+  background: black;
 }
-/* line 9, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 11, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary:last-child {
   margin-right: 0;
 }
@@ -984,6 +986,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .merchantPaymentWindow {
   height: 80vmin;
   width: 100vmin;
-  background: rgba(0, 0, 0, 0.3);
+  background-image: url("../images/bg_browser.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 3px;
 }
