@@ -6,6 +6,19 @@ import DetailInput from './DetailInput';
 import {ChromePicker} from 'react-color';
 
 class MerchantDetail extends Component {
+  constructor(props) {
+    super(props);
+
+    // Bind 'this' to methods
+    this.clearInputs = this.clearInputs.bind(this);
+  }
+
+  clearInputs() {
+    this.refs.inputMerchantName.clear();
+    this.refs.inputPaymentDescription.clear();
+    this.refs.inputAmount.clear();
+  }
+
   render() {
 
     var mDetailClasses = classNames({
@@ -21,6 +34,7 @@ class MerchantDetail extends Component {
         </div>
 
         <DetailInput
+          ref="inputMerchantName"
           labelText="Merchant Name"
           type="text"
           placeholder={this.props.data.name}
@@ -28,6 +42,7 @@ class MerchantDetail extends Component {
         />
 
         <DetailInput
+          ref="inputPaymentDescription"
           labelText="Payment Description"
           type="text"
           placeholder={this.props.data.desc}
@@ -35,6 +50,7 @@ class MerchantDetail extends Component {
         />
 
         <DetailInput
+          ref="inputAmount"
           labelText="Amount"
           type="number"
           placeholder={this.props.data.amount}

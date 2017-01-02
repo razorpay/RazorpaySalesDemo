@@ -52,6 +52,8 @@ class Sidebar extends Component {
       visibleState: this.visibleStates.detail,
       visibleMerchant: arguments[0]
     });
+    // Clear the inputs inside merchant detail
+    this.refs.merchantDetail && this.refs.merchantDetail.clearInputs();
   }
 
  /*
@@ -91,6 +93,7 @@ class Sidebar extends Component {
           />
 
           <MerchantDetail
+            ref="merchantDetail"
             currentMerchantColor={this.props.currentMerchantColor}
             data={this.state.visibleMerchant}
             visibleInSidebar={this.state.visibleState === this.visibleStates.detail}

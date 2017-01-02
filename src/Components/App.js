@@ -48,7 +48,6 @@ class App extends Component {
     fetch(url)
       .then(response=> response.json())
       .then(jsonData => {
-        console.log(jsonData);
         this.merchants = jsonData;
         var currentMerchant = this.merchants[0];
         this.setState({
