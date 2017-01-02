@@ -8,74 +8,19 @@ import ButtonPrimary from './ButtonPrimary';
 import PaymentButtons from './PaymentButtons';
 import ConditionalComp from './ConditionalComp';
 
-// Dummy Data
-var merchants = [
-  {
-    id: 0,
-    name: 'Akbar Travels',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #223',
-    amount: 7000,
-    color: '#1ABC9C'
-  },
-  {
-    id: 1,
-    name: 'Nestaway',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #421',
-    amount: 699,
-    color: '#9681A0'
-  },
-  {
-    id: 2,
-    name: 'Chaipoint',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #314',
-    amount: 341,
-    color: '#7A73AF'
-  },
-  {
-    id: 3,
-    name: 'Rentomojo',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #222',
-    amount: 3.1415,
-    color: '#F0DB4F'
-  },
-  {
-    id: 4,
-    name: 'Voonik',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #221',
-    amount: 1,
-    color: '#A4C639'
-  },
-  {
-    id: 5,
-    name: 'PapaJohns',
-    logo: 'http://images.google.com/funny/whatevs',
-    desc: 'Payment #221',
-    amount: 800,
-    color: '#6ADCFB'
-  }
-];
-
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.merchants = [];
+
     this.state = {
       isSidebarOpen: true,
       demoMode: false,
-      // Merchant data currently visible in the modal
-      currentMerchantId: merchants[0].id,
-      currentMerchantName: merchants[0].name,
-      currentPaymentDesc: merchants[0].desc,
-      currentAmount: merchants[0].amount,
-      currentMerchantLogo: merchants[0].logo,
-      currentMerchantColor: merchants[0].color
     };
 
     // Binding 'this' to methods
+    this.fetchMerchantData = this.fetchMerchantData.bind(this);
     this.openSidebar = this.openSidebar.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
@@ -86,6 +31,36 @@ class App extends Component {
     this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
     this.beginDemo = this.beginDemo.bind(this);
     this.endDemo = this.endDemo.bind(this);
+  }
+
+  componentWillMount() {
+    this.fetchMerchantData();
+  }
+
+  /*
+  * Function: fetchMerchantData
+  * -----------------------------------
+  * Fetches and stores data from inside public/data.json
+  * and stores in the data state variable.
+  */
+  fetchMerchantData() {
+    var url = './data.json';
+    fetch(url)
+      .then(response=> response.json())
+      .then(jsonData => {
+        console.log(jsonData);
+        this.merchants = jsonData;
+        var currentMerchant = this.merchants[0];
+        this.setState({
+          currentMerchantId: currentMerchant.id,
+          currentMerchantName: currentMerchant.name,
+          currentPaymentDesc: currentMerchant.desc,
+          currentAmount: currentMerchant.amount,
+          currentMerchantLogo: currentMerchant.logo,
+          currentMerchantColor: currentMerchant.color
+        });
+      })
+      .catch(error => console.log('JSON fetch error: ' + error));
   }
 
   /*
@@ -241,7 +216,7 @@ class App extends Component {
         <Sidebar
           currentMerchantColor={currentMerchantColor}
           open={this.state.isSidebarOpen}
-          merchants={merchants}
+          merchants={this.merchants}
           updateCurrentMerchant={this.updateCurrentMerchant}
           updateName={this.updateCurrentMerchantName}
           updateDesc={this.updateCurrentPaymentDesc}
@@ -259,20 +234,22 @@ class App extends Component {
             id="btnEndDemo"
             fireOnClick={this.endDemo}/>
 
-          <PaymentModal
-            id={currentMerchantId}
-            name={currentMerchantName}
-            desc={currentPaymentDesc}
-            amount={currentAmount}
-            logo={currentMerchantLogo}
-            color={currentMerchantColor}
-          />
+          <ConditionalComp visible={this.merchants.length > 0}>
+            <PaymentModal
+              id={currentMerchantId}
+              name={currentMerchantName}
+              desc={currentPaymentDesc}
+              amount={currentAmount}
+              logo={currentMerchantLogo}
+              color={currentMerchantColor}
+            />
+          </ConditionalComp>
 
           <ConditionalComp visible={!this.props.demoMode}>
             <ButtonPrimary
               id="btnStartDemo"
               className="buttonPrimary fadeIn"
-              text="Begin Demo"
+              text={this.merchants.length > 0 ? "Begin Demo" : "Loading..."}
               fireOnClick={this.beginDemo}/>
           </ConditionalComp>
 
