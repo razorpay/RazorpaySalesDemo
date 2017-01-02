@@ -16,7 +16,7 @@ html * {
   font-family: 'Lato', sans-serif !important;
 }
 
-/* line 5, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -38,45 +38,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-2.1.5/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -279,62 +279,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .f-anim-s1 .masterCardContainer {
   transform: translate3d(90px, 0, 0) rotateY(50deg);
 }
-/* line 45, ../../src/Styles/Components/_App.scss */
+/* line 44, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .masterCardContainer {
   transform: rotateY(50deg);
 }
 
-/* line 52, ../../src/Styles/Components/_App.scss */
+/* line 51, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .paymentModal,
 .f-anim-s2 .backdropContainer {
   transform: translateZ(-70px) rotateY(50deg);
 }
-/* line 56, ../../src/Styles/Components/_App.scss */
+/* line 55, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
   transform: translate3d(90px, 0, 140px) rotateY(50deg);
 }
-/* line 59, ../../src/Styles/Components/_App.scss */
+/* line 58, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
   transform: scale(1);
 }
 
-/* line 67, ../../src/Styles/Components/_App.scss */
+/* line 66, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal,
 .f-anim-s3 .backdropContainer,
 .f-anim-s3 .masterCardContainer {
   transform: translateZ(0) rotateY(50deg);
 }
-/* line 74, ../../src/Styles/Components/_App.scss */
+/* line 72, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 78, ../../src/Styles/Components/_App.scss */
+/* line 76, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer {
   transform: translate3d(0, 0, 0) rotateY(50deg);
 }
-/* line 80, ../../src/Styles/Components/_App.scss */
+/* line 78, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   transform: scale(0);
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 84, ../../src/Styles/Components/_App.scss */
+/* line 82, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 91, ../../src/Styles/Components/_App.scss */
+/* line 89, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .paymentModal,
 .f-anim-s4 .backdropContainer,
 .f-anim-s4 .masterCardContainer {
   transform: translateZ(0) rotateY(0);
 }
-/* line 97, ../../src/Styles/Components/_App.scss */
+/* line 95, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer {
   transform: rotateY(0);
 }
 
-/* line 104, ../../src/Styles/Components/_App.scss */
+/* line 102, ../../src/Styles/Components/_App.scss */
 .masterCardContainer {
   position: absolute;
   display: flex;
@@ -348,7 +348,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   z-index: 999;
   transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 117, ../../src/Styles/Components/_App.scss */
+/* line 115, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .masterCardWindow {
   width: 500px;
   height: 500px;
@@ -358,7 +358,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   transform: scale(0);
 }
-/* line 127, ../../src/Styles/Components/_App.scss */
+/* line 125, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .paymentConfirmationWindow {
   position: absolute;
   top: 50%;
@@ -373,23 +373,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 140, ../../src/Styles/Components/_App.scss */
+/* line 138, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .paymentConfirmationWindow h1 {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 144, ../../src/Styles/Components/_App.scss */
+/* line 142, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .paymentConfirmationWindow .row {
   display: flex;
   width: 100%;
   padding: 30px 0 0 0;
 }
-/* line 148, ../../src/Styles/Components/_App.scss */
+/* line 146, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .paymentConfirmationWindow .row .left-col,
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   flex: 1;
 }
-/* line 152, ../../src/Styles/Components/_App.scss */
+/* line 150, ../../src/Styles/Components/_App.scss */
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   text-align: right;
 }
@@ -487,7 +487,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   min-width: 350px;
   background: white;
   border-radius: 3px;
-  transition: all 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  transition: all 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   font-family: 'Lato';
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
@@ -934,7 +934,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   justify-content: center;
   background: transparent;
-  transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   z-index: -999;
 }
 
