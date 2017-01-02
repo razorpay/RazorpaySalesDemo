@@ -7,10 +7,14 @@ class MerchantListItem extends Component {
   }
 
   render() {
-    var {name} = this.props.data;
+    var {name, logo} = this.props.data;
     return (
       <li className="merchantListItem" onClick={this.props.showMerchantDetail}>
-        <div className="li-merchantImage"></div>
+        <div 
+          style={{
+            backgroundImage: `url(${logo})`
+          }}
+          className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
         <i className="arrow-right">&#9658;</i>
       </li>

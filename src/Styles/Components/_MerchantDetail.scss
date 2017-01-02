@@ -15,7 +15,9 @@
       height: 64px;
       width: 64px;
       border-radius: 3px;
-      background: grey;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     h1 {

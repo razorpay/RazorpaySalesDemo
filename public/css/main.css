@@ -546,21 +546,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 24px;
   background: white;
   float: left;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-/* line 50, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 53, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name {
   font-size: 20px;
 }
-/* line 55, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 58, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
   margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
-/* line 62, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 65, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
@@ -842,9 +845,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 64px;
   background: grey;
   border-radius: 3px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
-/* line 35, ../../src/Styles/Components/_MerchantListItem.scss */
+/* line 38, ../../src/Styles/Components/_MerchantListItem.scss */
 .arrow-right {
   margin-left: 5px;
   color: #6C6C6C;
@@ -871,21 +877,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 64px;
   width: 64px;
   border-radius: 3px;
-  background: grey;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-/* line 21, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 23, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .merchantInfo h1 {
   font-size: 18px;
   font-weight: 700;
   margin-left: 20px;
 }
-/* line 28, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 30, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap {
   margin-top: 20px;
   position: relative;
   border-bottom: 1px solid #e6e7e8;
 }
-/* line 33, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 35, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap label {
   color: #757575;
   position: absolute;
@@ -895,7 +903,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 43, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 45, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap .input {
   border: none;
   outline: none;
@@ -909,7 +917,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 16px;
 }
 
-/* line 59, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 61, ../../src/Styles/Components/_MerchantDetail.scss */
 .visible-in-sidebar {
   transform: translateX(0);
   z-index: 999;
