@@ -11,12 +11,20 @@ class PaymentModal extends Component {
     logo: PropTypes.string.isRequired
   }
 
+  constructor(props) {
+    super(props);
+    // I know this is not very organic, but I am doing it once
+    // Holla at me
+    setTimeout(() => {
+      this.refs.paymentModal.classList.remove('bounceIn');
+    }, 1000);
+  }
+
   render() {
-    var {name, desc, amount, logo} = this.props;
     return (
-      <div className="paymentModal bounceIn">
+      <div className="paymentModal bounceIn" ref="paymentModal">
         <PaymentModalHeader {...this.props}/>
-        <PaymentModalBody />
+        <PaymentModalBody {...this.props}/>
       </div>
     );
   }

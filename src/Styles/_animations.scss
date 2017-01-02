@@ -31,6 +31,15 @@
   }
 }
 
+@keyframes bounceOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
 @keyframes fadeOutInWithPause {
   from {
     opacity: 0;
@@ -52,6 +61,18 @@
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -60,6 +81,24 @@
     opacity: 1;
   }
 }
+
+@keyframes spin {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    border-width: 8px;
+  }
+  20% {
+    transform: scale(0.6);
+    opacity: 0.8;
+    border-width: 4px;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
 
 .fadeInLeft {
   @include animation(fadeInLeft 0.5s cubic-bezier(.17,.67,.32,1.01) forwards);
@@ -77,10 +116,32 @@
   @include animation(bounceIn 0.3s both cubic-bezier(.01,.66,.22,1.25));
 }
 
+.bounceOut {
+  @include animation(bounceOut 0.3s both cubic-bezier(.59,-0.46,.29,1.24));
+}
+
 .fadeInUp {
-  animation: fadeInUp 0.3s;
+  @include animation(fadeInUp 0.3s);
+}
+
+.fadeInDown {
+  @include animation(fadeInDown 0.3s both);
 }
 
 .fadeIn {
   animation: fadeIn 0.3s;
+}
+
+// Animations concerned with final payment rotations
+@keyframes demo-rotate{
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(30deg);
+  }
+}
+
+.demo-rotate {
+  animation: demo-rotate 0.3s $spring-easing both;
 }

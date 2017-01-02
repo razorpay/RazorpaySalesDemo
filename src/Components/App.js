@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import PaymentModal from './PaymentModal';
 import ButtonPrimary from './ButtonPrimary';
 import PaymentButtons from './PaymentButtons';
+import MerchantPaymentWidow from './MerchantPaymentWindow';
 import ConditionalComp from './ConditionalComp';
 
 class App extends Component {
@@ -14,9 +15,32 @@ class App extends Component {
 
     this.merchants = [];
 
+    // The steps demo consists of
+    this.demoSteps = {
+      0: () => {
+        this.endDemo();
+        this.setState({
+          demoStep: 0
+        });
+      },
+      1: () => {
+        this.setState({
+          paymentModalContent: 'contact-form',
+          demoStep: 1
+        });
+      },
+      2: () => {
+        this.setState({
+          demoStep: 2
+        });
+      }
+    };
+
     this.state = {
       isSidebarOpen: true,
       demoMode: false,
+      demoStep: 0,
+      paymentModalContent: 'contact-form'
     };
 
     // Binding 'this' to methods
@@ -29,8 +53,10 @@ class App extends Component {
     this.updateCurrentPaymentDesc = this.updateCurrentPaymentDesc.bind(this);
     this.updateCurrentAmount = this.updateCurrentAmount.bind(this);
     this.updateCurrentMerchantColor= this.updateCurrentMerchantColor.bind(this);
+    this.payUsingCard = this.payUsingCard.bind(this);
     this.beginDemo = this.beginDemo.bind(this);
     this.endDemo = this.endDemo.bind(this);
+    this.beginPaymentAnimation = this.beginPaymentAnimation.bind(this);
   }
 
   componentWillMount() {
@@ -118,7 +144,10 @@ class App extends Component {
   beginDemo() {
     this.closeSidebar();
     setTimeout(() => {
-      this.setState({demoMode: true});
+      this.setState({
+        demoMode: true,
+        demoStep: 1
+      });
     }, 500);
   }
 
@@ -130,6 +159,7 @@ class App extends Component {
   endDemo() {
     this.setState({
       demoMode: false,
+      paymentModalContent: 'contact-form'
     });
     setTimeout(() => {
       this.openSidebar();
@@ -189,10 +219,48 @@ class App extends Component {
     });
   }
 
+  /*
+  * Function: beginPaymentAnimation
+  * --------------------------------
+  * Starts the 3d modal popping animation
+  */
+  beginPaymentAnimation() {
+    var app = this.refs.app;
+
+    this.setState({
+      paymentModalContent: 'processing-payment'
+    });
+
+    app.classList.add('f-anim-s1');
+    setTimeout(()=> {
+      app.classList.add('f-anim-s2');
+    }, 1500);
+
+    setTimeout(()=>{
+      app.classList.add('f-anim-s3');
+    }, 3500);
+
+    setTimeout(() => {
+      app.classList.add('f-anim-s4');
+    }, 5500);
+ }
+
+  /*
+  * Function: payUsingCard
+  * -------------------------
+  * Switches the content in the Modal to 
+  * pay using card mode.
+  */
+  payUsingCard() {
+    this.setState({
+      paymentModalContent: 'card-payment',
+      demoStep: 2
+    });
+  }
+
   render() {
     var appClasses = classNames({
       'App': true,
-      'playingDemo-s1': this.state.demoMode,
       'shrunk': this.state.isSidebarOpen
     });
 
@@ -207,7 +275,7 @@ class App extends Component {
 
     return (
       /*
-        For realtime current change of PaymentModal
+        For realtime color change of PaymentModal
         we pass currentMerchantColor to <Sidebar/> as a separate prop
       */
 
@@ -223,18 +291,35 @@ class App extends Component {
           updateColor={this.updateCurrentMerchantColor}
       />
 
-        <div className={appClasses}>
-          <ButtonPrimary
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              opacity: 0.8
-            }}
-            text="restart"
-            id="btnEndDemo"
-            fireOnClick={this.endDemo}/>
+        <div className={appClasses} ref="app">
+          <ConditionalComp visible={this.state.demoMode}>
+            <ButtonPrimary
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                opacity: 0.8,
+                zIndex: 9999
+              }}
+              text="&#9664;"
+              id="btnStepBackDemo"
+              fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
+          </ConditionalComp>
+
+          <ConditionalComp visible={this.state.demoMode}>
+            <ButtonPrimary
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                opacity: 0.8,
+                zIndex: 9999
+              }}
+              text="&#x21E6;"
+              id="btnEndDemo"
+              fireOnClick={this.endDemo}/>
+          </ConditionalComp>
 
           <ConditionalComp visible={this.merchants.length > 0}>
             <PaymentModal
+              beginPaymentAnimation={this.beginPaymentAnimation}
+              content={this.state.paymentModalContent}
               id={currentMerchantId}
               name={currentMerchantName}
               desc={currentPaymentDesc}
@@ -244,7 +329,7 @@ class App extends Component {
             />
           </ConditionalComp>
 
-          <ConditionalComp visible={!this.props.demoMode}>
+          <ConditionalComp visible={!this.state.demoMode}>
             <ButtonPrimary
               id="btnStartDemo"
               className="buttonPrimary fadeIn"
@@ -252,9 +337,59 @@ class App extends Component {
               fireOnClick={this.beginDemo}/>
           </ConditionalComp>
 
-          <ConditionalComp visible={this.state.demoMode}>
-            <PaymentButtons/>
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep === 1}>
+            <PaymentButtons
+              payUsingCard={this.payUsingCard}
+            />
           </ConditionalComp>
+
+          <ConditionalComp visible={this.state.demoMode}>
+            <MerchantPaymentWidow />
+          </ConditionalComp>
+
+          <div className="masterCardContainer" ref="masterCardContainer">
+            <div className="masterCardWindow" ref="masterCardWindow">
+            </div>
+            <div className="paymentConfirmationWindow">
+              <h1>Thanks for your order!</h1>
+              <div className="row">
+                <div className="left-col">
+                  Amount
+                </div>
+                <div className="right-col">
+                  ₹{currentAmount}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="left-col">
+                  Date
+                </div>
+                <div className="right-col">
+                  20.09.2016 18:02
+                </div>
+              </div>
+
+            <div className="row">
+                <div className="left-col">
+                  Transaction ID
+                </div>
+                <div className="right-col">
+                  pay_38UehrY839Je4kK
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="left-col">
+                  Item
+                </div>
+                <div className="right-col">
+                  Payment #221
+                </div>
+            </div>
+            </div>
+          </div>
+
         </div>
       </div>
     );

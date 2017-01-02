@@ -1,0 +1,20 @@
+.backdropContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: transform 0.3s $slide-easing;
+  z-index: -999;
+}
+
+.merchantPaymentWindow {
+  height: 80vmin;
+  width: 100vmin;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}

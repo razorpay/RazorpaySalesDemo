@@ -7,10 +7,11 @@
 body {
   font-family: 'Lato', sans-serif;
   background: linear-gradient(0deg, #4C79B4, #101D4A);
+  perspective: 1400px;
   overflow: hidden;
 }
 
-/* line 11, ../../src/Styles/main.scss */
+/* line 12, ../../src/Styles/main.scss */
 html * {
   font-family: 'Lato', sans-serif !important;
 }
@@ -108,6 +109,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: scale(1);
   }
 }
+@keyframes bounceOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
 @keyframes fadeOutInWithPause {
   from {
     opacity: 0;
@@ -126,6 +135,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: translateY(0);
   }
 }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,42 +153,87 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 1;
   }
 }
-/* line 64, ../../src/Styles/_animations.scss */
+@keyframes spin {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    border-width: 8px;
+  }
+  20% {
+    transform: scale(0.6);
+    opacity: 0.8;
+    border-width: 4px;
+  }
+  90% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/* line 103, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 68, ../../src/Styles/_animations.scss */
+/* line 107, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 72, ../../src/Styles/_animations.scss */
+/* line 111, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 76, ../../src/Styles/_animations.scss */
+/* line 115, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 80, ../../src/Styles/_animations.scss */
+/* line 119, ../../src/Styles/_animations.scss */
+.bounceOut {
+  -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+  -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+  animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
+}
+
+/* line 123, ../../src/Styles/_animations.scss */
 .fadeInUp {
+  -moz-animation: fadeInUp 0.3s;
+  -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 84, ../../src/Styles/_animations.scss */
+/* line 127, ../../src/Styles/_animations.scss */
+.fadeInDown {
+  -moz-animation: fadeInDown 0.3s both;
+  -webkit-animation: fadeInDown 0.3s both;
+  animation: fadeInDown 0.3s both;
+}
+
+/* line 131, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
+}
+
+@keyframes demo-rotate {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(30deg);
+  }
+}
+/* line 145, ../../src/Styles/_animations.scss */
+.demo-rotate {
+  animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
 
 /* line 1, ../../src/Styles/Components/_App.scss */
@@ -191,31 +255,152 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 17, ../../src/Styles/Components/_App.scss */
-#btnEndDemo {
+#btnStepBackDemo {
   position: absolute;
   top: 20px;
   left: 20px;
-  display: none;
 }
 
-/* line 24, ../../src/Styles/Components/_App.scss */
+/* line 23, ../../src/Styles/Components/_App.scss */
+#btnEndDemo {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  transition: all 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+
+/* line 30, ../../src/Styles/Components/_App.scss */
 #btnStartDemo {
   margin-top: 20px;
 }
 
-/* line 29, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 .paymentButtons {
-  display: block;
-  opacity: 1;
+/* line 39, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .paymentModal,
+.f-anim-s1 .backdropContainer,
+.f-anim-s1 .masterCardContainer {
+  transform: translate3d(90px, 0, 0) rotateY(50deg);
 }
-/* line 34, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 #btnStartDemo {
-  opacity: 0;
+/* line 45, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .masterCardContainer {
+  transform: rotateY(50deg);
+}
+/* line 49, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 #btnStepBackDemo {
   display: none;
 }
-/* line 39, ../../src/Styles/Components/_App.scss */
-.playingDemo-s1 #btnEndDemo {
-  display: block;
+/* line 53, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 #btnEndDemo {
+  left: 20px;
+}
+
+/* line 60, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .paymentModal,
+.f-anim-s2 .backdropContainer {
+  transform: translateZ(-70px) rotateY(50deg);
+}
+/* line 64, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .masterCardContainer {
+  visibility: visible;
+  transform: translate3d(90px, 0, 140px) rotateY(50deg);
+}
+/* line 67, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .masterCardContainer .masterCardWindow {
+  transform: scale(1);
+}
+
+/* line 75, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .paymentModal,
+.f-anim-s3 .backdropContainer,
+.f-anim-s3 .masterCardContainer {
+  transform: translateZ(0) rotateY(50deg);
+}
+/* line 81, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .paymentModal {
+  opacity: 0;
+}
+/* line 85, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer {
+  transform: translate3d(0, 0, 0) rotateY(50deg);
+}
+/* line 87, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer .masterCardWindow {
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+/* line 91, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
+  transform: scale(1) translate3d(-50%, -50%, 0);
+}
+
+/* line 98, ../../src/Styles/Components/_App.scss */
+.f-anim-s4 .paymentModal,
+.f-anim-s4 .backdropContainer,
+.f-anim-s4 .masterCardContainer {
+  transform: translateZ(0) rotateY(0);
+}
+/* line 104, ../../src/Styles/Components/_App.scss */
+.f-anim-s4 .masterCardContainer {
+  transform: rotateY(0);
+}
+
+/* line 111, ../../src/Styles/Components/_App.scss */
+.masterCardContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+}
+/* line 124, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .masterCardWindow {
+  width: 500px;
+  height: 500px;
+  border-radius: 3px;
+  background: white;
+  border: 1px solid #000;
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transform: scale(0);
+}
+/* line 134, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate3d(-50%, -50%, 0);
+  background: white;
+  border-radius: 4px;
+  width: 500px;
+  transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  transform-origin: 0% 0%;
+  transition-delay: 1s;
+  padding: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* line 147, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
+/* line 151, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row {
+  display: flex;
+  width: 100%;
+  padding: 30px 0 0 0;
+}
+/* line 155, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row .left-col,
+.masterCardContainer .paymentConfirmationWindow .row .right-col {
+  flex: 1;
+}
+/* line 159, ../../src/Styles/Components/_App.scss */
+.masterCardContainer .paymentConfirmationWindow .row .right-col {
+  text-align: right;
 }
 
 /* line 1, ../../src/Styles/Components/_SidebarHeader.scss */
@@ -311,16 +496,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   min-width: 350px;
   background: white;
   border-radius: 3px;
-  transition: all 0.3s;
-  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   font-family: 'Lato';
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* line 12, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 11, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader {
+  position: relative;
   background: #1abc9c;
   width: 100%;
   padding: 20px;
@@ -330,13 +515,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: background-color 0.3s;
 }
 /* line 21, ../../src/Styles/Components/_PaymentModal.scss */
+.paymentModalHeader:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+}
+/* line 33, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
   white-space: pre;
   text-overflow: ellipsis;
   padding: 0 0 2px 0;
   overflow: hidden;
 }
-/* line 28, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 40, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
   width: 64px;
   height: 64px;
@@ -348,17 +550,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-/* line 38, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 50, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name {
   font-size: 20px;
 }
-/* line 43, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 55, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
   margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
-/* line 50, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 62, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
@@ -444,6 +646,113 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 71, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #payment-options .payment-option:last-child {
   border-color: transparent;
+}
+/* line 78, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #body-card-form {
+  margin: -20px -20px 0 -20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* line 85, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-header {
+  width: 100%;
+  padding: 20px;
+  background: #FCFBFA;
+  border-bottom: 1px solid #E6E7E8;
+  color: #767676;
+}
+/* line 93, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+/* line 98, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row {
+  display: flex;
+}
+/* line 100, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row:not(:first-child) {
+  margin-top: 30px;
+}
+/* line 103, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .row:last-child {
+  margin-bottom: 30px;
+}
+/* line 108, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .inputWrap {
+  margin-right: 10px;
+}
+/* line 111, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .inputWrap:last-child {
+  margin: 0;
+}
+/* line 116, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .left-input {
+  width: 65%;
+}
+/* line 120, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .card-fields .right-input {
+  width: 35%;
+}
+/* line 125, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .payButton {
+  position: relative;
+  background: #1ABC9C;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+  margin-top: 54px;
+}
+/* line 139, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .payButton:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+}
+/* line 152, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #body-processing-payment {
+  margin: -20px -20px 0 -20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* line 161, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 30px 0 30px 0;
+}
+/* line 166, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader div {
+  position: absolute;
+  border-color: #4994E6;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 4px solid #29b7d6;
+  opacity: 0;
+  animation: spin 1.3s linear infinite;
+}
+/* line 177, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody .loader div:last-child {
+  animation-delay: 0.65s;
 }
 
 /* line 1, ../../src/Styles/Components/_ButtonPrimary.scss */
@@ -609,18 +918,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons {
   margin-top: 32px;
-  opacity: 0;
-  display: none;
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 6, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 4, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary {
   margin-right: 5px;
   text-transform: capitalize;
   padding: 10px 20px;
   font-size: 16px;
 }
-/* line 11, ../../src/Styles/Components/_PaymentButtons.scss */
+/* line 9, ../../src/Styles/Components/_PaymentButtons.scss */
 .paymentButtons .buttonPrimary:last-child {
   margin-right: 0;
+}
+
+/* line 1, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+.backdropContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  z-index: -999;
+}
+
+/* line 15, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+.merchantPaymentWindow {
+  height: 80vmin;
+  width: 100vmin;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
 }
