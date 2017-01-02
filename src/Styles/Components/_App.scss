@@ -24,6 +24,7 @@
   position: absolute;
   top: 20px;
   left: 100px;
+  transition: all 0.3s $slide-easing;
 }
 
 #btnStartDemo {
@@ -43,6 +44,14 @@ $rotation: 50deg;
 
   .masterCardContainer {
     transform: rotateY($rotation);
+  }
+
+  #btnStepBackDemo {
+    display: none;
+  }
+
+  #btnEndDemo {
+    left: 20px;
   }
  }
 
