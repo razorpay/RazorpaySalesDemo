@@ -161,6 +161,9 @@ class App extends Component {
       demoMode: false,
       paymentModalContent: 'contact-form'
     });
+
+    this.refs.app.classList.remove('f-anim-s1', 'f-anim-s2', 'f-anim-s3', 'f-anim-s4');
+
     setTimeout(() => {
       this.openSidebar();
     }, 500);
@@ -372,7 +375,7 @@ class App extends Component {
                   Item
                 </div>
                 <div className="right-col">
-                  Payment #221
+                  {currentPaymentDesc}
                 </div>
             </div>
             </div>
