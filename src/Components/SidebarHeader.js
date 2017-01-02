@@ -15,7 +15,7 @@ class SidebarHeader extends Component {
       <div className={bClasses}>
         <h1>{this.props.text}</h1>
         <div className="subheader">
-          <i className="arrow-left">&#9664;</i>
+          <i className="arrow-left"></i>
           <ButtonBackToList
             text="Merchants"
             fireOnClick={this.props.backToList}

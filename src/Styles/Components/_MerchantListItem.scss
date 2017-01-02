@@ -36,6 +36,11 @@
 }
 
 .arrow-right {
-  margin-left: 5px;
-  color: #6C6C6C;
+  width: 18px;
+  height: 18px;
+  background-image: url('../images/icon_arrow.svg');
+  transform: rotate(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

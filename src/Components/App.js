@@ -294,24 +294,12 @@ class App extends Component {
         <div className={appClasses} ref="app">
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                opacity: 0.8,
-                zIndex: 9999
-              }}
-              text="&#9664;"
               id="btnStepBackDemo"
               fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
           </ConditionalComp>
 
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                opacity: 0.8,
-                zIndex: 9999
-              }}
-              text="&#x21E6;"
               id="btnEndDemo"
               fireOnClick={this.endDemo}/>
           </ConditionalComp>

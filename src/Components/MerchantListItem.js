@@ -16,7 +16,7 @@ class MerchantListItem extends Component {
           }}
           className="li-merchantImage"></div>
         <div className="li-merchantName">{name}</div>
-        <i className="arrow-right">&#9658;</i>
+        <i className="arrow-right"></i>
       </li>
     );
   }

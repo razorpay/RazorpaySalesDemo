@@ -16,8 +16,12 @@
   .arrow-left {
     position: relative;
     display: inline-block;
-    font-size: 14px;
-    width: 14px;
+    width: 13px;
+    height: 11px;
+    background-image: url('../images/icon_arrow.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
     transform: translateX(14px);
     transition: transform 0.2s, opacity 0.1s, $slide-easing;
     cursor: default;
