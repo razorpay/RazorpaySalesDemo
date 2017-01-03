@@ -17,6 +17,7 @@
   color: white;
   text-shadow: 0 1px 3px rgba(0,0,0,.12);
   transition: background-color 0.3s;
+  overflow: hidden;
 
   &:before {
     position: absolute;

@@ -474,8 +474,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: background-color 0.3s;
+  overflow: hidden;
 }
-/* line 21, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 22, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader:before {
   position: absolute;
   content: '';
@@ -492,14 +493,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
 }
-/* line 33, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 34, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name, .paymentModalHeader #header-description, .paymentModalHeader #header-amount {
   white-space: pre;
   text-overflow: ellipsis;
   padding: 0 0 2px 0;
   overflow: hidden;
 }
-/* line 40, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 41, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
   width: 64px;
   height: 64px;
@@ -514,17 +515,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-/* line 53, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 54, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-name {
   font-size: 20px;
 }
-/* line 58, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 59, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-description {
   margin-top: 3px;
   opacity: 0.8;
   font-size: 16px;
 }
-/* line 65, ../../src/Styles/Components/_PaymentModal.scss */
+/* line 66, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-amount {
   font-size: 24px;
   font-weight: 700;
