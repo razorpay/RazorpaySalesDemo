@@ -311,49 +311,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 76, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .paymentModal,
 .f-anim-s2 .backdropContainer {
-  transform: translateZ(-70px) rotateY(50deg);
+  transform: translate3d(-35px, 0, -60px) rotateY(50deg);
+  opacity: 0.8;
 }
-/* line 80, ../../src/Styles/Components/_App.scss */
+/* line 81, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
-  transform: translate3d(90px, 0, 140px) rotateY(50deg);
+  transform: translate3d(0px, 0, 140px) rotateY(50deg);
 }
-/* line 83, ../../src/Styles/Components/_App.scss */
+/* line 84, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
   transform: scale(1);
 }
 
-/* line 91, ../../src/Styles/Components/_App.scss */
+/* line 92, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal,
 .f-anim-s3 .backdropContainer,
 .f-anim-s3 .masterCardContainer {
   transform: translateZ(0) rotateY(50deg);
+  opacity: 1;
 }
-/* line 97, ../../src/Styles/Components/_App.scss */
+/* line 99, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 101, ../../src/Styles/Components/_App.scss */
+/* line 103, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer {
   transform: translate3d(0, 0, 0) rotateY(50deg);
 }
-/* line 103, ../../src/Styles/Components/_App.scss */
+/* line 105, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   transform: scale(0);
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 107, ../../src/Styles/Components/_App.scss */
+/* line 109, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 115, ../../src/Styles/Components/_App.scss */
+/* line 117, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .paymentModal,
 .f-anim-s4 .backdropContainer,
 .f-anim-s4 .masterCardContainer {
   transform: translateZ(0) rotateY(0);
 }
-/* line 121, ../../src/Styles/Components/_App.scss */
+/* line 123, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer {
   transform: rotateY(0);
 }
@@ -689,18 +691,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: -20px -20px 0 -20px;
   padding: 20px;
   display: flex;
+  height: 405px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/* line 161, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 162, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader {
   position: relative;
   width: 60px;
   height: 60px;
   margin: 30px 0 30px 0;
 }
-/* line 166, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 167, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div {
   position: absolute;
   border-color: #4994E6;
@@ -712,7 +715,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   animation: spin 1.3s linear infinite;
 }
-/* line 177, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 178, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div:last-child {
   animation-delay: 0.65s;
 }

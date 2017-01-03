@@ -75,11 +75,12 @@ $rotation: 50deg;
 .f-anim-s2 {
   .paymentModal,
   .backdropContainer {
-    transform: translateZ(-70px) rotateY($rotation); 
+    transform: translate3d(-35px, 0, -60px) rotateY($rotation); 
+    opacity: 0.8;
   }
  .masterCardContainer {
     visibility: visible;
-    transform: translate3d(90px, 0, 140px) rotateY($rotation);
+    transform: translate3d(0px, 0, 140px) rotateY($rotation);
     .masterCardWindow {
       transform: scale(1);
     }
@@ -92,6 +93,7 @@ $rotation: 50deg;
   .backdropContainer,
   .masterCardContainer {
     transform: translateZ(0) rotateY($rotation);
+    opacity: 1;
   }
 
   .paymentModal {
