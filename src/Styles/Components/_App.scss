@@ -58,6 +58,21 @@
 // Steps of final payment animation
 $rotation: 50deg;
 
+// 0th step just taaaa.... ya know
+.f-anim-s0 {
+  .paymentModal {
+    transform: scale(0.9) translateY(30px);
+  }
+
+  .backdropContainer {
+    transform: scale(1.1);
+  }
+
+  .paymentButtons {
+    transform: scale(0.9);
+  }
+}
+
 // First Step
 .f-anim-s1 {
   .paymentModal,

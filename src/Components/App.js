@@ -37,8 +37,10 @@ class App extends Component {
         });
       },
       1: () => {
+        this.closeSidebar();
         this.setState({
           paymentModalContent: 'contact-form',
+          demoMode: true,
           demoStep: 1
         });
       },
@@ -175,13 +177,12 @@ class App extends Component {
   */
   beginDemo() {
     this.closeSidebar();
-    setTimeout(() => {
-      this.setState({
-        demoMode: true,
-        demoStep: 1
-      });
-    }, 500);
-  }
+    this.refs.app.classList.add('booty');
+    this.animationTimeouts.push(setTimeout(()=>{
+      this.refs.app.classList.add('f-anim-s0');
+      this.demoSteps[1]();
+    }, 500));
+ }
 
  /*
   * Function: beginDemo
@@ -237,7 +238,7 @@ class App extends Component {
   * pay using card mode.
   */
   payUsingCard() {
-    this.demoSteps[2]();
+    this.state.demoMode && this.demoSteps[2]();
   }
 
   /*
@@ -345,15 +346,15 @@ class App extends Component {
 
         <div className={appClasses} ref="app">
 
-          {/*<ConditionalComp visible={this.state.demoMode} && this.state.demoStep <= 2/>*/}
-          <ConditionalComp visible={this.state.demoMode}>
+          {/*<ConditionalComp visible={this.state.demoMode}/>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
 
-          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>
+          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
             <ButtonPrimary
               id="btnStepDemoForward"
               fireOnClick={this.stepDemoForward}/>
@@ -375,6 +376,7 @@ class App extends Component {
               amount={currentAmount}
               logo={currentMerchantLogo}
               color={currentMerchantColor}
+              payUsingCard={this.payUsingCard}
             />
           </ConditionalComp>
 
@@ -386,7 +388,7 @@ class App extends Component {
               fireOnClick={this.beginDemo}/>
           </ConditionalComp>
 
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep === 1}>
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep === 1 && false}>
             <PaymentButtons
               payUsingCard={this.payUsingCard}
             />

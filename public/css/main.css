@@ -135,6 +135,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: translateY(0);
   }
 }
+@keyframes fadeInUpScaleDown {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(0.9);
+  }
+}
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -169,56 +179,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 0;
   }
 }
-/* line 103, ../../src/Styles/_animations.scss */
+/* line 115, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 107, ../../src/Styles/_animations.scss */
+/* line 119, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 111, ../../src/Styles/_animations.scss */
+/* line 123, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 115, ../../src/Styles/_animations.scss */
+/* line 127, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 119, ../../src/Styles/_animations.scss */
+/* line 131, ../../src/Styles/_animations.scss */
 .bounceOut {
   -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
 }
 
-/* line 123, ../../src/Styles/_animations.scss */
+/* line 135, ../../src/Styles/_animations.scss */
 .fadeInUp {
   -moz-animation: fadeInUp 0.3s;
   -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 127, ../../src/Styles/_animations.scss */
+/* line 139, ../../src/Styles/_animations.scss */
+.fadeInUpScaleDown {
+  -moz-animation: fadeInUpScaleDown 0.3s;
+  -webkit-animation: fadeInUpScaleDown 0.3s;
+  animation: fadeInUpScaleDown 0.3s;
+}
+
+/* line 144, ../../src/Styles/_animations.scss */
 .fadeInDown {
   -moz-animation: fadeInDown 0.3s both;
   -webkit-animation: fadeInDown 0.3s both;
   animation: fadeInDown 0.3s both;
 }
 
-/* line 131, ../../src/Styles/_animations.scss */
+/* line 148, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
 }
@@ -231,7 +248,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotateY(30deg);
   }
 }
-/* line 145, ../../src/Styles/_animations.scss */
+/* line 162, ../../src/Styles/_animations.scss */
 .demo-rotate {
   animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
@@ -298,64 +315,77 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 63, ../../src/Styles/Components/_App.scss */
+.f-anim-s0 .paymentModal {
+  transform: scale(0.9) translateY(30px);
+}
+/* line 67, ../../src/Styles/Components/_App.scss */
+.f-anim-s0 .backdropContainer {
+  transform: scale(1.1);
+}
+/* line 71, ../../src/Styles/Components/_App.scss */
+.f-anim-s0 .paymentButtons {
+  transform: scale(0.9);
+}
+
+/* line 78, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .paymentModal,
 .f-anim-s1 .backdropContainer,
 .f-anim-s1 .masterCardContainer {
   transform: translate3d(90px, 0, 0) rotateY(50deg);
 }
-/* line 69, ../../src/Styles/Components/_App.scss */
+/* line 84, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .masterCardContainer {
   transform: rotateY(50deg);
 }
 
-/* line 76, ../../src/Styles/Components/_App.scss */
+/* line 91, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .paymentModal,
 .f-anim-s2 .backdropContainer {
   transform: translate3d(-35px, 0, -60px) rotateY(50deg);
   opacity: 0.8;
 }
-/* line 81, ../../src/Styles/Components/_App.scss */
+/* line 96, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
   transform: translate3d(0px, 0, 140px) rotateY(50deg);
 }
-/* line 84, ../../src/Styles/Components/_App.scss */
+/* line 99, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
   transform: scale(1);
 }
 
-/* line 92, ../../src/Styles/Components/_App.scss */
+/* line 107, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal,
 .f-anim-s3 .backdropContainer,
 .f-anim-s3 .masterCardContainer {
   transform: translateZ(0) rotateY(50deg);
   opacity: 1;
 }
-/* line 99, ../../src/Styles/Components/_App.scss */
+/* line 114, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 103, ../../src/Styles/Components/_App.scss */
+/* line 118, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer {
   transform: translate3d(0, 0, 0) rotateY(50deg);
 }
-/* line 105, ../../src/Styles/Components/_App.scss */
+/* line 120, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   transform: scale(0);
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 109, ../../src/Styles/Components/_App.scss */
+/* line 124, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 117, ../../src/Styles/Components/_App.scss */
+/* line 132, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .paymentModal,
 .f-anim-s4 .backdropContainer,
 .f-anim-s4 .masterCardContainer {
   transform: translateZ(0) rotateY(0);
 }
-/* line 123, ../../src/Styles/Components/_App.scss */
+/* line 138, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer {
   transform: rotateY(0);
 }
@@ -502,8 +532,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 41, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
-  width: 64px;
-  height: 64px;
+  width: 86px;
+  height: 86px;
   border-radius: 3px;
   margin-right: 24px;
   background: white;
@@ -608,23 +638,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   flex: 1;
   height: 117px;
   border-right: 1px solid #e6e7e8;
+  cursor: pointer;
 }
-/* line 72, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 73, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #payment-options .payment-option:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+/* line 76, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #payment-options .payment-option:last-child {
   border-color: transparent;
 }
-/* line 75, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 79, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #payment-options .payment-option span {
   margin-top: 15px;
 }
-/* line 82, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 86, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #body-card-form {
   margin: -20px -20px 0 -20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-/* line 89, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 93, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-header {
   width: 100%;
   padding: 20px;
@@ -632,41 +667,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-bottom: 1px solid #E6E7E8;
   color: #767676;
 }
-/* line 97, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 101, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields {
   display: flex;
   padding: 20px;
   flex-direction: column;
 }
-/* line 102, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 106, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row {
   display: flex;
 }
-/* line 104, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 108, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row:not(:first-child) {
   margin-top: 30px;
 }
-/* line 107, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 111, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row:last-child {
   margin-bottom: 30px;
 }
-/* line 112, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 116, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .inputWrap {
   margin-right: 10px;
 }
-/* line 115, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 119, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .inputWrap:last-child {
   margin: 0;
 }
-/* line 120, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 124, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .left-input {
   width: 65%;
 }
-/* line 124, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 128, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .right-input {
   width: 35%;
 }
-/* line 129, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 133, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .payButton {
   position: relative;
   background: #1ABC9C;
@@ -679,9 +714,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 0 0 3px 3px;
-  margin-top: 54px;
+  margin-top: -12px;
 }
-/* line 143, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 147, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .payButton:after {
   position: absolute;
   top: 0;
@@ -692,24 +727,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 1;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
 }
-/* line 156, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 160, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #body-processing-payment {
   margin: -20px -20px 0 -20px;
   padding: 20px;
   display: flex;
-  height: 405px;
+  height: 360px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/* line 166, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 170, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader {
   position: relative;
   width: 60px;
   height: 60px;
   margin: 30px 0 30px 0;
 }
-/* line 171, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 175, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div {
   position: absolute;
   border-color: #4994E6;
@@ -721,7 +756,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   animation: spin 1.3s linear infinite;
 }
-/* line 182, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 186, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div:last-child {
   animation-delay: 0.65s;
 }
@@ -926,11 +961,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   justify-content: center;
   background: transparent;
+  transform: scale(1.1);
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   z-index: -999;
 }
 
-/* line 15, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
+/* line 16, ../../src/Styles/Components/_MerchantPaymentWindow.scss */
 .merchantPaymentWindow {
   height: 80vmin;
   width: 120vmin;

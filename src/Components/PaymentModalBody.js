@@ -33,22 +33,22 @@ class PaymentModalBody extends Component {
       </div>
       <div id="legend">Select payment method</div>
       <div id="payment-options">
-        <div className="payment-option" id="po-card">
-          <PaymentIcon 
+        <div className="payment-option" id="po-card" onClick={this.props.payUsingCard}>
+          <PaymentIcon
             color={this.props.color}
             type='card'
           />
           <span>Card</span>
         </div>
         <div className="payment-option" id="po-netbanking">
-          <PaymentIcon 
+          <PaymentIcon
             color={this.props.color}
             type='netbanking'
           />
           <span>Netbanking</span>
         </div>
         <div className="payment-option" id="po-wallet">
-          <PaymentIcon 
+          <PaymentIcon
             color={this.props.color}
             type='wallet'
           />
@@ -114,7 +114,7 @@ class PaymentModalBody extends Component {
   processingPayment() {
     return (
       <div id="body-processing-payment" className="fadeIn">
-        <h1>Your payment is being processed</h1> 
+        <h1>Your payment is being processed</h1>
         <div className="loader">
           <div></div>
           <div></div>
