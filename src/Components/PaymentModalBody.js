@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+// Components
+import PaymentIcon from './CardIcon';
+
 class PaymentModalBody extends Component {
 
   constructor(props) {
@@ -31,13 +34,25 @@ class PaymentModalBody extends Component {
       <div id="legend">Select payment method</div>
       <div id="payment-options">
         <div className="payment-option" id="po-card">
-          Card
+          <PaymentIcon 
+            color={this.props.color}
+            type='card'
+          />
+          <span>Card</span>
         </div>
         <div className="payment-option" id="po-netbanking">
-          Netbanking
+          <PaymentIcon 
+            color={this.props.color}
+            type='netbanking'
+          />
+          <span>Netbanking</span>
         </div>
         <div className="payment-option" id="po-wallet">
-          Wallet
+          <PaymentIcon 
+            color={this.props.color}
+            type='wallet'
+          />
+          <span>Wallet</span>
         </div>
       </div>
       </div>
@@ -122,7 +137,7 @@ class PaymentModalBody extends Component {
         body = this.processingPayment();
       break;
       default:
-        this.contactForm();
+        body = this.contactForm();
       break;
     }
 

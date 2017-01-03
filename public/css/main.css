@@ -600,6 +600,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 63, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #payment-options .payment-option {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -607,18 +608,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 117px;
   border-right: 1px solid #e6e7e8;
 }
-/* line 71, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 72, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #payment-options .payment-option:last-child {
   border-color: transparent;
 }
-/* line 78, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 75, ../../src/Styles/Components/_PaymentModalBody.scss */
+.paymentModalBody #payment-options .payment-option span {
+  margin-top: 15px;
+}
+/* line 82, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #body-card-form {
   margin: -20px -20px 0 -20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-/* line 85, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 89, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-header {
   width: 100%;
   padding: 20px;
@@ -626,41 +631,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-bottom: 1px solid #E6E7E8;
   color: #767676;
 }
-/* line 93, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 97, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields {
   display: flex;
   padding: 20px;
   flex-direction: column;
 }
-/* line 98, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 102, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row {
   display: flex;
 }
-/* line 100, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 104, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row:not(:first-child) {
   margin-top: 30px;
 }
-/* line 103, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 107, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .row:last-child {
   margin-bottom: 30px;
 }
-/* line 108, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 112, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .inputWrap {
   margin-right: 10px;
 }
-/* line 111, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 115, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .inputWrap:last-child {
   margin: 0;
 }
-/* line 116, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 120, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .left-input {
   width: 65%;
 }
-/* line 120, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 124, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .card-fields .right-input {
   width: 35%;
 }
-/* line 125, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 129, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .payButton {
   position: relative;
   background: #1ABC9C;
@@ -675,7 +680,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 0 0 3px 3px;
   margin-top: 54px;
 }
-/* line 139, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 143, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .payButton:after {
   position: absolute;
   top: 0;
@@ -686,7 +691,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 1;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
 }
-/* line 152, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 156, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody #body-processing-payment {
   margin: -20px -20px 0 -20px;
   padding: 20px;
@@ -696,14 +701,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   justify-content: center;
 }
-/* line 162, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 166, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader {
   position: relative;
   width: 60px;
   height: 60px;
   margin: 30px 0 30px 0;
 }
-/* line 167, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 171, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div {
   position: absolute;
   border-color: #4994E6;
@@ -715,7 +720,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   animation: spin 1.3s linear infinite;
 }
-/* line 178, ../../src/Styles/Components/_PaymentModalBody.scss */
+/* line 182, ../../src/Styles/Components/_PaymentModalBody.scss */
 .paymentModalBody .loader div:last-child {
   animation-delay: 0.65s;
 }

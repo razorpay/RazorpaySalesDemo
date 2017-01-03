@@ -62,6 +62,7 @@
     border-top: 1px solid #e6e7e8;
     .payment-option {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 10px;
@@ -70,6 +71,9 @@
       border-right: 1px solid #e6e7e8;
       &:last-child {
         border-color: transparent;
+      }
+      span {
+        margin-top: 15px;
       }
     }
   }
