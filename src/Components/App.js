@@ -14,15 +14,22 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // Stores all merchant data after fetched from JSON
     this.merchants = [];
+    // Stores setTimeouts, makes it easier to clear them
+    this.animationTimeouts = [];
 
     // The steps demo consists of
     this.demoSteps = {
       0: () => {
+        // Remove all the classes
         this.refs.app.classList.remove('f-anim-s1', 'f-anim-s2', 'f-anim-s3', 'f-anim-s4');
-        setTimeout(() => {
+        // Clear all the timeouts
+        this.animationTimeouts.forEach(timeout => clearTimeout(timeout));
+        this.animationTimeouts.push(setTimeout(() =>  {
           this.openSidebar();
-        }, 500);
+        }, 500));
+
         this.setState({
           paymentModalContent: 'contact-form',
           demoMode: false,
@@ -216,11 +223,11 @@ class App extends Component {
     // 3d tilt with processing payment content
     this.demoSteps[3]();
     // Master card window pops in
-    setTimeout(this.demoSteps[4], 1500);
+    this.animationTimeouts.push(setTimeout(this.demoSteps[4], 1500));
     // Master card window pops out, confirmation dialog pops in
-    setTimeout(this.demoSteps[5], 3500);
+    this.animationTimeouts.push(setTimeout(this.demoSteps[5], 3500));
     // 3d tilt ends
-    setTimeout(this.demoSteps[6], 5500);
+    this.animationTimeouts.push(setTimeout(this.demoSteps[6], 5500));
  }
 
   /*
@@ -338,12 +345,14 @@ class App extends Component {
 
         <div className={appClasses} ref="app">
 
-          <ConditionalComp visible={this.state.demoMode}>
+          {/*<ConditionalComp visible={this.state.demoMode}/>>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
 
+          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>*/}
           <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
             <ButtonPrimary
               id="btnStepDemoForward"
