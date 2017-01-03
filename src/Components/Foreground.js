@@ -1,6 +1,15 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class Foreground extends Component {
+  static PropTypes = {
+    amount: PropTypes.number,
+    desc: PropTypes.string
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="masterCardContainer" ref="masterCardContainer">
@@ -14,7 +23,7 @@ class Foreground extends Component {
               Amount
             </div>
             <div className="right-col">
-              ₹{this.props.amount}
+              ₹{this.props.amount || 0}
             </div>
           </div>
 
@@ -41,7 +50,7 @@ class Foreground extends Component {
               Item
             </div>
             <div className="right-col">
-              {this.props.desc}
+              {this.props.desc || 'Payment #42'}
             </div>
           </div>
         </div>

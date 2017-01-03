@@ -342,7 +342,7 @@ class App extends Component {
 
           <Foreground
             amount={currentAmount}
-            desc={currentPaymentDesc} 
+            desc={currentPaymentDesc}
           />
 
         </div>
