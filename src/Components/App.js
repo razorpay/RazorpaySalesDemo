@@ -19,8 +19,13 @@ class App extends Component {
     // The steps demo consists of
     this.demoSteps = {
       0: () => {
-        this.endDemo();
+        this.refs.app.classList.remove('f-anim-s1', 'f-anim-s2', 'f-anim-s3', 'f-anim-s4');
+        setTimeout(() => {
+          this.openSidebar();
+        }, 500);
         this.setState({
+          paymentModalContent: 'contact-form',
+          demoMode: false,
           demoStep: 0
         });
       },
@@ -31,8 +36,41 @@ class App extends Component {
         });
       },
       2: () => {
+        this.refs.app.classList.remove('f-anim-s1');
         this.setState({
+          // STORE 'card-payment' PAYMENT METHOD DYNAMICALLY
+          paymentModalContent: 'card-payment',
           demoStep: 2
+        });
+      },
+      // Steps involving final-animation (f-anim)
+      3: () => {
+        this.refs.app.classList.add('f-anim-s1');
+        this.refs.app.classList.remove('f-anim-s2');
+        this.setState({
+          paymentModalContent: 'processing-payment',
+          demoStep: 3
+        });
+      },
+      4: () => {
+        this.refs.app.classList.add('f-anim-s2');
+        this.refs.app.classList.remove('f-anim-s3');
+        this.refs.app.classList.remove('f-anim-s4');
+        this.setState({
+          demoStep: 4
+        });
+      },
+      5: () => {
+        this.refs.app.classList.add('f-anim-s3');
+        this.refs.app.classList.remove('f-anim-s4');
+        this.setState({
+          demoStep: 5
+        });
+      },
+      6: () => {
+        this.refs.app.classList.add('f-anim-s4');
+        this.setState({
+          demoStep: 6
         });
       }
     };
@@ -58,6 +96,8 @@ class App extends Component {
     this.beginDemo = this.beginDemo.bind(this);
     this.endDemo = this.endDemo.bind(this);
     this.beginPaymentAnimation = this.beginPaymentAnimation.bind(this);
+    this.stepDemoForward = this.stepDemoForward.bind(this);
+    this.stepDemoBackward = this.stepDemoBackward.bind(this);
   }
 
   componentWillMount() {
@@ -121,26 +161,10 @@ class App extends Component {
   }
 
   /*
-  * Function: updateCurrentMerchant(object holding new merchant's data)
-  * -------------------------------------------------------------------
-  * Updates the data visible in the Payment modal to the data passed in
-  * as param to this function.
-  */
-  updateCurrentMerchant(newMerchant) {
-    this.setState({
-      currentMerchantId: newMerchant.id,
-      currentMerchantColor: newMerchant.color,
-      currentMerchantName: newMerchant.name,
-      currentPaymentDesc: newMerchant.desc,
-      currentAmount: newMerchant.amount,
-      currentMerchantLogo: newMerchant.logo,
-    });
-  }
-
-  /*
   * Function: beginDemo
-  * -----------------------
-  * Starts demoing animation.
+  * -------------------------------------------
+  * Puts app in demo mode.
+  * Fired after clicking the 'Begin Demo' button.
   */
   beginDemo() {
     this.closeSidebar();
@@ -158,16 +182,72 @@ class App extends Component {
   * Stops demoing animation.
   */
   endDemo() {
+    this.demoSteps[0]();
+  }
+
+  /*
+  * Function: stepDemoForward
+  * --------------------------
+  * Steps demo one step forward.
+  */
+  stepDemoForward() {
+    var {demoStep} = this.state;
+    if(demoStep !== Object.keys(this.demoSteps).length - 1)
+      this.demoSteps[demoStep + 1]();
+  }
+
+  /*
+  * Function: stepDemoBackward
+  * --------------------------
+  * Steps demo one step backward.
+  */
+  stepDemoBackward() {
+    var {demoStep} = this.state;
+    if(demoStep > 0)
+      this.demoSteps[demoStep - 1]();
+  }
+
+    /*
+  * Function: beginPaymentAnimation
+  * ----------------------------------------
+  * Fires after clicking 'Pay Amount' button.
+  */
+  beginPaymentAnimation() {
+    // 3d tilt with processing payment content
+    this.demoSteps[3]();
+    // Master card window pops in
+    setTimeout(this.demoSteps[4], 1500);
+    // Master card window pops out, confirmation dialog pops in
+    setTimeout(this.demoSteps[5], 3500);
+    // 3d tilt ends
+    setTimeout(this.demoSteps[6], 5500);
+ }
+
+  /*
+  * Function: payUsingCard
+  * -------------------------
+  * Switches the content in the Modal to
+  * pay using card mode.
+  */
+  payUsingCard() {
+    this.demoSteps[2]();
+  }
+
+  /*
+  * Function: updateCurrentMerchant(object holding new merchant's data)
+  * -------------------------------------------------------------------
+  * Updates the data visible in the Payment modal to the data passed in
+  * as param to this function.
+  */
+  updateCurrentMerchant(newMerchant) {
     this.setState({
-      demoMode: false,
-      paymentModalContent: 'contact-form'
+      currentMerchantId: newMerchant.id,
+      currentMerchantColor: newMerchant.color,
+      currentMerchantName: newMerchant.name,
+      currentPaymentDesc: newMerchant.desc,
+      currentAmount: newMerchant.amount,
+      currentMerchantLogo: newMerchant.logo,
     });
-
-    this.refs.app.classList.remove('f-anim-s1', 'f-anim-s2', 'f-anim-s3', 'f-anim-s4');
-
-    setTimeout(() => {
-      this.openSidebar();
-    }, 500);
   }
 
   /*
@@ -223,45 +303,6 @@ class App extends Component {
     });
   }
 
-  /*
-  * Function: beginPaymentAnimation
-  * --------------------------------
-  * Starts the 3d modal popping animation
-  */
-  beginPaymentAnimation() {
-    var app = this.refs.app;
-
-    this.setState({
-      paymentModalContent: 'processing-payment'
-    });
-
-    app.classList.add('f-anim-s1');
-    setTimeout(()=> {
-      app.classList.add('f-anim-s2');
-    }, 1500);
-
-    setTimeout(()=>{
-      app.classList.add('f-anim-s3');
-    }, 3500);
-
-    setTimeout(() => {
-      app.classList.add('f-anim-s4');
-    }, 5500);
- }
-
-  /*
-  * Function: payUsingCard
-  * -------------------------
-  * Switches the content in the Modal to 
-  * pay using card mode.
-  */
-  payUsingCard() {
-    this.setState({
-      paymentModalContent: 'card-payment',
-      demoStep: 2
-    });
-  }
-
   render() {
     var appClasses = classNames({
       'App': true,
@@ -299,8 +340,14 @@ class App extends Component {
 
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
-              id="btnStepBackDemo"
-              fireOnClick={this.demoSteps[this.state.demoStep - 1]}/>
+              id="btnStepDemoBack"
+              fireOnClick={this.stepDemoBackward}/>
+          </ConditionalComp>
+
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
+            <ButtonPrimary
+              id="btnStepDemoForward"
+              fireOnClick={this.stepDemoForward}/>
           </ConditionalComp>
 
           <ConditionalComp visible={this.state.demoMode}>
