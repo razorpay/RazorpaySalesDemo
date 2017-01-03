@@ -7,6 +7,7 @@ import PaymentModal from './PaymentModal';
 import ButtonPrimary from './ButtonPrimary';
 import PaymentButtons from './PaymentButtons';
 import MerchantPaymentWidow from './MerchantPaymentWindow';
+import Foreground from './Foreground';
 import ConditionalComp from './ConditionalComp';
 
 class App extends Component {
@@ -292,9 +293,10 @@ class App extends Component {
           updateDesc={this.updateCurrentPaymentDesc}
           updateAmount={this.updateCurrentAmount}
           updateColor={this.updateCurrentMerchantColor}
-      />
+        />
 
         <div className={appClasses} ref="app">
+
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
               id="btnStepBackDemo"
@@ -338,48 +340,10 @@ class App extends Component {
             <MerchantPaymentWidow />
           </ConditionalComp>
 
-          <div className="masterCardContainer" ref="masterCardContainer">
-            <div className="masterCardWindow" ref="masterCardWindow">
-            </div>
-            <div className="paymentConfirmationWindow">
-              <h1>Thanks for your order!</h1>
-              <div className="row">
-                <div className="left-col">
-                  Amount
-                </div>
-                <div className="right-col">
-                  ₹{currentAmount}
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="left-col">
-                  Date
-                </div>
-                <div className="right-col">
-                  20.09.2016 18:02
-                </div>
-              </div>
-
-            <div className="row">
-                <div className="left-col">
-                  Transaction ID
-                </div>
-                <div className="right-col">
-                  pay_38UehrY839Je4kK
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="left-col">
-                  Item
-                </div>
-                <div className="right-col">
-                  {currentPaymentDesc}
-                </div>
-            </div>
-            </div>
-          </div>
+          <Foreground
+            amount={currentAmount}
+            desc={currentPaymentDesc} 
+          />
 
         </div>
       </div>
