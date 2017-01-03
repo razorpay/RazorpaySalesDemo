@@ -9,7 +9,8 @@
   height: 100%;
   width: 100%;
   z-index: 999;
-  transition: transform 0.7s $slide-easing;
+  transform: translate3d(90px, 0, 0);
+  transition: transform 0.3s $slide-easing;
 
   .masterCardWindow {
     width: 500px;
@@ -17,7 +18,7 @@
     border-radius: 3px;
     background: white;
     border: 1px solid #000;
-    transition: transform 0.3s $slide-easing;
+    transition: transform 0.3s $spring-easing;
     transform: scale(0);
   }
 

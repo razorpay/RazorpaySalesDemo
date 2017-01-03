@@ -345,7 +345,7 @@ class App extends Component {
 
         <div className={appClasses} ref="app">
 
-          {/*<ConditionalComp visible={this.state.demoMode}/>>*/}
+          {/*<ConditionalComp visible={this.state.demoMode}/>*/}
           <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
             <ButtonPrimary
               id="btnStepDemoBack"
