@@ -349,15 +349,15 @@ class App extends Component {
 
         <div className={appClasses} ref="app">
 
-          {/*<ConditionalComp visible={this.state.demoMode}/>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
+          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}/>*/}
+          <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
 
-          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
+          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>
             <ButtonPrimary
               id="btnStepDemoForward"
               fireOnClick={this.stepDemoForward}/>
@@ -383,19 +383,11 @@ class App extends Component {
             />
           </ConditionalComp>
 
-          <ConditionalComp visible={!this.state.demoMode}>
-            <ButtonPrimary
-              id="btnStartDemo"
-              className="buttonPrimary fadeIn"
-              text={this.merchants.length > 0 ? "Begin Demo" : "Loading..."}
-              fireOnClick={this.beginDemo}/>
-          </ConditionalComp>
-
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep === 1 && false}>
-            <PaymentButtons
-              payUsingCard={this.payUsingCard}
-            />
-          </ConditionalComp>
+          <ButtonPrimary
+            id="btnStartDemo"
+            className="buttonPrimary fadeIn"
+            text={this.merchants.length > 0 ? "Begin Demo" : "Loading..."}
+            fireOnClick={this.beginDemo}/>
 
           <ConditionalComp visible={this.state.demoMode}>
             <MerchantPaymentWidow

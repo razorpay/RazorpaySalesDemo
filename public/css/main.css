@@ -316,7 +316,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 64, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 .paymentModal {
-  transform: scale(0.95);
+  transform: scale(0.95) translateY(50px);
 }
 /* line 68, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 .backdropContainer {
@@ -326,67 +326,78 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .f-anim-s0 .paymentButtons {
   transform: scale(1);
 }
+/* line 76, ../../src/Styles/Components/_App.scss */
+.f-anim-s0 #btnStartDemo {
+  visibility: hidden;
+}
 
-/* line 79, ../../src/Styles/Components/_App.scss */
-.f-anim-s1 .paymentModal,
+/* line 83, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .backdropContainer,
 .f-anim-s1 .masterCardContainer {
   transform: translate3d(90px, 0, 0) rotateY(50deg);
 }
-/* line 85, ../../src/Styles/Components/_App.scss */
+/* line 88, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .paymentModal {
+  transform: translate3d(90px, 50px, 0) rotateY(50deg);
+}
+/* line 92, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .masterCardContainer {
   transform: rotateY(50deg);
 }
 
-/* line 92, ../../src/Styles/Components/_App.scss */
-.f-anim-s2 .paymentModal,
+/* line 99, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .backdropContainer {
   transform: translate3d(-35px, 0, -60px) rotateY(50deg);
   opacity: 0.8;
 }
-/* line 97, ../../src/Styles/Components/_App.scss */
+/* line 104, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .paymentModal {
+  transform: translate3d(-35px, 50px, -60px) rotateY(50deg);
+}
+/* line 108, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
   transform: translate3d(0px, 0, 140px) rotateY(50deg);
 }
-/* line 100, ../../src/Styles/Components/_App.scss */
+/* line 111, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
   transform: scale(1);
 }
 
-/* line 108, ../../src/Styles/Components/_App.scss */
+/* line 119, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal,
 .f-anim-s3 .backdropContainer,
 .f-anim-s3 .masterCardContainer {
   transform: translateZ(0) rotateY(50deg);
   opacity: 1;
 }
-/* line 115, ../../src/Styles/Components/_App.scss */
+/* line 126, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 119, ../../src/Styles/Components/_App.scss */
+/* line 130, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer {
   transform: translate3d(0, 0, 0) rotateY(50deg);
 }
-/* line 121, ../../src/Styles/Components/_App.scss */
+/* line 132, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   transform: scale(0);
   transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 125, ../../src/Styles/Components/_App.scss */
+/* line 136, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 133, ../../src/Styles/Components/_App.scss */
+/* line 144, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .paymentModal,
 .f-anim-s4 .backdropContainer,
 .f-anim-s4 .masterCardContainer {
   transform: translateZ(0) rotateY(0);
 }
-/* line 139, ../../src/Styles/Components/_App.scss */
+/* line 150, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer {
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   transform: rotateY(0);
 }
 
@@ -487,7 +498,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   min-width: 350px;
   background: white;
   border-radius: 3px;
-  transition: all 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   font-family: 'Lato';
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
@@ -732,7 +743,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: -20px -20px 0 -20px;
   padding: 20px;
   display: flex;
-  height: 360px;
+  height: 260px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -962,7 +973,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   background: transparent;
   transform: scale(1.1);
-  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   z-index: -999;
 }
 
@@ -998,7 +1009,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 3px;
   background: url("../images/mastercard.png") no-repeat center center;
   background-size: contain;
-  transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
+  transition: transform 0.5s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }
 /* line 25, ../../src/Styles/Components/_Foreground.scss */

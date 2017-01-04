@@ -62,7 +62,7 @@ $rotation: 50deg;
 // browser window a bit
 .f-anim-s0 {
   .paymentModal {
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(50px);
   }
 
   .backdropContainer {
@@ -72,14 +72,21 @@ $rotation: 50deg;
   .paymentButtons {
     transform: scale(1);
   }
+
+  #btnStartDemo {
+    visibility: hidden;
+  }
 }
 
 // First Step
 .f-anim-s1 {
-  .paymentModal,
   .backdropContainer,
   .masterCardContainer {
     transform: translate3d(90px, 0, 0) rotateY($rotation);
+  }
+
+  .paymentModal {
+    transform: translate3d(90px, 50px, 0) rotateY($rotation);
   }
 
   .masterCardContainer {
@@ -89,11 +96,15 @@ $rotation: 50deg;
 
 // Second Step
 .f-anim-s2 {
-  .paymentModal,
   .backdropContainer {
     transform: translate3d(-35px, 0, -60px) rotateY($rotation);
     opacity: 0.8;
   }
+
+  .paymentModal {
+    transform: translate3d(-35px, 50px, -60px) rotateY($rotation);
+  }
+
  .masterCardContainer {
     visibility: visible;
     transform: translate3d(0px, 0, 140px) rotateY($rotation);
@@ -137,6 +148,7 @@ $rotation: 50deg;
   }
 
   .masterCardContainer {
+    transition: transform 0.7s $slide-easing;
     transform: rotateY(0);
   }
 }

@@ -53,7 +53,7 @@ class Sidebar extends Component {
       visibleMerchant: arguments[0]
     });
     // Clear the inputs inside merchant detail
-    // this.refs.merchantDetail && this.refs.merchantDetail.clearInputs();
+    this.refs.merchantDetail && this.refs.merchantDetail.clearInputs();
   }
 
  /*
