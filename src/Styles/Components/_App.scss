@@ -58,18 +58,19 @@
 // Steps of final payment animation
 $rotation: 50deg;
 
-// 0th step just taaaa.... ya know
+// 0th sets up the stage, shrinks the payment modal a bit scales up the 
+// browser window a bit
 .f-anim-s0 {
   .paymentModal {
-    transform: scale(0.9) translateY(30px);
+    transform: scale(0.95);
   }
 
   .backdropContainer {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .paymentButtons {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 
@@ -90,7 +91,7 @@ $rotation: 50deg;
 .f-anim-s2 {
   .paymentModal,
   .backdropContainer {
-    transform: translate3d(-35px, 0, -60px) rotateY($rotation); 
+    transform: translate3d(-35px, 0, -60px) rotateY($rotation);
     opacity: 0.8;
   }
  .masterCardContainer {
