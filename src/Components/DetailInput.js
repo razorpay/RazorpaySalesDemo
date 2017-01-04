@@ -17,11 +17,16 @@ class DetailInput extends Component {
       <div className="inputWrap">
         <label>{this.props.labelText}</label>
         <input
-        ref="detailInput"
-        className="input"
-        type={this.props.type}
-        placeholder={this.props.placeholder}
-        onChange={this.props.onChange}/>
+          ref="detailInput"
+          className="input"
+          type={this.props.type}
+          placeholder={this.props.placeholder}
+          onChange={(e) => {
+            this.props.onChange(e);
+            if(!e.target.value)
+              e.target.placeholder = e.target.value;
+          }}
+        />
       </div>
     );
   }

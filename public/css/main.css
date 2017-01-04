@@ -532,8 +532,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 41, ../../src/Styles/Components/_PaymentModal.scss */
 .paymentModalHeader #header-merchant-logo {
-  width: 86px;
-  height: 86px;
+  width: 72px;
+  height: 72px;
   border-radius: 3px;
   margin-right: 24px;
   background: white;
@@ -996,8 +996,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 500px;
   height: 500px;
   border-radius: 3px;
-  background: white;
-  border: 1px solid #000;
+  background: url("../images/mastercard.png") no-repeat center center;
+  background-size: contain;
   transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }

@@ -29,7 +29,7 @@ class MerchantDetail extends Component {
     return (
       <div className={mDetailClasses}>
         <div className="merchantInfo">
-          <div 
+          <div
             style={{
               backgroundImage: `url(${this.props.data.logo})`
             }}
