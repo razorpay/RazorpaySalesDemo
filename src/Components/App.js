@@ -78,8 +78,15 @@ class App extends Component {
       },
       6: () => {
         this.refs.app.classList.add('f-anim-s4');
+        this.refs.app.classList.remove('f-anim-s5');
         this.setState({
           demoStep: 6
+        });
+      },
+      7: () => {
+        this.refs.app.classList.add('f-anim-s5');
+        this.setState({
+          demoStep: 7
         });
       }
     };
@@ -178,7 +185,6 @@ class App extends Component {
   */
   beginDemo() {
     this.closeSidebar();
-    this.refs.app.classList.add('booty');
     this.animationTimeouts.push(setTimeout(()=>{
       this.refs.app.classList.add('f-anim-s0');
       this.demoSteps[1]();
@@ -224,12 +230,10 @@ class App extends Component {
   beginPaymentAnimation() {
     // 3d tilt with processing payment content
     this.demoSteps[3]();
-    // Master card window pops in
     this.animationTimeouts.push(setTimeout(this.demoSteps[4], 1500));
-    // Master card window pops out, confirmation dialog pops in
     this.animationTimeouts.push(setTimeout(this.demoSteps[5], 3500));
-    // 3d tilt ends
     this.animationTimeouts.push(setTimeout(this.demoSteps[6], 5500));
+    this.animationTimeouts.push(setTimeout(this.demoSteps[7], 7500));
  }
 
   /*
@@ -385,7 +389,7 @@ class App extends Component {
 
           <ButtonPrimary
             id="btnStartDemo"
-            className="buttonPrimary fadeIn"
+            className="buttonPrimary"
             text={this.merchants.length > 0 ? "Begin Demo" : "Loading..."}
             fireOnClick={this.beginDemo}/>
 

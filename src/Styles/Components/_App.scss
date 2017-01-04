@@ -6,17 +6,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: width 0.3s, margin 0.3s;
+  transition: transform 0.3s;
 }
 
 .shrunk {
-  width: 100vw - $width-sidebar;
-  margin-left: $width-sidebar;
+  // Do nolthing
+  .paymentModal,
+  #btnStartDemo {
+    transform: translate($width-sidebar/2);
+  }
+  // width: 100vw - $width-sidebar;
+  // margin-left: $width-sidebar;
 }
 
 %btnDemoNav {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
   width: 75px;
   height: 55px;
@@ -56,21 +61,21 @@
 }
 
 // Steps of final payment animation
-$rotation: 50deg;
+$rotation: 30deg;
 
-// 0th sets up the stage, shrinks the payment modal a bit scales up the 
+// 0th sets up the stage, shrinks the payment modal a bit scales up the
 // browser window a bit
 .f-anim-s0 {
   .paymentModal {
-    transform: scale(0.95) translateY(50px);
+    @include transform(scale(0.95) translateY(50px));
   }
 
   .backdropContainer {
-    transform: scale(1.05);
+    @include transform(scale(1.05));
   }
 
   .paymentButtons {
-    transform: scale(1);
+    @include transform(scale(1));
   }
 
   #btnStartDemo {
@@ -80,75 +85,63 @@ $rotation: 50deg;
 
 // First Step
 .f-anim-s1 {
-  .backdropContainer,
-  .masterCardContainer {
-    transform: translate3d(90px, 0, 0) rotateY($rotation);
-  }
-
   .paymentModal {
-    transform: translate3d(90px, 50px, 0) rotateY($rotation);
+    @include transition(transform 0.5s ease-out);
+    @include transform(scale(0.95) translate3d(0, 50px, 10px) rotateY($rotation));
   }
 
-  .masterCardContainer {
-    transform: rotateY($rotation);
+  .backdropContainer {
+    @include transition(transform 0.5s ease-out);
+    @include transform(scale(1.05) rotateY($rotation));
   }
 }
 
 // Second Step
 .f-anim-s2 {
-  .backdropContainer {
-    transform: translate3d(-35px, 0, -60px) rotateY($rotation);
-    opacity: 0.8;
-  }
-
-  .paymentModal {
-    transform: translate3d(-35px, 50px, -60px) rotateY($rotation);
-  }
-
- .masterCardContainer {
+  .masterCardContainer {
     visibility: visible;
-    transform: translate3d(0px, 0, 140px) rotateY($rotation);
+    @include transform(rotateY($rotation));
     .masterCardWindow {
-      transform: scale(1);
+      @include transition(transform 0.35s cubic-bezier(0,1.03,.58,1.02));
+      @include transform (scale(1.2));
     }
   }
 }
 
 // Third step
 .f-anim-s3 {
-  .paymentModal,
-  .backdropContainer,
-  .masterCardContainer {
-    transform: translateZ(0) rotateY($rotation);
-    opacity: 1;
-  }
-
   .paymentModal {
     opacity: 0;
   }
 
-  .masterCardContainer{
-    transform: translate3d(0, 0, 0) rotateY($rotation);
-    .masterCardWindow {
-      transform: scale(0);
-      transition: transform 0.3s $slide-easing;
-    }
-    .paymentConfirmationWindow {
-      transform: scale(1) translate3d(-50%, -50%, 0);
-    }
+  .masterCardContainer .masterCardWindow {
+    @include transform(scale(0));
   }
 }
 
 // Fourth step
 .f-anim-s4 {
-  .paymentModal,
-  .backdropContainer,
   .masterCardContainer {
-    transform: translateZ(0) rotateY(0);
+    .paymentConfirmationWindow {
+      @include transform(scale(1) translate3d(-50%, -50%, 0));
+    }
+  }
+}
+
+// Fifth step
+.f-anim-s5 {
+  .paymentModal {
+    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transform(rotateY(0));
+  }
+
+  .backdropContainer {
+    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transform(rotateY(0));
   }
 
   .masterCardContainer {
-    transition: transform 0.7s $slide-easing;
-    transform: rotateY(0);
+    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transform(rotateY(0));
   }
 }

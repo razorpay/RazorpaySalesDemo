@@ -101,6 +101,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: none;
   }
 }
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes bounceIn {
   from {
     transform: scale(0);
@@ -179,63 +189,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 0;
   }
 }
-/* line 115, ../../src/Styles/_animations.scss */
+/* line 127, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 119, ../../src/Styles/_animations.scss */
+/* line 131, ../../src/Styles/_animations.scss */
+.fadeInRight {
+  -moz-animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+  -webkit-animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+  animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
+}
+
+/* line 135, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 123, ../../src/Styles/_animations.scss */
+/* line 139, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 127, ../../src/Styles/_animations.scss */
+/* line 143, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 131, ../../src/Styles/_animations.scss */
+/* line 147, ../../src/Styles/_animations.scss */
 .bounceOut {
   -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
 }
 
-/* line 135, ../../src/Styles/_animations.scss */
+/* line 151, ../../src/Styles/_animations.scss */
 .fadeInUp {
   -moz-animation: fadeInUp 0.3s;
   -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 139, ../../src/Styles/_animations.scss */
+/* line 155, ../../src/Styles/_animations.scss */
 .fadeInUpScaleDown {
   -moz-animation: fadeInUpScaleDown 0.3s;
   -webkit-animation: fadeInUpScaleDown 0.3s;
   animation: fadeInUpScaleDown 0.3s;
 }
 
-/* line 144, ../../src/Styles/_animations.scss */
+/* line 160, ../../src/Styles/_animations.scss */
 .fadeInDown {
   -moz-animation: fadeInDown 0.3s both;
   -webkit-animation: fadeInDown 0.3s both;
   animation: fadeInDown 0.3s both;
 }
 
-/* line 148, ../../src/Styles/_animations.scss */
+/* line 164, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
 }
@@ -248,7 +265,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotateY(30deg);
   }
 }
-/* line 162, ../../src/Styles/_animations.scss */
+/* line 178, ../../src/Styles/_animations.scss */
 .demo-rotate {
   animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
@@ -262,19 +279,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: width 0.3s, margin 0.3s;
+  transition: transform 0.3s;
 }
 
-/* line 12, ../../src/Styles/Components/_App.scss */
-.shrunk {
-  width: 60vw;
-  margin-left: 40vw;
+/* line 14, ../../src/Styles/Components/_App.scss */
+.shrunk .paymentModal,
+.shrunk #btnStartDemo {
+  transform: translate(20vw);
 }
 
-/* line 17, ../../src/Styles/Components/_App.scss */
+/* line 22, ../../src/Styles/Components/_App.scss */
 #btnStepDemoBack, #btnStepDemoForward, #btnEndDemo {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
   width: 75px;
   height: 55px;
@@ -283,14 +300,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   z-index: 9999;
 }
 
-/* line 28, ../../src/Styles/Components/_App.scss */
+/* line 33, ../../src/Styles/Components/_App.scss */
 #btnStepDemoBack {
   background-image: url("../images/icon_arrow_white.svg");
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-/* line 35, ../../src/Styles/Components/_App.scss */
+/* line 40, ../../src/Styles/Components/_App.scss */
 #btnStepDemoForward {
   left: 100px;
   background-image: url("../images/icon_arrow_white.svg");
@@ -299,7 +316,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: rotate(180deg);
 }
 
-/* line 44, ../../src/Styles/Components/_App.scss */
+/* line 49, ../../src/Styles/Components/_App.scss */
 #btnEndDemo {
   left: auto;
   right: 20px;
@@ -309,95 +326,131 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: all 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
 
-/* line 54, ../../src/Styles/Components/_App.scss */
+/* line 59, ../../src/Styles/Components/_App.scss */
 #btnStartDemo {
   margin-top: 20px;
 }
 
-/* line 64, ../../src/Styles/Components/_App.scss */
+/* line 69, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 .paymentModal {
+  -moz-transform: scale(0.95) translateY(50px);
+  -ms-transform: scale(0.95) translateY(50px);
+  -webkit-transform: scale(0.95) translateY(50px);
   transform: scale(0.95) translateY(50px);
 }
-/* line 68, ../../src/Styles/Components/_App.scss */
+/* line 73, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 .backdropContainer {
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
   transform: scale(1.05);
 }
-/* line 72, ../../src/Styles/Components/_App.scss */
+/* line 77, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 .paymentButtons {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 76, ../../src/Styles/Components/_App.scss */
+/* line 81, ../../src/Styles/Components/_App.scss */
 .f-anim-s0 #btnStartDemo {
   visibility: hidden;
 }
 
-/* line 83, ../../src/Styles/Components/_App.scss */
-.f-anim-s1 .backdropContainer,
-.f-anim-s1 .masterCardContainer {
-  transform: translate3d(90px, 0, 0) rotateY(50deg);
-}
 /* line 88, ../../src/Styles/Components/_App.scss */
 .f-anim-s1 .paymentModal {
-  transform: translate3d(90px, 50px, 0) rotateY(50deg);
+  -moz-transition: -moz-transform 0.5s ease-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  -moz-transform: scale(0.95) translate3d(0, 50px, 10px) rotateY(30deg);
+  -ms-transform: scale(0.95) translate3d(0, 50px, 10px) rotateY(30deg);
+  -webkit-transform: scale(0.95) translate3d(0, 50px, 10px) rotateY(30deg);
+  transform: scale(0.95) translate3d(0, 50px, 10px) rotateY(30deg);
 }
-/* line 92, ../../src/Styles/Components/_App.scss */
-.f-anim-s1 .masterCardContainer {
-  transform: rotateY(50deg);
+/* line 93, ../../src/Styles/Components/_App.scss */
+.f-anim-s1 .backdropContainer {
+  -moz-transition: -moz-transform 0.5s ease-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  -moz-transform: scale(1.05) rotateY(30deg);
+  -ms-transform: scale(1.05) rotateY(30deg);
+  -webkit-transform: scale(1.05) rotateY(30deg);
+  transform: scale(1.05) rotateY(30deg);
 }
 
-/* line 99, ../../src/Styles/Components/_App.scss */
-.f-anim-s2 .backdropContainer {
-  transform: translate3d(-35px, 0, -60px) rotateY(50deg);
-  opacity: 0.8;
-}
-/* line 104, ../../src/Styles/Components/_App.scss */
-.f-anim-s2 .paymentModal {
-  transform: translate3d(-35px, 50px, -60px) rotateY(50deg);
-}
-/* line 108, ../../src/Styles/Components/_App.scss */
+/* line 101, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
-  transform: translate3d(0px, 0, 140px) rotateY(50deg);
+  -moz-transform: rotateY(30deg);
+  -ms-transform: rotateY(30deg);
+  -webkit-transform: rotateY(30deg);
+  transform: rotateY(30deg);
 }
-/* line 111, ../../src/Styles/Components/_App.scss */
+/* line 104, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
-  transform: scale(1);
+  -moz-transition: -moz-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -o-transition: -o-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
+  transition: transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-/* line 119, ../../src/Styles/Components/_App.scss */
-.f-anim-s3 .paymentModal,
-.f-anim-s3 .backdropContainer,
-.f-anim-s3 .masterCardContainer {
-  transform: translateZ(0) rotateY(50deg);
-  opacity: 1;
-}
-/* line 126, ../../src/Styles/Components/_App.scss */
+/* line 113, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 130, ../../src/Styles/Components/_App.scss */
-.f-anim-s3 .masterCardContainer {
-  transform: translate3d(0, 0, 0) rotateY(50deg);
-}
-/* line 132, ../../src/Styles/Components/_App.scss */
+/* line 117, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
   transform: scale(0);
-  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 136, ../../src/Styles/Components/_App.scss */
-.f-anim-s3 .masterCardContainer .paymentConfirmationWindow {
+
+/* line 125, ../../src/Styles/Components/_App.scss */
+.f-anim-s4 .masterCardContainer .paymentConfirmationWindow {
+  -moz-transform: scale(1) translate3d(-50%, -50%, 0);
+  -ms-transform: scale(1) translate3d(-50%, -50%, 0);
+  -webkit-transform: scale(1) translate3d(-50%, -50%, 0);
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 144, ../../src/Styles/Components/_App.scss */
-.f-anim-s4 .paymentModal,
-.f-anim-s4 .backdropContainer,
-.f-anim-s4 .masterCardContainer {
-  transform: translateZ(0) rotateY(0);
+/* line 133, ../../src/Styles/Components/_App.scss */
+.f-anim-s5 .paymentModal {
+  -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  transition: transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
 }
-/* line 150, ../../src/Styles/Components/_App.scss */
-.f-anim-s4 .masterCardContainer {
-  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+/* line 138, ../../src/Styles/Components/_App.scss */
+.f-anim-s5 .backdropContainer {
+  -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  transition: transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+/* line 143, ../../src/Styles/Components/_App.scss */
+.f-anim-s5 .masterCardContainer {
+  -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  transition: transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
 
@@ -498,8 +551,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   min-width: 350px;
   background: white;
   border-radius: 3px;
-  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   font-family: 'Lato';
+  transition: transform 0.5s cubic-bezier(0.4, 0.03, 0.18, 1.1);
   -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
@@ -743,7 +796,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: -20px -20px 0 -20px;
   padding: 20px;
   display: flex;
-  height: 260px;
+  height: 340px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -786,7 +839,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   letter-spacing: 2px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   opacity: 1;
-  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transition: transform 0.5s cubic-bezier(0.4, 0.03, 0.18, 1.1);
 }
 /* line 16, ../../src/Styles/Components/_ButtonPrimary.scss */
 .buttonPrimary:active {
@@ -973,7 +1026,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   background: transparent;
   transform: scale(1.1);
-  transition: transform 0.7s cubic-bezier(0.06, 0.69, 0.18, 1.01);
+  transition: transform 0.5s cubic-bezier(0.4, 0.03, 0.18, 1.1);
   z-index: -999;
 }
 
@@ -999,10 +1052,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   width: 100%;
   z-index: 999;
-  transform: translate3d(90px, 0, 0);
-  transition: transform 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
 }
-/* line 15, ../../src/Styles/Components/_Foreground.scss */
+/* line 13, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow {
   width: 500px;
   height: 500px;
@@ -1012,7 +1063,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.5s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }
-/* line 25, ../../src/Styles/Components/_Foreground.scss */
+/* line 23, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow {
   position: absolute;
   top: 50%;
@@ -1023,27 +1074,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 500px;
   transition: transform 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform-origin: 0% 0%;
-  transition-delay: 1s;
   padding: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 38, ../../src/Styles/Components/_Foreground.scss */
+/* line 35, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow h1 {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 42, ../../src/Styles/Components/_Foreground.scss */
+/* line 39, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row {
   display: flex;
   width: 100%;
   padding: 30px 0 0 0;
 }
-/* line 46, ../../src/Styles/Components/_Foreground.scss */
+/* line 43, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .left-col,
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   flex: 1;
 }
-/* line 50, ../../src/Styles/Components/_Foreground.scss */
+/* line 47, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   text-align: right;
 }

@@ -80,7 +80,7 @@ class Sidebar extends Component {
     return (
       <div className={classes}>
         <SidebarHeader
-          text="Customize Modal"
+          text="Razorpay Checkout"
           subtext="Merchants"
           backButtonVisible={this.state.visibleState === this.visibleStates.detail}
           backToList={this.showMerchantList}
