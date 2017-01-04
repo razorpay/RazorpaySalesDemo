@@ -100,7 +100,7 @@ $rotation: 30deg;
 .f-anim-s2 {
   .masterCardContainer {
     visibility: visible;
-    @include transform(rotateY($rotation));
+    @include transform(rotateY($rotation) translateZ(30px));
     .masterCardWindow {
       @include transition(transform 0.35s cubic-bezier(0,1.03,.58,1.02));
       @include transform (scale(1.2));

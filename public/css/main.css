@@ -383,10 +383,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 101, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer {
   visibility: visible;
-  -moz-transform: rotateY(30deg);
-  -ms-transform: rotateY(30deg);
-  -webkit-transform: rotateY(30deg);
-  transform: rotateY(30deg);
+  -moz-transform: rotateY(30deg) translateZ(30px);
+  -ms-transform: rotateY(30deg) translateZ(30px);
+  -webkit-transform: rotateY(30deg) translateZ(30px);
+  transform: rotateY(30deg) translateZ(30px);
 }
 /* line 104, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
@@ -1052,8 +1052,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   width: 100%;
   z-index: 999;
+  transform: translateZ(30px);
 }
-/* line 13, ../../src/Styles/Components/_Foreground.scss */
+/* line 14, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow {
   width: 500px;
   height: 500px;
@@ -1063,7 +1064,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.5s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }
-/* line 23, ../../src/Styles/Components/_Foreground.scss */
+/* line 24, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow {
   position: absolute;
   top: 50%;
@@ -1077,23 +1078,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 35, ../../src/Styles/Components/_Foreground.scss */
+/* line 36, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow h1 {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 39, ../../src/Styles/Components/_Foreground.scss */
+/* line 40, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row {
   display: flex;
   width: 100%;
   padding: 30px 0 0 0;
 }
-/* line 43, ../../src/Styles/Components/_Foreground.scss */
+/* line 44, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .left-col,
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   flex: 1;
 }
-/* line 47, ../../src/Styles/Components/_Foreground.scss */
+/* line 48, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   text-align: right;
 }

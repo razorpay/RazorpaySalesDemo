@@ -353,6 +353,11 @@ class App extends Component {
 
         <div className={appClasses} ref="app">
 
+          <Foreground
+            amount={currentAmount}
+            desc={currentPaymentDesc}
+          />
+
           {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}/>*/}
           <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
@@ -399,12 +404,7 @@ class App extends Component {
             />
           </ConditionalComp>
 
-          <Foreground
-            amount={currentAmount}
-            desc={currentPaymentDesc}
-          />
-
-        </div>
+       </div>
       </div>
     );
   }
