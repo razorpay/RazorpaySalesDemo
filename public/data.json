@@ -3,7 +3,8 @@
     "id": 0,
     "name": "Akbar Travels",
     "logo": "./images/logo_akbartravels.png",
-    "desc": "Payment #223",
+    "browserPreview": "./images/browser_akbartravels.png",
+    "desc": "Bombay to Goa",
     "amount": 7000,
     "color": "#1ABC9C"
   },
@@ -11,7 +12,8 @@
     "id": 1,
     "name": "Nestaway",
     "logo": "./images/logo_nestaway.png",
-    "desc": "Payment #42",
+    "browserPreview": "./images/browser_nestaway.png",
+    "desc": "3 BHK",
     "amount": 699,
     "color": "#9681A0"
   },
@@ -19,7 +21,8 @@
     "id": 2,
     "name": "Chaipoint",
     "logo": "./images/logo_chaipoint.png",
-    "desc": "Payment #314",
+    "browserPreview": "./images/browser_chaipoint.png",
+    "desc": "Banana Cake",
     "amount": 341,
     "color": "#7A73AF"
   },
@@ -27,7 +30,8 @@
     "id": 3,
     "name": "Rentomojo",
     "logo": "./images/logo_rentomojo.png",
-    "desc": "Payment #222",
+    "browserPreview": "./images/browser_rentomojo.png",
+    "desc": "3 Couches",
     "amount": 3.1415,
     "color": "#F0DB4F"
   },
@@ -35,7 +39,8 @@
     "id": 4,
     "name": "Licious",
     "logo": "./images/logo_licious.png",
-    "desc": "Payment #314159",
+    "browserPreview": "./images/browser_licious.png",
+    "desc": "Tender lamb",
     "amount": 42,
     "color": "#767D76"
   },
@@ -43,7 +48,8 @@
     "id": 5,
     "name": "Papa Johns",
     "logo": "./images/logo_papajohns.png",
-    "desc": "Payment #221",
+    "browserPreview": "./images/browser_papajohns.png",
+    "desc": "12 inches",
     "amount": 800,
     "color": "#6ADCFB"
   }

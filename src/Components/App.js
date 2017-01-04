@@ -132,7 +132,8 @@ class App extends Component {
           currentPaymentDesc: currentMerchant.desc,
           currentAmount: currentMerchant.amount,
           currentMerchantLogo: currentMerchant.logo,
-          currentMerchantColor: currentMerchant.color
+          currentMerchantColor: currentMerchant.color,
+          currentMerchantBrowserPreview: currentMerchant.browserPreview
         });
       })
       .catch(error => console.log('JSON fetch error: ' + error));
@@ -255,6 +256,7 @@ class App extends Component {
       currentPaymentDesc: newMerchant.desc,
       currentAmount: newMerchant.amount,
       currentMerchantLogo: newMerchant.logo,
+      currentMerchantBrowserPreview: newMerchant.browserPreview
     });
   }
 
@@ -324,7 +326,8 @@ class App extends Component {
         currentPaymentDesc,
         currentAmount,
         currentMerchantLogo,
-        currentMerchantColor} = this.state;
+        currentMerchantColor,
+        currentMerchantBrowserPreview} = this.state;
 
     return (
       /*
@@ -395,7 +398,9 @@ class App extends Component {
           </ConditionalComp>
 
           <ConditionalComp visible={this.state.demoMode}>
-            <MerchantPaymentWidow />
+            <MerchantPaymentWidow
+              browserPreview={currentMerchantBrowserPreview}
+            />
           </ConditionalComp>
 
           <Foreground

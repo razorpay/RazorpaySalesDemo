@@ -970,7 +970,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .merchantPaymentWindow {
   height: 80vmin;
   width: 120vmin;
-  background-image: url("../images/bg_browser.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;

@@ -4,7 +4,11 @@ class MerchantPaymentWindow extends Component {
   render() {
     return (
       <div className="backdropContainer">
-        <div className="merchantPaymentWindow fadeInUp">
+        <div
+          style={{
+            backgroundImage: `url(${this.props.browserPreview})`
+          }}
+          className="merchantPaymentWindow fadeInUp">
         </div>
       </div>
     );
