@@ -81,6 +81,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+@keyframes otp-fill-anim {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -3396px;
+  }
+}
 @keyframes slideIn {
   to {
     transform: translateX(0);
@@ -189,70 +197,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     opacity: 0;
   }
 }
-/* line 127, ../../src/Styles/_animations.scss */
+/* line 132, ../../src/Styles/_animations.scss */
 .fadeInLeft {
   -moz-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInLeft 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 131, ../../src/Styles/_animations.scss */
+/* line 136, ../../src/Styles/_animations.scss */
 .fadeInRight {
   -moz-animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   -webkit-animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
   animation: fadeInRight 0.5s cubic-bezier(0.17, 0.67, 0.32, 1.01) forwards;
 }
 
-/* line 135, ../../src/Styles/_animations.scss */
+/* line 140, ../../src/Styles/_animations.scss */
 .slideIn {
   -moz-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideIn 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 139, ../../src/Styles/_animations.scss */
+/* line 144, ../../src/Styles/_animations.scss */
 .slideOut {
   -moz-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   -webkit-animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
   animation: slideOut 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01) both;
 }
 
-/* line 143, ../../src/Styles/_animations.scss */
+/* line 148, ../../src/Styles/_animations.scss */
 .bounceIn {
   -moz-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   -webkit-animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
   animation: bounceIn 0.3s both cubic-bezier(0.01, 0.66, 0.22, 1.25);
 }
 
-/* line 147, ../../src/Styles/_animations.scss */
+/* line 152, ../../src/Styles/_animations.scss */
 .bounceOut {
   -moz-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   -webkit-animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
   animation: bounceOut 0.3s both cubic-bezier(0.59, -0.46, 0.29, 1.24);
 }
 
-/* line 151, ../../src/Styles/_animations.scss */
+/* line 156, ../../src/Styles/_animations.scss */
 .fadeInUp {
   -moz-animation: fadeInUp 0.3s;
   -webkit-animation: fadeInUp 0.3s;
   animation: fadeInUp 0.3s;
 }
 
-/* line 155, ../../src/Styles/_animations.scss */
+/* line 160, ../../src/Styles/_animations.scss */
 .fadeInUpScaleDown {
   -moz-animation: fadeInUpScaleDown 0.3s;
   -webkit-animation: fadeInUpScaleDown 0.3s;
   animation: fadeInUpScaleDown 0.3s;
 }
 
-/* line 160, ../../src/Styles/_animations.scss */
+/* line 165, ../../src/Styles/_animations.scss */
 .fadeInDown {
   -moz-animation: fadeInDown 0.3s both;
   -webkit-animation: fadeInDown 0.3s both;
   animation: fadeInDown 0.3s both;
 }
 
-/* line 164, ../../src/Styles/_animations.scss */
+/* line 169, ../../src/Styles/_animations.scss */
 .fadeIn {
   animation: fadeIn 0.3s;
 }
@@ -265,7 +273,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotateY(30deg);
   }
 }
-/* line 178, ../../src/Styles/_animations.scss */
+/* line 183, ../../src/Styles/_animations.scss */
 .demo-rotate {
   animation: demo-rotate 0.3s cubic-bezier(0.01, 0.66, 0.22, 1.25) both;
 }
@@ -394,17 +402,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -o-transition: -o-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
   -webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
   transition: transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -moz-animation: otp-fill-anim 2s steps(6, start) forwards;
+  -webkit-animation: otp-fill-anim 2s steps(6, start) forwards;
+  animation: otp-fill-anim 2s steps(6, start) forwards;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
-/* line 113, ../../src/Styles/Components/_App.scss */
+/* line 115, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 117, ../../src/Styles/Components/_App.scss */
+/* line 119, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -412,7 +426,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(0);
 }
 
-/* line 125, ../../src/Styles/Components/_App.scss */
+/* line 127, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer .paymentConfirmationWindow {
   -moz-transform: scale(1) translate3d(-50%, -50%, 0);
   -ms-transform: scale(1) translate3d(-50%, -50%, 0);
@@ -420,7 +434,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 133, ../../src/Styles/Components/_App.scss */
+/* line 135, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .paymentModal {
   -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
   -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
@@ -431,7 +445,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
-/* line 138, ../../src/Styles/Components/_App.scss */
+/* line 140, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .backdropContainer {
   -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
   -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
@@ -442,7 +456,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
-/* line 143, ../../src/Styles/Components/_App.scss */
+/* line 145, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .masterCardContainer {
   -moz-transition: -moz-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
   -o-transition: -o-transform 0.7s cubic-bezier(0, 1.03, 0.58, 1.02);
@@ -491,7 +505,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: #F2F2F2;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   color: #6C6C6C;
   transition: padding 0.3s cubic-bezier(0.06, 0.69, 0.18, 1.01);
   flex-grow: 1;
@@ -1056,15 +1070,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 14, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow {
-  width: 500px;
-  height: 500px;
+  width: 762px;
+  height: 566px;
   border-radius: 3px;
-  background: url("../images/mastercard.png") no-repeat center center;
-  background-size: contain;
+  background: url("../images/mastercard.png") 0 0 no-repeat;
   transition: transform 0.5s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }
-/* line 24, ../../src/Styles/Components/_Foreground.scss */
+/* line 23, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow {
   position: absolute;
   top: 50%;
@@ -1078,23 +1091,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 36, ../../src/Styles/Components/_Foreground.scss */
+/* line 35, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow h1 {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 40, ../../src/Styles/Components/_Foreground.scss */
+/* line 39, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row {
   display: flex;
   width: 100%;
   padding: 30px 0 0 0;
 }
-/* line 44, ../../src/Styles/Components/_Foreground.scss */
+/* line 43, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .left-col,
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   flex: 1;
 }
-/* line 48, ../../src/Styles/Components/_Foreground.scss */
+/* line 47, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   text-align: right;
 }

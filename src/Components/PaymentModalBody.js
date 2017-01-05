@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // Components
-import PaymentIcon from './CardIcon';
+import PaymentIcon from './PaymentIcon';
 
 class PaymentModalBody extends Component {
 

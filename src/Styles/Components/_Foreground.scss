@@ -12,11 +12,10 @@
   transform: translateZ(30px);
 
   .masterCardWindow {
-    width: 500px;
-    height: 500px;
+    width: 762px;
+    height: 566px;
     border-radius: 3px;
-    background: url('../images/mastercard.png') no-repeat center center;
-    background-size: contain;
+    background: url('../images/mastercard.png') 0 0 no-repeat;
     transition: transform 0.5s $spring-easing;
     transform: scale(0);
   }

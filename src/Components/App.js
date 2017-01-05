@@ -230,10 +230,14 @@ class App extends Component {
   beginPaymentAnimation() {
     // 3d tilt with processing payment content
     this.demoSteps[3]();
+    // Master card popping up
     this.animationTimeouts.push(setTimeout(this.demoSteps[4], 1500));
-    this.animationTimeouts.push(setTimeout(this.demoSteps[5], 3500));
-    this.animationTimeouts.push(setTimeout(this.demoSteps[6], 5500));
-    this.animationTimeouts.push(setTimeout(this.demoSteps[7], 7500));
+    // Master card popping out and checkout modal hiding
+    this.animationTimeouts.push(setTimeout(this.demoSteps[5], 6000));
+    // Payment Confirmation window pops in
+    this.animationTimeouts.push(setTimeout(this.demoSteps[6], 7000));
+    // Rotate back to 0 degrees
+    this.animationTimeouts.push(setTimeout(this.demoSteps[7], 8000));
  }
 
   /*
@@ -358,15 +362,15 @@ class App extends Component {
             desc={currentPaymentDesc}
           />
 
-          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}/>*/}
-          <ConditionalComp visible={this.state.demoMode}>
+          {/*<ConditionalComp visible={this.state.demoMode}/>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
 
-          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>
+          {/*<ConditionalComp visible={this.state.demoMode}>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
             <ButtonPrimary
               id="btnStepDemoForward"
               fireOnClick={this.stepDemoForward}/>
