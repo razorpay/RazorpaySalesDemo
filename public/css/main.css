@@ -989,19 +989,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 36px;
   margin-right: 15px;
   background: url("../images/icon_back_arrow.svg") no-repeat center center;
-  background-color: #8C82BD;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
-/* line 26, ../../src/Styles/Components/_MerchantDetail.scss */
-.merchantDetail .merchantInfo .backIcon:hover {
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
-}
-/* line 32, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 25, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .merchantInfo .merchantLogo {
   height: 64px;
   width: 64px;
@@ -1010,19 +1002,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 41, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 34, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .merchantInfo h1 {
   font-size: 18px;
   font-weight: 700;
   margin-left: 20px;
 }
-/* line 48, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 41, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap {
   margin-top: 20px;
   position: relative;
   border-bottom: 1px solid #e6e7e8;
 }
-/* line 53, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 46, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap label {
   color: #757575;
   position: absolute;
@@ -1032,7 +1024,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   white-space: nowrap;
   pointer-events: none;
 }
-/* line 63, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 56, ../../src/Styles/Components/_MerchantDetail.scss */
 .merchantDetail .inputWrap .input {
   border: none;
   outline: none;
@@ -1046,7 +1038,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 16px;
 }
 
-/* line 79, ../../src/Styles/Components/_MerchantDetail.scss */
+/* line 72, ../../src/Styles/Components/_MerchantDetail.scss */
 .visible-in-sidebar {
   transform: translateX(0);
   z-index: 999;
