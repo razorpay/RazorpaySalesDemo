@@ -83,7 +83,6 @@ class Sidebar extends Component {
           text="Razorpay Checkout"
           subtext="Merchants"
           backButtonVisible={this.state.visibleState === this.visibleStates.detail}
-          backToList={this.showMerchantList}
         />
         <div className="sidebarContent">
           <MerchantList
@@ -101,6 +100,7 @@ class Sidebar extends Component {
             onDescChange={this.props.updateDesc}
             onAmountChange={this.props.updateAmount}
             onColorChange={this.props.updateColor}
+            backToList={this.showMerchantList}
           />
         </div>
       </div>
