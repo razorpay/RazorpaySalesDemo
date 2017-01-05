@@ -1,3 +1,10 @@
+@keyframes tap-gesture {
+  50% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
 @keyframes otp-fill-anim {
   0% {background-position: 0 0;}
   100% {background-position: 0 -3396px;}

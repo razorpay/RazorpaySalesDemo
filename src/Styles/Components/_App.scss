@@ -86,13 +86,15 @@ $rotation: 30deg;
 // First Step
 .f-anim-s1 {
   .paymentModal {
-    @include transition(transform 0.5s ease-out);
+    @include transition(transform 0.8s ease-in-out);
     @include transform(scale(0.95) translate3d(0, 50px, 10px) rotateY($rotation));
+    transition-delay: 0.3s;
   }
 
   .backdropContainer {
-    @include transition(transform 0.5s ease-out);
-    @include transform(scale(1.05) rotateY($rotation));
+    @include transition(transform 0.8s ease-in-out);
+    @include transform(scale(1) rotateY($rotation));
+    transition-delay: 0.3s;
   }
 }
 
@@ -106,6 +108,10 @@ $rotation: 30deg;
       @include transform (scale(0.9));
       @include animation(otp-fill-anim 2s steps(6, start) forwards);
       @include animation-delay(1s);
+      &:after {
+        animation: tap-gesture 0.5s;
+        animation-delay: 3.5s;
+      }
     }
   }
 }
@@ -133,17 +139,17 @@ $rotation: 30deg;
 // Fifth step
 .f-anim-s5 {
   .paymentModal {
-    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transition(transform 0.7s ease-in-out);
     @include transform(rotateY(0));
   }
 
   .backdropContainer {
-    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transition(transform 0.7s ease-in-out);
     @include transform(rotateY(0));
   }
 
   .masterCardContainer {
-    @include transition(transform 0.7s cubic-bezier(0,1.03,.58,1.02));
+    @include transition(transform 0.7s ease-in-out);
     @include transform(rotateY(0));
   }
 }

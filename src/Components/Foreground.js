@@ -6,14 +6,10 @@ class Foreground extends Component {
     desc: PropTypes.string
   }
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="masterCardContainer" ref="masterCardContainer">
-        <div className="masterCardWindow" ref="masterCardWindow">
+        <div className="masterCardWindow" ref="masterCardWindow" data-amount={`Rs ${this.props.amount}`}>
         </div>
         <div className="paymentConfirmationWindow">
           <h1>Thanks for your order!</h1>
