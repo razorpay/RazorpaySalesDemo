@@ -103,6 +103,12 @@ $rotation: 30deg;
   .masterCardContainer {
     visibility: visible;
     @include transform(rotateY($rotation) translateZ(30px));
+    &:before,
+    &:after {
+      transition: opacity 0.1s;
+      transition-delay: 0.25s;
+      opacity: 1;
+    }
     .masterCardWindow {
       @include transition(transform 0.35s cubic-bezier(0,1.03,.58,1.02));
       @include transform (scale(0.9));
@@ -122,8 +128,16 @@ $rotation: 30deg;
     opacity: 0;
   }
 
-  .masterCardContainer .masterCardWindow {
-    @include transform(scale(0));
+  .masterCardContainer {
+    &:before,
+    &:after{
+      transition-delay: 0s;
+      transition: opacity 0s;
+      opacity: 0;
+    }
+    .masterCardWindow {
+      @include transform(scale(0));
+    }
   }
 }
 

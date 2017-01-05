@@ -359,18 +359,19 @@ class App extends Component {
 
           <Foreground
             amount={currentAmount}
+            name={currentMerchantName}
             desc={currentPaymentDesc}
           />
 
           {/*<ConditionalComp visible={this.state.demoMode}/>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
+          <ConditionalComp visible={this.state.demoMode}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
 
           {/*<ConditionalComp visible={this.state.demoMode}>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>
             <ButtonPrimary
               id="btnStepDemoForward"
               fireOnClick={this.stepDemoForward}/>

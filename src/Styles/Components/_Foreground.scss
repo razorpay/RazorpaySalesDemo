@@ -10,6 +10,33 @@
   width: 100%;
   z-index: 999;
   transform: translateZ(30px);
+  white-space:pre;
+
+  &:before {
+    position: absolute;
+    color: forestgreen;
+    content: attr(data-mname);
+    top: 400px;
+    left: 841px;
+    display: block;
+    z-index: 9999;
+    font-weight: 900;
+    font-size: 14px;
+    opacity: 0;
+  }
+
+  &:after {
+    position: absolute;
+    color: forestgreen;
+    content: attr(data-date);
+    top: 418px;
+    left: 841px;
+    display: block;
+    z-index: 9999;
+    font-weight: 900;
+    font-size: 14px;
+    opacity: 0;
+  }
 
   .masterCardWindow {
     position: relative;
@@ -19,6 +46,7 @@
     background: url('../images/mastercard.png') 0 0 no-repeat;
     transition: transform 0.5s $spring-easing;
     transform: scale(0);
+    // Tap Gesture
     &:after {
       position: absolute;
       top: 355px;
@@ -33,19 +61,17 @@
       transform: scale(1.3);
       opacity: 0.0;
     }
-
+    // Amount
     &:before {
       position: absolute;
       top: 242px;
       left: 381px;
       content: attr(data-amount);
-      color: white;
       font-weight: 900;
       font-size: 15px;
       color:#00007D;
       display: block;
       background:white;
-      width: 200px;
     }
   }
 

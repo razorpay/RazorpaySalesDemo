@@ -405,6 +405,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: rotateY(30deg) translateZ(30px);
 }
 /* line 106, ../../src/Styles/Components/_App.scss */
+.f-anim-s2 .masterCardContainer:before, .f-anim-s2 .masterCardContainer:after {
+  transition: opacity 0.1s;
+  transition-delay: 0.25s;
+  opacity: 1;
+}
+/* line 112, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow {
   -moz-transition: -moz-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
   -o-transition: -o-transform 0.35s cubic-bezier(0, 1.03, 0.58, 1.02);
@@ -421,17 +427,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
-/* line 111, ../../src/Styles/Components/_App.scss */
+/* line 117, ../../src/Styles/Components/_App.scss */
 .f-anim-s2 .masterCardContainer .masterCardWindow:after {
   animation: tap-gesture 0.5s;
   animation-delay: 3.5s;
 }
 
-/* line 121, ../../src/Styles/Components/_App.scss */
+/* line 127, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .paymentModal {
   opacity: 0;
 }
-/* line 125, ../../src/Styles/Components/_App.scss */
+/* line 132, ../../src/Styles/Components/_App.scss */
+.f-anim-s3 .masterCardContainer:before, .f-anim-s3 .masterCardContainer:after {
+  transition-delay: 0s;
+  transition: opacity 0s;
+  opacity: 0;
+}
+/* line 138, ../../src/Styles/Components/_App.scss */
 .f-anim-s3 .masterCardContainer .masterCardWindow {
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -439,7 +451,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(0);
 }
 
-/* line 133, ../../src/Styles/Components/_App.scss */
+/* line 147, ../../src/Styles/Components/_App.scss */
 .f-anim-s4 .masterCardContainer .paymentConfirmationWindow {
   -moz-transform: scale(1) translate3d(-50%, -50%, 0);
   -ms-transform: scale(1) translate3d(-50%, -50%, 0);
@@ -447,7 +459,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(1) translate3d(-50%, -50%, 0);
 }
 
-/* line 141, ../../src/Styles/Components/_App.scss */
+/* line 155, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .paymentModal {
   -moz-transition: -moz-transform 0.7s ease-in-out;
   -o-transition: -o-transform 0.7s ease-in-out;
@@ -458,7 +470,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
-/* line 146, ../../src/Styles/Components/_App.scss */
+/* line 160, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .backdropContainer {
   -moz-transition: -moz-transform 0.7s ease-in-out;
   -o-transition: -o-transform 0.7s ease-in-out;
@@ -469,7 +481,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
-/* line 151, ../../src/Styles/Components/_App.scss */
+/* line 165, ../../src/Styles/Components/_App.scss */
 .f-anim-s5 .masterCardContainer {
   -moz-transition: -moz-transform 0.7s ease-in-out;
   -o-transition: -o-transform 0.7s ease-in-out;
@@ -1080,8 +1092,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 100%;
   z-index: 999;
   transform: translateZ(30px);
+  white-space: pre;
 }
-/* line 14, ../../src/Styles/Components/_Foreground.scss */
+/* line 15, ../../src/Styles/Components/_Foreground.scss */
+.masterCardContainer:before {
+  position: absolute;
+  color: forestgreen;
+  content: attr(data-mname);
+  top: 400px;
+  left: 841px;
+  display: block;
+  z-index: 9999;
+  font-weight: 900;
+  font-size: 14px;
+  opacity: 0;
+}
+/* line 28, ../../src/Styles/Components/_Foreground.scss */
+.masterCardContainer:after {
+  position: absolute;
+  color: forestgreen;
+  content: attr(data-date);
+  top: 418px;
+  left: 841px;
+  display: block;
+  z-index: 9999;
+  font-weight: 900;
+  font-size: 14px;
+  opacity: 0;
+}
+/* line 41, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow {
   position: relative;
   width: 762px;
@@ -1091,7 +1130,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: transform 0.5s cubic-bezier(0.01, 0.66, 0.22, 1.25);
   transform: scale(0);
 }
-/* line 22, ../../src/Styles/Components/_Foreground.scss */
+/* line 50, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow:after {
   position: absolute;
   top: 355px;
@@ -1106,21 +1145,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: scale(1.3);
   opacity: 0.0;
 }
-/* line 37, ../../src/Styles/Components/_Foreground.scss */
+/* line 65, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .masterCardWindow:before {
   position: absolute;
   top: 242px;
   left: 381px;
   content: attr(data-amount);
-  color: white;
   font-weight: 900;
   font-size: 15px;
   color: #00007D;
   display: block;
   background: white;
-  width: 200px;
 }
-/* line 52, ../../src/Styles/Components/_Foreground.scss */
+/* line 78, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow {
   position: absolute;
   top: 50%;
@@ -1134,23 +1171,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 64, ../../src/Styles/Components/_Foreground.scss */
+/* line 90, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow h1 {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 68, ../../src/Styles/Components/_Foreground.scss */
+/* line 94, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row {
   display: flex;
   width: 100%;
   padding: 30px 0 0 0;
 }
-/* line 72, ../../src/Styles/Components/_Foreground.scss */
+/* line 98, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .left-col,
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   flex: 1;
 }
-/* line 76, ../../src/Styles/Components/_Foreground.scss */
+/* line 102, ../../src/Styles/Components/_Foreground.scss */
 .masterCardContainer .paymentConfirmationWindow .row .right-col {
   text-align: right;
 }

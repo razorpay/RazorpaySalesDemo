@@ -1,14 +1,34 @@
 import React, {Component, PropTypes} from 'react';
 
+var monthNames = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+];
+
+var date = new Date();
+var day = date.getDate();
+var monthIndex = date.getMonth();
+var year = date.getFullYear();
+
+var formattedDate = `${day} ${monthNames[monthIndex]}, ${year}`;
+
 class Foreground extends Component {
   static PropTypes = {
-    amount: PropTypes.number,
-    desc: PropTypes.string
+    amount: PropTypes.number.isRequired,
+    desc: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
   }
 
   render() {
     return (
-      <div className="masterCardContainer" ref="masterCardContainer">
+      <div
+        className="masterCardContainer"
+        ref="masterCardContainer"
+        data-mname={this.props.name}
+        data-date={formattedDate}
+      >
         <div className="masterCardWindow" ref="masterCardWindow" data-amount={`Rs ${this.props.amount}`}>
         </div>
         <div className="paymentConfirmationWindow">
