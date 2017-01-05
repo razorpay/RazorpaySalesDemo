@@ -26,10 +26,10 @@ class Foreground extends Component {
       <div
         className="masterCardContainer"
         ref="masterCardContainer"
-        data-mname={this.props.name}
-        data-date={formattedDate}
       >
         <div className="masterCardWindow" ref="masterCardWindow" data-amount={`Rs ${this.props.amount}`}>
+          <div className="mcWindow-mname">{this.props.name}</div>
+          <div className="mcWindow-date">{formattedDate}</div>
         </div>
         <div className="paymentConfirmationWindow">
           <h1>Thanks for your order!</h1>

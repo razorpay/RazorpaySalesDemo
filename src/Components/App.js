@@ -364,14 +364,14 @@ class App extends Component {
           />
 
           {/*<ConditionalComp visible={this.state.demoMode}/>*/}
-          <ConditionalComp visible={this.state.demoMode}>
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep <= 2}>
             <ButtonPrimary
               id="btnStepDemoBack"
               fireOnClick={this.stepDemoBackward}/>
           </ConditionalComp>
-
-          {/*<ConditionalComp visible={this.state.demoMode}>*/}
-          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>
+ 
+          {/*<ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2}>*/}
+          <ConditionalComp visible={this.state.demoMode && this.state.demoStep >= 2 && false}>
             <ButtonPrimary
               id="btnStepDemoForward"
               fireOnClick={this.stepDemoForward}/>

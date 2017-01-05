@@ -12,32 +12,6 @@
   transform: translateZ(30px);
   white-space:pre;
 
-  &:before {
-    position: absolute;
-    color: forestgreen;
-    content: attr(data-mname);
-    top: 400px;
-    left: 841px;
-    display: block;
-    z-index: 9999;
-    font-weight: 900;
-    font-size: 14px;
-    opacity: 0;
-  }
-
-  &:after {
-    position: absolute;
-    color: forestgreen;
-    content: attr(data-date);
-    top: 418px;
-    left: 841px;
-    display: block;
-    z-index: 9999;
-    font-weight: 900;
-    font-size: 14px;
-    opacity: 0;
-  }
-
   .masterCardWindow {
     position: relative;
     width: 762px;
@@ -70,6 +44,28 @@
       font-weight: 900;
       font-size: 15px;
       color:#00007D;
+      display: block;
+      background:white;
+    }
+    // MerchantName
+    .mcWindow-mname {
+      position: absolute;
+      top: 200px;
+      left: 381px;
+      font-weight: 900;
+      font-size: 15px;
+      color: forestgreen;
+      display: block;
+      background:white;
+    }
+    // Date of payment
+    .mcWindow-date {
+      position: absolute;
+      top: 220px;
+      left: 381px;
+      font-weight: 900;
+      font-size: 15px;
+      color: forestgreen;
       display: block;
       background:white;
     }
